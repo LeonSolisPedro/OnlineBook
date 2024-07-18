@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Core.Entites.Tour;
 
-public class DirectionTour
+public class TourDirection
 {
     [Key]
     public int Id { get; set; }

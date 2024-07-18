@@ -13,14 +13,14 @@ public class AppDbContext : DbContext
 
     public DbSet<Agency> Agencies => Set<Agency>();
     public DbSet<Tour> Tours => Set<Tour>();
-    public DbSet<DirectionTour> DirectionTours => Set<DirectionTour>();
+    public DbSet<TourDirection> TourDirections => Set<TourDirection>();
     public DbSet<TourInclude> TourIncludes => Set<TourInclude>();
     public DbSet<TourItinerary> TourItineraries => Set<TourItinerary>();
     public DbSet<TourCategory> TourCategories => Set<TourCategory>();
     public DbSet<TourCategoryComposition> TourCategoryCompositions => Set<TourCategoryComposition>();
     public DbSet<TourSearchQuery> TourSearchQueries => Set<TourSearchQuery>();
     public DbSet<TourSearchQueryComposition> TourSearchQueryCompositions => Set<TourSearchQueryComposition>();
-    public DbSet<SimilarTour> SimilarTours => Set<SimilarTour>();
+    public DbSet<TourSimilar> TourSimilars => Set<TourSimilar>();
     public DbSet<TourGalleryImage> TourGalleryImages => Set<TourGalleryImage>();
     public DbSet<CurrencyRate> CurrencyRates => Set<CurrencyRate>();
     public DbSet<AgencyCurrency> AgencyCurrencies => Set<AgencyCurrency>();

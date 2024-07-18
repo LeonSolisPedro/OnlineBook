@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Core.Entites.Tour;
 
-public class SimilarTour
+public class TourSimilar
 {
   [Key]
   public int Id { get; set; }

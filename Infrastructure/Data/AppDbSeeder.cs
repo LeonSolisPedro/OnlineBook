@@ -99,7 +99,7 @@ public class AppDbSeeder
       };
       _context.TourSearchQueries.Add(tourSearchQuery4);
 
-      var direction1 = new DirectionTour
+      var direction1 = new TourDirection
       {
         Name = "Cancún",
         Agency = agency1
@@ -118,7 +118,7 @@ public class AppDbSeeder
         DurationType = Core.Dto.Enums.DurationType.HOURS,
         IsInternational = false,
         Agency = agency1,
-        DirectionTour = direction1
+        TourDirection = direction1
       };
 
       

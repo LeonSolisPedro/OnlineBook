@@ -36,14 +36,14 @@ public class Tour
 
   public bool IsInternational { get; set; }
 
-  [ForeignKey("DirectionTour")]
-  public int IdDirectionTour { get; set; }
+  [ForeignKey("TourDirection")]
+  public int IdTourDirection { get; set; }
 
-  public DirectionTour? DirectionTour { get; set; }
+  public TourDirection? TourDirection { get; set; }
 
   public virtual List<TourInclude>? TourIncludes { get; set; }
 
-  public virtual List<SimilarTour>? SimilarTours { get; set; }
+  public virtual List<TourSimilar>? TourSimilar { get; set; }
 
   public virtual List<TourCategoryComposition>? TourCategoryCompositions {get; set;}
 
