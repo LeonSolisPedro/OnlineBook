@@ -53,4 +53,6 @@ public class Tour
 
   public virtual List<TourGalleryImage>? TourGalleryImages {get; set;}
 
+  public virtual TourDatePricing? TourDatePricings {get; set;}
+
 }

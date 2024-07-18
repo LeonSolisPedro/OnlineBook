@@ -19,4 +19,11 @@ public class Enums
     EXCLUDES,
     RECOMENDATIONS
   }
+
+  public enum RepeatType
+  {
+    EVERYDAY,
+    EVERYNNNDAYS,
+    SPECIFICDAYS
+  }
 }

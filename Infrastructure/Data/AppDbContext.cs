@@ -22,12 +22,20 @@ public class AppDbContext : DbContext
     public DbSet<TourSearchQueryComposition> TourSearchQueryCompositions => Set<TourSearchQueryComposition>();
     public DbSet<SimilarTour> SimilarTours => Set<SimilarTour>();
     public DbSet<TourGalleryImage> TourGalleryImages => Set<TourGalleryImage>();
+    public DbSet<CurrencyRate> CurrencyRates => Set<CurrencyRate>();
+    public DbSet<AgencyCurrency> AgencyCurrencies => Set<AgencyCurrency>();
+    public DbSet<TourClassPricing> TourClassPricings => Set<TourClassPricing>();
+    public DbSet<TourDatePricing> TourDatePricings => Set<TourDatePricing>();
+    public DbSet<TourDatePricingComposition> TourDatePricingCompositions => Set<TourDatePricingComposition>();
 
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<TourCategoryComposition>().HasKey(x => new {x.IdTour, x.IdTourCategory});
         modelBuilder.Entity<TourSearchQueryComposition>().HasKey(x => new {x.IdTour, x.IdTourSearchQuery});
+        modelBuilder.Entity<TourDatePricingComposition>().HasKey(x => new {x.IdTourClassPricing, x.IdTourDatePricing});
+
+        modelBuilder.Entity<AgencyCurrency>().HasKey(x => new {x.IdAgency, x.IdCurrencyRate});
         foreach (var relationship in modelBuilder.Model.GetEntityTypes().SelectMany(e => e.GetForeignKeys()))
         {
             relationship.DeleteBehavior = DeleteBehavior.Restrict;

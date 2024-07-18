@@ -11,12 +11,45 @@ public class AppDbSeeder
 {
   public static async Task SeedAsync(AppDbContext _context)
   {
+
+    
+
+
     if (!_context.Tours.Any())
     {
+
+      var currency1 = new CurrencyRate
+      {
+        ExchangeRateToMXN = 0m,
+        Name = "MXN"
+      };
+
+      var currency2 = new CurrencyRate
+      {
+        ExchangeRateToMXN = 18.02m,
+        Name = "USD"
+      };
+
+
+      var currency3 = new CurrencyRate
+      {
+        ExchangeRateToMXN = 19.63m,
+        Name = "EUR"
+      };
+
       var agency1 = new Agency
       {
         Name = "Agencía 1"
       };
+
+      var agencyCurrency1 = new List<AgencyCurrency>
+      {
+        new() {Agency = agency1, CurrencyRate = currency1, Order = 1},
+        new() {Agency = agency1, CurrencyRate = currency2, Order = 2},
+      };
+      
+      agency1.AgencyCurrencies = agencyCurrency1;
+      
 
       var tourCategory1 = new TourCategory
       {
