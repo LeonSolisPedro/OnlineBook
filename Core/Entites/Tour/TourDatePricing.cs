@@ -16,9 +16,15 @@ public class TourDatePricing
   public int IdTour { get; set; }
   public virtual Tour? Tour { get; set; }
 
-  public bool AreSeatsGlobal { get; set; }
+  public bool AreSettingsGlobal { get; set; }
 
   public int? MaxSeats { get; set; }
+
+  public bool? InfantsCountAsSeats {get; set;}
+
+  public bool? AllowInfants {get; set;}
+
+  public bool? AllowMinors {get; set;}
 
   public List<TourDatePricingComposition>? TourDatePricingCompositions { get; set; }
 }

@@ -27,6 +27,8 @@ public class AppDbContext : DbContext
     public DbSet<TourClassPricing> TourClassPricings => Set<TourClassPricing>();
     public DbSet<TourDatePricing> TourDatePricings => Set<TourDatePricing>();
     public DbSet<TourDatePricingComposition> TourDatePricingCompositions => Set<TourDatePricingComposition>();
+    public DbSet<TourNotWorkingDay> TourNotWorkingDays => Set<TourNotWorkingDay>();
+    public DbSet<TourRepeatSpecificDate> TourRepeatSpecificDates => Set<TourRepeatSpecificDate>();
 
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -34,6 +36,8 @@ public class AppDbContext : DbContext
         modelBuilder.Entity<TourCategoryComposition>().HasKey(x => new {x.IdTour, x.IdTourCategory});
         modelBuilder.Entity<TourSearchQueryComposition>().HasKey(x => new {x.IdTour, x.IdTourSearchQuery});
         modelBuilder.Entity<TourDatePricingComposition>().HasKey(x => new {x.IdTourClassPricing, x.IdTourDatePricing});
+        modelBuilder.Entity<TourNotWorkingDay>().HasKey(x => new {x.IdTourClassPricing, x.Day});
+        modelBuilder.Entity<TourRepeatSpecificDate>().HasKey(x => new {x.IdTourClassPricing, x.Day});
 
         modelBuilder.Entity<AgencyCurrency>().HasKey(x => new {x.IdAgency, x.IdCurrencyRate});
         foreach (var relationship in modelBuilder.Model.GetEntityTypes().SelectMany(e => e.GetForeignKeys()))

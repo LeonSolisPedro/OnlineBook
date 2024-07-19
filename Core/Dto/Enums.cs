@@ -26,4 +26,18 @@ public class Enums
     EVERYNNNDAYS,
     SPECIFICDAYS
   }
+
+  public enum Gender
+  {
+    FEMALE,
+    MALE
+
+  }
+
+  public enum TourReservationStatus
+  {
+    PENDING,
+    PAID,
+    COMFIRMED,
+  }
 }
