@@ -1,15 +1,18 @@
-
-
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
+using System.Threading.Tasks;
+using Core.Entites._Agency;
 
-namespace Core.Entites;
+namespace Core.Entites._Tour;
 
-public class TourSimilar
+public class TourItinerary
 {
+
   [Key]
   public int Id { get; set; }
-
 
   [ForeignKey("Tour")]
   public int IdTour { get; set; }
@@ -19,4 +22,10 @@ public class TourSimilar
   [ForeignKey("Agency")]
   public int IdAgency { get; set; }
   public virtual Agency? Agency { get; set; }
+
+  public int Day { get; set; }
+
+  [Column(TypeName = "ntext")]
+  [MaxLength]
+  public string Description { get; set; } = "";
 }

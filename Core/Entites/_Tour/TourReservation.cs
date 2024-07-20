@@ -1,8 +1,9 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Core.Entites._Agency;
 using static Core.Dto.Enums;
 
-namespace Core.Entites;
+namespace Core.Entites._Tour;
 
 public class TourReservation
 {

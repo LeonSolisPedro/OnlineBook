@@ -2,14 +2,15 @@
 using System.ComponentModel.DataAnnotations.Schema;
 
 
-namespace Core.Entites;
+namespace Core.Entites._Tour;
 
-public class TourRepeatSpecificDate
+public class TourNotWorkingDay
 {
   [ForeignKey("TourClassPricing")]
   public int IdTourClassPricing { get; set; }
 
   public TourClassPricing? TourClassPricing { get; set; }
 
-  public DayOfWeek Day {get; set;}
+  public DateOnly Day {get; set;}
+
 }

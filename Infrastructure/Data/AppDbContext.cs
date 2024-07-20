@@ -1,5 +1,8 @@
 
 using Core.Entites;
+using Core.Entites._Agency;
+using Core.Entites._Home;
+using Core.Entites._Tour;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Data;
@@ -31,6 +34,7 @@ public class AppDbContext : DbContext
     public DbSet<TourReservation> TourReservations => Set<TourReservation>();
     public DbSet<AgencySocial> AgencySocials => Set<AgencySocial>();
     public DbSet<AgencySocialComposition> AgencySocialCompositions => Set<AgencySocialComposition>();
+    public DbSet<HomeTourPopularComposition> HomeTourPopularCompositions => Set<HomeTourPopularComposition>();
 
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)

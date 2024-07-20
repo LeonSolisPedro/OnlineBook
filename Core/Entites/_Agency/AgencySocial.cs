@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace Core.Entites;
+namespace Core.Entites._Agency;
 
 public class AgencySocial
 {

@@ -1,7 +1,8 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Core.Entites._Agency;
 
-namespace Core.Entites;
+namespace Core.Entites._Tour;
 
 public class TourDirection
 {

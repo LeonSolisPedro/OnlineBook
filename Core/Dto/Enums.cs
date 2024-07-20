@@ -40,4 +40,11 @@ public class Enums
     PAID,
     COMFIRMED,
   }
+
+
+  public enum PopularType
+  {
+    POPULAR,
+    OTHERTOURS
+  }
 }

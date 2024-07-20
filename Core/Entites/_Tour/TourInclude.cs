@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using static Core.Dto.Enums;
 
 
-namespace Core.Entites;
+namespace Core.Entites._Tour;
 
 public class TourInclude
 {
