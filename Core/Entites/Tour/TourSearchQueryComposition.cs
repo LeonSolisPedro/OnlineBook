@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations.Schema;
 
 
-namespace Core.Entites.Tour;
+namespace Core.Entites;
 
 public class TourSearchQueryComposition
 {

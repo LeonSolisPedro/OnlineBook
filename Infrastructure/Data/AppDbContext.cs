@@ -1,6 +1,5 @@
 
 using Core.Entites;
-using Core.Entites.Tour;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Data;
@@ -22,13 +21,16 @@ public class AppDbContext : DbContext
     public DbSet<TourSearchQueryComposition> TourSearchQueryCompositions => Set<TourSearchQueryComposition>();
     public DbSet<TourSimilar> TourSimilars => Set<TourSimilar>();
     public DbSet<TourGalleryImage> TourGalleryImages => Set<TourGalleryImage>();
-    public DbSet<CurrencyRate> CurrencyRates => Set<CurrencyRate>();
     public DbSet<AgencyCurrency> AgencyCurrencies => Set<AgencyCurrency>();
+    public DbSet<AgencyCurrencyComposition> AgencyCurrencyCompositions => Set<AgencyCurrencyComposition>();
     public DbSet<TourClassPricing> TourClassPricings => Set<TourClassPricing>();
     public DbSet<TourDatePricing> TourDatePricings => Set<TourDatePricing>();
     public DbSet<TourDatePricingComposition> TourDatePricingCompositions => Set<TourDatePricingComposition>();
     public DbSet<TourNotWorkingDay> TourNotWorkingDays => Set<TourNotWorkingDay>();
     public DbSet<TourRepeatSpecificDate> TourRepeatSpecificDates => Set<TourRepeatSpecificDate>();
+    public DbSet<TourReservation> TourReservations => Set<TourReservation>();
+    public DbSet<AgencySocial> AgencySocials => Set<AgencySocial>();
+    public DbSet<AgencySocialComposition> AgencySocialCompositions => Set<AgencySocialComposition>();
 
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -39,7 +41,7 @@ public class AppDbContext : DbContext
         modelBuilder.Entity<TourNotWorkingDay>().HasKey(x => new {x.IdTourClassPricing, x.Day});
         modelBuilder.Entity<TourRepeatSpecificDate>().HasKey(x => new {x.IdTourClassPricing, x.Day});
 
-        modelBuilder.Entity<AgencyCurrency>().HasKey(x => new {x.IdAgency, x.IdCurrencyRate});
+        modelBuilder.Entity<AgencyCurrencyComposition>().HasKey(x => new {x.IdAgency, x.IdAgencyCurrency});
         foreach (var relationship in modelBuilder.Model.GetEntityTypes().SelectMany(e => e.GetForeignKeys()))
         {
             relationship.DeleteBehavior = DeleteBehavior.Restrict;

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Core.Entites;
 
-public class CurrencyRate
+public class AgencyCurrency
 {
   [Key]
   public int Id { get; set; }

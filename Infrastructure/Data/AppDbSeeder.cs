@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Core.Entites;
-using Core.Entites.Tour;
 
 namespace Infrastructure.Data;
 
@@ -18,20 +17,20 @@ public class AppDbSeeder
     if (!_context.Tours.Any())
     {
 
-      var currency1 = new CurrencyRate
+      var currency1 = new AgencyCurrency
       {
         ExchangeRateToMXN = 0m,
         Name = "MXN"
       };
 
-      var currency2 = new CurrencyRate
+      var currency2 = new AgencyCurrency
       {
         ExchangeRateToMXN = 18.02m,
         Name = "USD"
       };
 
 
-      var currency3 = new CurrencyRate
+      var currency3 = new AgencyCurrency
       {
         ExchangeRateToMXN = 19.63m,
         Name = "EUR"
@@ -42,13 +41,13 @@ public class AppDbSeeder
         Name = "Agencía 1"
       };
 
-      var agencyCurrency1 = new List<AgencyCurrency>
+      var agencyCurrency1 = new List<AgencyCurrencyComposition>
       {
-        new() {Agency = agency1, CurrencyRate = currency1, Order = 1},
-        new() {Agency = agency1, CurrencyRate = currency2, Order = 2},
+        new() {Agency = agency1, AgencyCurrency = currency1, Order = 1},
+        new() {Agency = agency1, AgencyCurrency = currency2, Order = 2},
       };
       
-      agency1.AgencyCurrencies = agencyCurrency1;
+      agency1.AgencyCurrencyCompositions = agencyCurrency1;
       
 
       var tourCategory1 = new TourCategory

@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using static Core.Dto.Enums;
 
 
-namespace Core.Entites.Tour;
+namespace Core.Entites;
 
 public class Tour
 {

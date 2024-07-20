@@ -4,12 +4,12 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Core.Entites;
 
-public class AgencyCurrency
+public class AgencyCurrencyComposition
 {
-  [ForeignKey("CurrencyRate")]
-  public int IdCurrencyRate { get; set; }
+  [ForeignKey("AgencyCurrency")]
+  public int IdAgencyCurrency { get; set; }
 
-  public virtual CurrencyRate? CurrencyRate { get; set; }
+  public virtual AgencyCurrency? AgencyCurrency { get; set; }
 
   [ForeignKey("Agency")]
   public int IdAgency { get; set; }

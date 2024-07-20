@@ -1,21 +1,15 @@
-
-using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-
 
 namespace Core.Entites;
 
-public class TourCategory
+public class AgencySocialComposition
 {
-  [Key]
-  public int Id { get; set; }
+  [ForeignKey("AgencySocial")]
+  public int IdAgencySocial { get; set; }
 
-  public string Name { get; set; } = "";
-
-  public int Order { get; set; }
+  public virtual AgencySocial? AgencySocial { get; set; }
 
   [ForeignKey("Agency")]
   public int IdAgency { get; set; }
   public virtual Agency? Agency { get; set; }
-
 }
