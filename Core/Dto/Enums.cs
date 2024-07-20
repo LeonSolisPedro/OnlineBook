@@ -47,4 +47,12 @@ public class Enums
     POPULAR,
     OTHERTOURS
   }
+
+  public enum ContactStatus
+  {
+    NEW,
+    ATTENDING,
+    CLEAR,
+    SPAM
+  }
 }

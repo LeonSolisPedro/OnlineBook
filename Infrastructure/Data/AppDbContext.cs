@@ -2,6 +2,7 @@
 using Core.Entites;
 using Core.Entites._Agency;
 using Core.Entites._Home;
+using Core.Entites._Other;
 using Core.Entites._Tour;
 using Microsoft.EntityFrameworkCore;
 
@@ -35,17 +36,22 @@ public class AppDbContext : DbContext
     public DbSet<AgencySocial> AgencySocials => Set<AgencySocial>();
     public DbSet<AgencySocialComposition> AgencySocialCompositions => Set<AgencySocialComposition>();
     public DbSet<HomeTourPopularComposition> HomeTourPopularCompositions => Set<HomeTourPopularComposition>();
-
+    public DbSet<OtherGallery> OtherGalleries => Set<OtherGallery>();
+    public DbSet<HomeCarousel> HomeCarousels => Set<HomeCarousel>();
+    public DbSet<HomeOffer> HomeOffers => Set<HomeOffer>();
+    public DbSet<OtherPrivacyNotice> OtherPrivacyNotices => Set<OtherPrivacyNotice>();
+    public DbSet<OtherTermsCondition> OtherTermsConditions => Set<OtherTermsCondition>();
+    public DbSet<OtherContactForm> OtherContactForms => Set<OtherContactForm>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<TourCategoryComposition>().HasKey(x => new {x.IdTour, x.IdTourCategory});
-        modelBuilder.Entity<TourSearchQueryComposition>().HasKey(x => new {x.IdTour, x.IdTourSearchQuery});
-        modelBuilder.Entity<TourDatePricingComposition>().HasKey(x => new {x.IdTourClassPricing, x.IdTourDatePricing});
-        modelBuilder.Entity<TourNotWorkingDay>().HasKey(x => new {x.IdTourClassPricing, x.Day});
-        modelBuilder.Entity<TourRepeatSpecificDate>().HasKey(x => new {x.IdTourClassPricing, x.Day});
+        modelBuilder.Entity<TourCategoryComposition>().HasKey(x => new { x.IdTour, x.IdTourCategory });
+        modelBuilder.Entity<TourSearchQueryComposition>().HasKey(x => new { x.IdTour, x.IdTourSearchQuery });
+        modelBuilder.Entity<TourDatePricingComposition>().HasKey(x => new { x.IdTourClassPricing, x.IdTourDatePricing });
+        modelBuilder.Entity<TourNotWorkingDay>().HasKey(x => new { x.IdTourClassPricing, x.Day });
+        modelBuilder.Entity<TourRepeatSpecificDate>().HasKey(x => new { x.IdTourClassPricing, x.Day });
 
-        modelBuilder.Entity<AgencyCurrencyComposition>().HasKey(x => new {x.IdAgency, x.IdAgencyCurrency});
+        modelBuilder.Entity<AgencyCurrencyComposition>().HasKey(x => new { x.IdAgency, x.IdAgencyCurrency });
         foreach (var relationship in modelBuilder.Model.GetEntityTypes().SelectMany(e => e.GetForeignKeys()))
         {
             relationship.DeleteBehavior = DeleteBehavior.Restrict;

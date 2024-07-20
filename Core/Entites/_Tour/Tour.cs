@@ -17,6 +17,8 @@ public class Tour
 
   public string Title { get; set; } = "";
 
+  public bool Archived {get; set;}
+
   public string Image { get; set; } = "";
 
   public string ImageThumbnail { get; set; } = "";

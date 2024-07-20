@@ -11,6 +11,7 @@ public class HomeTourPopularComposition
   public int IdTour { get; set; }
   public Tour? Tour { get; set; }
 
+  [ForeignKey("Agency")]
   public int IdAgency { get; set; }
   public Agency? Agency { get; set; }
 

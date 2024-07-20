@@ -1,4 +1,6 @@
 using System.ComponentModel.DataAnnotations;
+using Core.Entites._Home;
+using Core.Entites._Other;
 
 namespace Core.Entites._Agency;
 
@@ -22,4 +24,19 @@ public class Agency
     public virtual List<AgencyCurrencyComposition>? AgencyCurrencyCompositions { get; set; }
 
     public virtual List<AgencySocialComposition>? AgencySocialCompositions { get; set; }
+
+    public virtual List<OtherGallery>? OtherGalleries { get; set; }
+
+    public virtual List<HomeCarousel>? HomeCarousels { get; set; }
+
+    public virtual List<HomeOffer>? HomeOffers {get; set;}
+
+    public virtual List<HomeTourPopularComposition>? HomeTourPopularCompositions { get; set; }
+
+    public virtual OtherPrivacyNotice? OtherPrivacyNotice {get; set;}
+
+    public virtual OtherTermsCondition? OtherTermsCondition {get; set;}
+
+    public virtual List<OtherContactForm>? OtherContactForms {get; set;}
+
 }
