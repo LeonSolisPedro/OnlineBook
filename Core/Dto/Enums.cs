@@ -55,4 +55,10 @@ public class Enums
     CLEAR,
     SPAM
   }
+
+  public enum TourType
+  {
+    SINGLEDAY,
+    MULTIDAY
+  }
 }

@@ -17,7 +17,9 @@ public class Tour
 
   public string Title { get; set; } = "";
 
-  public bool Archived {get; set;}
+  public TourType TourType {get; set;}
+
+  public bool IsArchived {get; set;}
 
   public string Image { get; set; } = "";
 

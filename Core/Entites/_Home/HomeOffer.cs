@@ -31,4 +31,6 @@ public class HomeOffer
   public int IdAgency { get; set; }
   public virtual Agency? Agency { get; set; }
 
+  public bool IsArchived {get; set;}
+
 }
