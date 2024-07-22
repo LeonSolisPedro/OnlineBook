@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructure.Data.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240722201305_Initial")]
+    [Migration("20240722210526_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -108,12 +108,9 @@ namespace Infrastructure.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Link")
+                    b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("SocialName")
-                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -126,6 +123,13 @@ namespace Infrastructure.Data.Migrations
                         .HasColumnType("int");
 
                     b.Property<int>("IdAgency")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Link")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Order")
                         .HasColumnType("int");
 
                     b.HasKey("IdAgencySocial", "IdAgency");

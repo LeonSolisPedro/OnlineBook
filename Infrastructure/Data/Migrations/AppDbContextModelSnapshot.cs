@@ -105,12 +105,9 @@ namespace Infrastructure.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Link")
+                    b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("SocialName")
-                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -123,6 +120,13 @@ namespace Infrastructure.Data.Migrations
                         .HasColumnType("int");
 
                     b.Property<int>("IdAgency")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Link")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Order")
                         .HasColumnType("int");
 
                     b.HasKey("IdAgencySocial", "IdAgency");

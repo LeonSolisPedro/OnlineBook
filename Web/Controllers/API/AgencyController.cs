@@ -21,4 +21,16 @@ public class AgencyController : ControllerBase
   {
     return Ok(await _agencyService.GetInfo());
   }
+
+  [Route("GetCurrency")]
+  public async Task<IActionResult> GetCurrency()
+  {
+    return Ok(await _agencyService.GetCurrency());
+  }
+
+  [Route("GetTourCategories")]
+  public async Task<IActionResult> GetTourCategories()
+  {
+    return Ok(await _agencyService.GetTourCategories());
+  }
 }

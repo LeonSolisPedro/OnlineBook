@@ -9,6 +9,10 @@ public class AgencySocialComposition
 
   public virtual AgencySocial? AgencySocial { get; set; }
 
+  public string Link {get; set;} = "";
+
+  public int Order {get; set;}
+
   [ForeignKey("Agency")]
   public int IdAgency { get; set; }
   public virtual Agency? Agency { get; set; }
