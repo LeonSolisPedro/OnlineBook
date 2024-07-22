@@ -48,8 +48,8 @@ public class AppDbContext : DbContext
         modelBuilder.Entity<TourCategoryComposition>().HasKey(x => new { x.IdTour, x.IdTourCategory });
         modelBuilder.Entity<TourSearchQueryComposition>().HasKey(x => new { x.IdTour, x.IdTourSearchQuery });
         modelBuilder.Entity<TourDatePricingComposition>().HasKey(x => new { x.IdTourClassPricing, x.IdTourDatePricing });
-        modelBuilder.Entity<TourNotWorkingDay>().HasKey(x => new { x.IdTourClassPricing, x.Day });
-        modelBuilder.Entity<TourRepeatSpecificDate>().HasKey(x => new { x.IdTourClassPricing, x.Day });
+        modelBuilder.Entity<TourNotWorkingDay>().HasKey(x => new { x.IdTourDatePricing, x.Day });
+        modelBuilder.Entity<TourRepeatSpecificDate>().HasKey(x => new { x.IdTourDatePricing, x.Day });
         modelBuilder.Entity<AgencySocialComposition>().HasKey(x => new {x.IdAgencySocial, x.IdAgency});
         modelBuilder.Entity<AgencyCurrencyComposition>().HasKey(x => new { x.IdAgency, x.IdAgencyCurrency });
         

@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
+using static Core.Dto.Enums;
 
 namespace Core.Entites._Tour;
 
@@ -16,6 +17,12 @@ public class TourDatePricing
   public int IdTour { get; set; }
   public virtual Tour? Tour { get; set; }
 
+  public DateOnly StartDate {get; set;}
+
+  public DateOnly? EndDate {get; set;}
+
+  public RepeatType RepeatType {get; set;}
+
   public bool AreSettingsGlobal { get; set; }
 
   public int? MaxSeats { get; set; }
@@ -25,6 +32,10 @@ public class TourDatePricing
   public bool? AllowInfants {get; set;}
 
   public bool? AllowMinors {get; set;}
+
+  public List<TourRepeatSpecificDate>? TourRepeatSpecificDates {get; set;}
+
+  public List<TourNotWorkingDay>? TourNotWorkingDays {get; set;}
 
   public List<TourDatePricingComposition>? TourDatePricingCompositions { get; set; }
 }

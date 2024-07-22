@@ -6,10 +6,10 @@ namespace Core.Entites._Tour;
 
 public class TourNotWorkingDay
 {
-  [ForeignKey("TourClassPricing")]
-  public int IdTourClassPricing { get; set; }
+  [ForeignKey("TourDatePricing")]
+  public int IdTourDatePricing { get; set; }
 
-  public TourClassPricing? TourClassPricing { get; set; }
+  public TourDatePricing? TourDatePricing { get; set; }
 
   public DateOnly Day {get; set;}
 
