@@ -13,11 +13,11 @@ public class AppDbSeeder
   public static async Task SeedAsync(AppDbContext _context)
   {
 
-    
-
 
     if (!_context.Tours.Any())
     {
+
+      //Global
 
       var currency1 = new AgencyCurrency
       {
@@ -38,6 +38,8 @@ public class AppDbSeeder
         Name = "EUR"
       };
 
+      // var 
+
       var agency1 = new Agency
       {
         Name = "Agencía 1"
@@ -48,9 +50,9 @@ public class AppDbSeeder
         new() {Agency = agency1, AgencyCurrency = currency1, Order = 1},
         new() {Agency = agency1, AgencyCurrency = currency2, Order = 2},
       };
-      
+
       agency1.AgencyCurrencyCompositions = agencyCurrency1;
-      
+
 
       var tourCategory1 = new TourCategory
       {
@@ -122,7 +124,7 @@ public class AppDbSeeder
         TourDirection = direction1
       };
 
-      
+
       var tourCategoryCompositions1 = new List<TourCategoryComposition>
       {
         new() {Tour = tour1, TourCategory = tourCategory1}
@@ -145,26 +147,26 @@ public class AppDbSeeder
         new(){ IncludeType = Core.Dto.Enums.IncludeType.EXCLUDES, Description = "Cubrebocas", Tour = tour1 }
       };
 
-      var tourItinerary1 =  new List<TourItinerary>
+      var tourItinerary1 = new List<TourItinerary>
       {
         new() {Agency = agency1, Tour = tour1, Day = 1, Description = "<p>Empezamos el día con un chapuzón, disfratermos del sol y actividades divertidas </p>"}
       };
 
-      var tourgalleryimages1 =  new List<TourGalleryImage>
+      var tourgalleryimages1 = new List<TourGalleryImage>
       {
         new() {Agency = agency1, Tour = tour1, Image = $"image_{agency1.Name}_1.jpg", ImageThumbnail = $"image_thumbnail_{agency1.Name}_1.jpg"  },
         new() {Agency = agency1, Tour = tour1, Image = $"image_{agency1.Name}_2.jpg", ImageThumbnail = $"image_thumbnail_{agency1.Name}_2.jpg"  },
         new() {Agency = agency1, Tour = tour1, Image = $"image_{agency1.Name}_3.jpg", ImageThumbnail = $"image_thumbnail_{agency1.Name}_3.jpg"  },
         new() {Agency = agency1, Tour = tour1, Image = $"image_{agency1.Name}_4.jpg", ImageThumbnail = $"image_thumbnail_{agency1.Name}_4.jpg"  },
       };
-      
+
       tour1.TourIncludes = tourIncludes1;
       tour1.TourCategoryCompositions = tourCategoryCompositions1;
       tour1.TourSearchQueryCompositions = tourSearchQueryCompositions1;
       tour1.TourItineraries = tourItinerary1;
       tour1.TourGalleryImages = tourgalleryimages1;
 
-      
+
 
       _context.Tours.Add(tour1);
       await _context.SaveChangesAsync();

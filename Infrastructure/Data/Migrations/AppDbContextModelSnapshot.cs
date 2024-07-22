@@ -109,9 +109,8 @@ namespace Infrastructure.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("SocialName")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
