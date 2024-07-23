@@ -6,10 +6,10 @@ namespace Core.Entites._Agency;
 
 public class AgencyCurrencyComposition
 {
-  [ForeignKey("AgencyCurrency")]
+  [ForeignKey("Currency")]
   public int IdAgencyCurrency { get; set; }
 
-  public virtual AgencyCurrency? AgencyCurrency { get; set; }
+  public virtual AgencyCurrency? Currency { get; set; }
 
   [ForeignKey("Agency")]
   public int IdAgency { get; set; }

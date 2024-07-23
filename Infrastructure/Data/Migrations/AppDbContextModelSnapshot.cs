@@ -890,7 +890,7 @@ namespace Infrastructure.Data.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("Core.Entites._Agency.AgencyCurrency", "AgencyCurrency")
+                    b.HasOne("Core.Entites._Agency.AgencyCurrency", "Currency")
                         .WithMany()
                         .HasForeignKey("IdAgencyCurrency")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -898,7 +898,7 @@ namespace Infrastructure.Data.Migrations
 
                     b.Navigation("Agency");
 
-                    b.Navigation("AgencyCurrency");
+                    b.Navigation("Currency");
                 });
 
             modelBuilder.Entity("Core.Entites._Agency.AgencySocialComposition", b =>
@@ -909,7 +909,7 @@ namespace Infrastructure.Data.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("Core.Entites._Agency.AgencySocial", "AgencySocial")
+                    b.HasOne("Core.Entites._Agency.AgencySocial", "Social")
                         .WithMany()
                         .HasForeignKey("IdAgencySocial")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -917,7 +917,7 @@ namespace Infrastructure.Data.Migrations
 
                     b.Navigation("Agency");
 
-                    b.Navigation("AgencySocial");
+                    b.Navigation("Social");
                 });
 
             modelBuilder.Entity("Core.Entites._Home.HomeCarousel", b =>

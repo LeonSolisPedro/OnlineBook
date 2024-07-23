@@ -4,10 +4,10 @@ namespace Core.Entites._Agency;
 
 public class AgencySocialComposition
 {
-  [ForeignKey("AgencySocial")]
+  [ForeignKey("Social")]
   public int IdAgencySocial { get; set; }
 
-  public virtual AgencySocial? AgencySocial { get; set; }
+  public virtual AgencySocial? Social { get; set; }
 
   public string Link {get; set;} = "";
 

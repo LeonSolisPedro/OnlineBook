@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructure.Data.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240722210526_Initial")]
+    [Migration("20240723012707_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -893,7 +893,7 @@ namespace Infrastructure.Data.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("Core.Entites._Agency.AgencyCurrency", "AgencyCurrency")
+                    b.HasOne("Core.Entites._Agency.AgencyCurrency", "Currency")
                         .WithMany()
                         .HasForeignKey("IdAgencyCurrency")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -901,7 +901,7 @@ namespace Infrastructure.Data.Migrations
 
                     b.Navigation("Agency");
 
-                    b.Navigation("AgencyCurrency");
+                    b.Navigation("Currency");
                 });
 
             modelBuilder.Entity("Core.Entites._Agency.AgencySocialComposition", b =>
@@ -912,7 +912,7 @@ namespace Infrastructure.Data.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("Core.Entites._Agency.AgencySocial", "AgencySocial")
+                    b.HasOne("Core.Entites._Agency.AgencySocial", "Social")
                         .WithMany()
                         .HasForeignKey("IdAgencySocial")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -920,7 +920,7 @@ namespace Infrastructure.Data.Migrations
 
                     b.Navigation("Agency");
 
-                    b.Navigation("AgencySocial");
+                    b.Navigation("Social");
                 });
 
             modelBuilder.Entity("Core.Entites._Home.HomeCarousel", b =>

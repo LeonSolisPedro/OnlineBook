@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Core.Entites;
 using Core.Entites._Agency;
+using Core.Entites._Home;
 using Core.Entites._Tour;
 using static Core.Dto.Enums;
 
@@ -90,7 +91,7 @@ public class AppDbSeeder
         var agency1 = new Agency
         {
           Name = "Agencía 1",
-          Location = "Dirección Temporal",
+          Location = "Cuauhtémoc, 06060, CDMX",
           BusinessHours = "Lun - Vie: 9:00 a 17:00",
           PhoneContact = "5555555555",
           EmailContact = "pedro@wintercr.com",
@@ -99,25 +100,39 @@ public class AppDbSeeder
 
         var agencySocial1 = new List<AgencySocialComposition>
         {
-          new() {Agency = agency1, AgencySocial = social1, Link = "https://www.linkedin.com/in/leonsolispedro/", Order = 1},
-          new() {Agency = agency1, AgencySocial = social2, Link = "https://www.linkedin.com/in/leonsolispedro/", Order = 2},
-          new() {Agency = agency1, AgencySocial = social3, Link = "https://www.linkedin.com/in/leonsolispedro/", Order = 3},
-          new() {Agency = agency1, AgencySocial = social4, Link = "https://www.linkedin.com/in/leonsolispedro/", Order = 4},
-          new() {Agency = agency1, AgencySocial = social5, Link = "https://www.linkedin.com/in/leonsolispedro/", Order = 5},
-          new() {Agency = agency1, AgencySocial = social6, Link = "https://www.linkedin.com/in/leonsolispedro/", Order = 6},
-          new() {Agency = agency1, AgencySocial = social7, Link = "https://www.linkedin.com/in/leonsolispedro/", Order = 7},
-          new() {Agency = agency1, AgencySocial = social8, Link = "https://www.linkedin.com/in/leonsolispedro/", Order = 8},
-          new() {Agency = agency1, AgencySocial = social9, Link = "https://www.linkedin.com/in/leonsolispedro/", Order = 9},
+          new() {Agency = agency1, Social = social1, Link = "https://www.linkedin.com/in/leonsolispedro/", Order = 1},
+          new() {Agency = agency1, Social = social2, Link = "https://www.linkedin.com/in/leonsolispedro/", Order = 2},
+          new() {Agency = agency1, Social = social3, Link = "https://www.linkedin.com/in/leonsolispedro/", Order = 3},
+          new() {Agency = agency1, Social = social4, Link = "https://www.linkedin.com/in/leonsolispedro/", Order = 4},
+          new() {Agency = agency1, Social = social5, Link = "https://www.linkedin.com/in/leonsolispedro/", Order = 5},
+          new() {Agency = agency1, Social = social6, Link = "https://www.linkedin.com/in/leonsolispedro/", Order = 6},
+          new() {Agency = agency1, Social = social7, Link = "https://www.linkedin.com/in/leonsolispedro/", Order = 7},
+          new() {Agency = agency1, Social = social8, Link = "https://www.linkedin.com/in/leonsolispedro/", Order = 8},
+          new() {Agency = agency1, Social = social9, Link = "https://www.linkedin.com/in/leonsolispedro/", Order = 9},
         };
   
         var agencyCurrency1 = new List<AgencyCurrencyComposition>
         {
-          new() {Agency = agency1, AgencyCurrency = currency1, Order = 1},
-          new() {Agency = agency1, AgencyCurrency = currency2, Order = 2},
+          new() {Agency = agency1, Currency = currency1, Order = 1},
+          new() {Agency = agency1, Currency = currency2, Order = 2},
+        };
+
+        var homeCarousel1 = new List<HomeCarousel>
+        {
+          new() {Image = "imagen1.png", Agency = agency1, Order = 1},
+          new() {Image = "imagen2.png", Agency = agency1, Order = 2},
+        };
+
+        var homeOffers1 = new List<HomeOffer>
+        {
+          new() {Image = "imagen1.png", ImageThumbnail = "imagen1.png", Name = "Oferta 1", IncludesHotel = true, IncludesFlights = true, IncludesTransportation = true, MoreInfoLink = "https://wintercr.com"},
+          new() {Image = "imagen2.png", ImageThumbnail = "imagen2.png", Name = "Oferta 2", IncludesHotel = true, IncludesFlights = true, IncludesTransportation = true, MoreInfoLink = "https://wintercr.com"},
         };
 
         agency1.AgencySocialCompositions = agencySocial1;
         agency1.AgencyCurrencyCompositions = agencyCurrency1;
+        agency1.HomeCarousels = homeCarousel1;
+        agency1.HomeOffers = homeOffers1;
   
   
         var tourCategory1 = new TourCategory
@@ -184,7 +199,7 @@ public class AppDbSeeder
           LinkVideo = "https://wintercr.com",
           LinkPDFItinerary = "documento.pdf",
           Duration = 2,
-          DurationType = Core.Dto.Enums.DurationType.HOURS,
+          DurationType = DurationType.HOURS,
           IsInternational = false,
           Agency = agency1,
           TourDirection = direction1
