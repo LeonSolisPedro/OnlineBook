@@ -31,4 +31,24 @@ public class HomeController : ControllerBase
   {
     return Ok(await _homeService.GetOffers());
   }
+
+  [Route("GetPopularTours")]
+  public async Task<IActionResult> GetPopularTours()
+  {
+    return Ok(await _homeService.GetPopularTours());
+  }
+
+
+  [Route("GetOtherTours")]
+  public async Task<IActionResult> GetOtherTours()
+  {
+    return Ok(await _homeService.GetOtherTours());
+  }
+
+
+  [Route("GetGalleries")]
+  public async Task<IActionResult> GetGalleries()
+  {
+    return Ok(await _homeService.GetGalleries());
+  }
 }

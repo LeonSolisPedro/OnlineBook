@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructure.Data.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240723012707_Initial")]
+    [Migration("20240724205200_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -265,11 +265,10 @@ namespace Infrastructure.Data.Migrations
                     b.Property<int>("IdAgency")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("LastEditedDate")
+                    b.Property<DateTime?>("LastEditedDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("LastEditedDateTimeZone")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("LastName")
@@ -280,8 +279,10 @@ namespace Infrastructure.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("PhoneNumber")
-                        .HasColumnType("int");
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasMaxLength(10)
+                        .HasColumnType("nvarchar(10)");
 
                     b.Property<int>("Status")
                         .HasColumnType("int");

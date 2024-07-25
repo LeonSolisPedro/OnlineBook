@@ -24,8 +24,8 @@ public class AgencyService
 
   public async Task<Agency> GetInfo()
   {
-    var list = await _genericRepository.GetOrNull(x => x.Id == 1, "AgencySocialCompositions.Social");
-    list.AgencySocialCompositions = list?.AgencySocialCompositions?.OrderBy(x => x.Order).ToList();
+    var list = await _genericRepository.GetOrNull(x => x.Id == 1, "AgencySocialCompositions.Social") ?? new Agency();
+    list.AgencySocialCompositions = list.AgencySocialCompositions?.OrderBy(x => x.Order).ToList();
     return list;
   }
 

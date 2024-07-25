@@ -52,6 +52,7 @@ builder.Services.AddDbContext<AppDbContext>(options => { options.UseSqlServer(bu
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 builder.Services.AddScoped<AgencyService>();
 builder.Services.AddScoped<HomeService>();
+builder.Services.AddScoped<OtherWebService>();
 
 //Endpoints
 var app = builder.Build();

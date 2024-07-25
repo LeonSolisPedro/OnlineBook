@@ -61,17 +61,4 @@ public class Enums
     SINGLEDAY,
     MULTIDAY
   }
-
-  public enum SocialName
-  {
-    FACEBOOK,
-    TWITTER,
-    WHATSAPP,
-    GOOGLEMAPS,
-    INSTAGRAM,
-    PINTEREST,
-    YOUTUBE,
-    LINKEDIN,
-    TIKTOK
-  }
 }

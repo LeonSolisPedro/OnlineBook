@@ -14,25 +14,33 @@ public class OtherContactForm
   [Key]
   public int Id { get; set; }
 
-  public ContactStatus Status {get; set;}
+  public ContactStatus Status { get; set; }
 
   public DateTime ContactDate { get; set; }
 
   public string ContactDateTimeZone { get; set; } = "";
 
-  public DateTime LastEditedDate { get; set; }
+  public DateTime? LastEditedDate { get; set; }
 
-  public string LastEditedDateTimeZone { get; set; } = "";
+  public string? LastEditedDateTimeZone { get; set; }
 
-  public string Name {get; set;} = "";
+  [Required]
+  public string Name { get; set; } = "";
 
-  public string LastName {get; set;} = "";
+  [Required]
+  public string LastName { get; set; } = "";
 
-  public int PhoneNumber { get; set; }
+  [Required]
+  [StringLength(10, MinimumLength = 10)]
+  [RegularExpression(@"^\d{10}$")]
+  public string PhoneNumber { get; set; } = "";
 
-  public string Email {get; set;} = "";
+  [Required]
+  [EmailAddress]
+  public string Email { get; set; } = "";
 
-  public string Comments {get; set;} = "";
+  [Required]
+  public string Comments { get; set; } = "";
 
   [ForeignKey("Agency")]
   public int IdAgency { get; set; }
