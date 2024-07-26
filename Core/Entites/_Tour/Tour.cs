@@ -31,9 +31,9 @@ public class Tour
   [MaxLength]
   public string Description { get; set; } = "";
 
-  public string LinkVideo { get; set; } = "";
+  public string? LinkVideo { get; set; }
 
-  public string LinkPDFItinerary { get; set; } = "";
+  public string? LinkPDFItinerary { get; set; }
 
   public int Duration { get; set; }
 

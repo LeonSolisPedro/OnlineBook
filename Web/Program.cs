@@ -35,20 +35,30 @@ var mvcBuilder = builder.Services.AddControllersWithViews(options =>
 });
 builder.Services.AddApiVersioning(options =>
 {
-    options.DefaultApiVersion = new ApiVersion(1);
-    options.ReportApiVersions = true;
-    options.AssumeDefaultVersionWhenUnspecified = true;
-    options.ApiVersionReader = ApiVersionReader.Combine(
-        new UrlSegmentApiVersionReader(),
-        new HeaderApiVersionReader("X-Api-Version"));
+  options.DefaultApiVersion = new ApiVersion(1);
+  options.ReportApiVersions = true;
+  options.AssumeDefaultVersionWhenUnspecified = true;
+  options.ApiVersionReader = ApiVersionReader.Combine(
+      new UrlSegmentApiVersionReader(),
+      new HeaderApiVersionReader("X-Api-Version"));
 }).AddApiExplorer(options =>
 {
-    options.GroupNameFormat = "'v'VVV";
-    options.SubstituteApiVersionInUrl = true;
+  options.GroupNameFormat = "'v'VVV";
+  options.SubstituteApiVersionInUrl = true;
 });
 if (builder.Environment.IsDevelopment()) mvcBuilder.AddRazorRuntimeCompilation();
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
-builder.Services.AddDbContext<AppDbContext>(options => { options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")); });
+builder.Services.AddDbContext<AppDbContext>(options =>
+{
+  if (builder.Environment.IsDevelopment())
+  {
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+  }
+  else
+  {
+    options.UseInMemoryDatabase("OnlineBook");
+  }
+});
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 builder.Services.AddScoped<AgencyService>();
 builder.Services.AddScoped<HomeService>();

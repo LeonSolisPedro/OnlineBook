@@ -85,18 +85,14 @@ public class AppDbSeeder
         Name = "tiktok"
       };
 
-
-
-
-
       var agency1 = new Agency
       {
-        Name = "Agencía 1",
+        Name = "Paseos Locochones",
         Location = "Cuauhtémoc, 06060, CDMX",
         BusinessHours = "Lun - Vie: 9:00 a 17:00",
         PhoneContact = "5555555555",
         EmailContact = "pedro@wintercr.com",
-        Copyright = "Derechos Reservados Agencía 1"
+        Copyright = "Derechos Reservados Paseos Locochones"
       };
 
       var agencySocial1 = new List<AgencySocialComposition>
@@ -116,6 +112,7 @@ public class AppDbSeeder
         {
           new() {Agency = agency1, Currency = currency1, Order = 1},
           new() {Agency = agency1, Currency = currency2, Order = 2},
+          new() {Agency = agency1, Currency = currency3, Order = 3},
         };
 
       var homeCarousel1 = new List<HomeCarousel>
@@ -135,10 +132,6 @@ public class AppDbSeeder
       agency1.HomeCarousels = homeCarousel1;
       agency1.HomeOffers = homeOffers1;
 
-      #endregion
-
-
-      #region Tour 1
 
       var tourCategory1 = new TourCategory
       {
@@ -147,6 +140,32 @@ public class AppDbSeeder
         Agency = agency1
       };
 
+
+      var tourCategory2 = new TourCategory
+      {
+        Name = "Aventuras",
+        Order = 2,
+        Agency = agency1
+      };
+
+
+
+      var tourCategory3 = new TourCategory
+      {
+        Name = "Cenotes",
+        Order = 3,
+        Agency = agency1
+      };
+
+
+      var tourCategory4 = new TourCategory
+      {
+        Name = "Gastronomía",
+        Order = 4,
+        Agency = agency1
+      };
+
+
       var tourSearchQuery1 = new TourSearchQuery
       {
         Name = "Diversión",
@@ -154,12 +173,44 @@ public class AppDbSeeder
         Agency = agency1
       };
 
+
+
       var tourSearchQuery2 = new TourSearchQuery
       {
         Name = "Relajación",
+        Order = 2,
+        Agency = agency1
+      };
+
+      var tourSearchQuery3 = new TourSearchQuery
+      {
+        Name = "Exploración",
+        Order = 3,
+        Agency = agency1
+      };
+
+
+      var tourSearchQuery4 = new TourSearchQuery
+      {
+        Name = "Fitness",
         Order = 4,
         Agency = agency1
       };
+
+      var tourSearchQuery5 = new TourSearchQuery
+      {
+        Name = "Gastronomía",
+        Order = 5,
+        Agency = agency1
+      };
+
+
+
+
+      #endregion
+
+
+      #region Tour 1
 
       var direction1 = new TourDirection
       {
@@ -229,32 +280,11 @@ public class AppDbSeeder
       tour1.TourSearchQueryCompositions = tourSearchQueryCompositions1;
       tour1.TourItineraries = tourItinerary1;
       tour1.TourGalleryImages = tourgalleryimages1;
+
       #endregion
 
 
       #region Tour 2
-
-      var tourCategory3 = new TourCategory
-      {
-        Name = "Aventuras",
-        Order = 3,
-        Agency = agency1
-      };
-
-      // var tourSearchQuery1 = new TourSearchQuery
-      // {
-      //   Name = "Diversión",
-      //   Order = 1,
-      //   Agency = agency1
-      // };
-
-
-      var tourSearchQuery3 = new TourSearchQuery
-      {
-        Name = "Exploración",
-        Order = 1,
-        Agency = agency1
-      };
 
 
       // var direction1 = new TourDirection
@@ -283,13 +313,13 @@ public class AppDbSeeder
 
       var tourCategoryCompositions2 = new List<TourCategoryComposition>
           {
-            new() {Tour = tour2, TourCategory = tourCategory3}
+            new() {Tour = tour2, TourCategory = tourCategory2}
           };
 
       var tourSearchQueryCompositions2 = new List<TourSearchQueryComposition>
           {
-            new() {Tour = tour2, TourSearchQuery = tourSearchQuery3},
-            new() {Tour = tour2, TourSearchQuery = tourSearchQuery1}
+            new() {Tour = tour2, TourSearchQuery = tourSearchQuery1},
+            new() {Tour = tour2, TourSearchQuery = tourSearchQuery3}
           };
 
 
@@ -330,27 +360,6 @@ public class AppDbSeeder
 
 
       #region Tour 3
-
-      // var tourCategory1 = new TourCategory
-      // {
-      //   Name = "Playas",
-      //   Order = 1,
-      //   Agency = agency1
-      // };
-
-      // var tourSearchQuery1 = new TourSearchQuery
-      // {
-      //   Name = "Diversión",
-      //   Order = 1,
-      //   Agency = agency1
-      // };
-
-      // var tourSearchQuery2 = new TourSearchQuery
-      // {
-      //   Name = "Relajación",
-      //   Order = 4,
-      //   Agency = agency1
-      // };
 
       var direction2 = new TourDirection
       {
@@ -425,27 +434,6 @@ public class AppDbSeeder
 
       #region Tour 4
 
-      var tourCategory2 = new TourCategory
-      {
-        Name = "Cenotes",
-        Order = 1,
-        Agency = agency1
-      };
-
-      // var tourSearchQuery3 = new TourSearchQuery
-      // {
-      //   Name = "Exploración",
-      //   Order = 1,
-      //   Agency = agency1
-      // };
-
-      // var tourSearchQuery1 = new TourSearchQuery
-      // {
-      //   Name = "Diversión",
-      //   Order = 1,
-      //   Agency = agency1
-      // };
-
       var direction3 = new TourDirection
       {
         Name = "Yucatán",
@@ -473,7 +461,7 @@ public class AppDbSeeder
 
       var tourCategoryCompositions4 = new List<TourCategoryComposition>
           {
-            new() {Tour = tour4, TourCategory = tourCategory2}
+            new() {Tour = tour4, TourCategory = tourCategory3}
           };
 
       var tourSearchQueryCompositions4 = new List<TourSearchQueryComposition>
@@ -521,28 +509,6 @@ public class AppDbSeeder
       #region Tour 5
 
 
-      // var tourCategory3 = new TourCategory
-      // {
-      //   Name = "Aventuras",
-      //   Order = 3,
-      //   Agency = agency1
-      // };
-
-      // var tourSearchQuery1 = new TourSearchQuery
-      // {
-      //   Name = "Diversión",
-      //   Order = 1,
-      //   Agency = agency1
-      // };
-
-      // var tourSearchQuery2 = new TourSearchQuery
-      // {
-      //   Name = "Relajación",
-      //   Order = 4,
-      //   Agency = agency1
-      // };
-
-
       // var direction1 = new TourDirection
       // {
       //   Name = "Cancún",
@@ -570,12 +536,11 @@ public class AppDbSeeder
 
       var tourCategoryCompositions5 = new List<TourCategoryComposition>
           {
-            new() {Tour = tour5, TourCategory = tourCategory3}
+            new() {Tour = tour5, TourCategory = tourCategory1}
           };
 
       var tourSearchQueryCompositions5 = new List<TourSearchQueryComposition>
           {
-            new() {Tour = tour5, TourSearchQuery = tourSearchQuery1},
             new() {Tour = tour5, TourSearchQuery = tourSearchQuery2}
           };
 
@@ -619,42 +584,11 @@ public class AppDbSeeder
       #region Tour 6
 
 
-      // var tourCategory2 = new TourCategory
+      // var direction3 = new TourDirection
       // {
-      //   Name = "Cenotes",
-      //   Order = 1,
+      //   Name = "Yucatán",
       //   Agency = agency1
       // };
-
-      // var tourCategory3 = new TourCategory
-      // {
-      //   Name = "Aventuras",
-      //   Order = 3,
-      //   Agency = agency1
-      // };
-
-
-      // var tourSearchQuery3 = new TourSearchQuery
-      // {
-      //   Name = "Exploración",
-      //   Order = 1,
-      //   Agency = agency1
-      // };
-
-
-      var tourSearchQuery4 = new TourSearchQuery
-      {
-        Name = "Fitness",
-        Order = 1,
-        Agency = agency1
-      };
-
-
-      var direction4 = new TourDirection
-      {
-        Name = "Mérida",
-        Agency = agency1
-      };
 
       var tour6 = new Tour
       {
@@ -671,20 +605,20 @@ public class AppDbSeeder
         DurationType = DurationType.DAYS,
         IsInternational = false,
         Agency = agency1,
-        TourDirection = direction4
+        TourDirection = direction3
       };
 
 
       var tourCategoryCompositions6 = new List<TourCategoryComposition>
           {
-            new() {Tour = tour6, TourCategory = tourCategory2},
             new() {Tour = tour6, TourCategory = tourCategory3},
+            new() {Tour = tour6, TourCategory = tourCategory2},
           };
 
       var tourSearchQueryCompositions6 = new List<TourSearchQueryComposition>
           {
-            new() {Tour = tour1, TourSearchQuery = tourSearchQuery3},
-            new() {Tour = tour1, TourSearchQuery = tourSearchQuery4}
+            new() {Tour = tour6, TourSearchQuery = tourSearchQuery2},
+            new() {Tour = tour6, TourSearchQuery = tourSearchQuery4}
           };
 
       var tourItinerary6 = new List<TourItinerary>
@@ -722,13 +656,537 @@ public class AppDbSeeder
       tour6.TourGalleryImages = tourgalleryimages6;
 
       #endregion
-      
+
+
+      #region Tour 7
+
+      var direction5 = new TourDirection
+      {
+        Name = "Ciudad de México",
+        Agency = agency1
+      };
+
+      var tour7 = new Tour
+      {
+        Title = "Tour Histórico en Ciudad de México",
+        TourType = TourType.SINGLEDAY,
+        Image = "imagenCDMX.png",
+        ImageThumbnail = "imagenCDMXthumbnail.png",
+        MetaKeywords = "Ciudad de México, tour, histórico, viaje, vacaciones, cultura, México, turismo",
+        Description = @"<p>Explora la rica historia de la Ciudad de México en este tour de un día. Visita el Zócalo, la Catedral Metropolitana y el Palacio de Bellas Artes. Aprende sobre la historia y cultura de México con guías expertos y disfruta de la gastronomía local en un restaurante tradicional.</p>
+    <p>Este tour es ideal para aquellos interesados en la historia y la cultura de una de las ciudades más grandes y vibrantes del mundo. Descubre monumentos icónicos y maravíllate con la arquitectura colonial.</p>",
+        LinkVideo = "https://youtube.com",
+        LinkPDFItinerary = "documentoCDMX.pdf",
+        Duration = 5,
+        DurationType = DurationType.HOURS,
+        IsInternational = false,
+        Agency = agency1,
+        TourDirection = direction5
+      };
+
+      var tourCategoryCompositions7 = new List<TourCategoryComposition>
+          {
+            new() {Tour = tour7, TourCategory = tourCategory2},
+            new() {Tour = tour7, TourCategory = tourCategory4},
+          };
+
+      var tourSearchQueryCompositions7 = new List<TourSearchQueryComposition>
+          {
+            new() {Tour = tour7, TourSearchQuery = tourSearchQuery5},
+            new() {Tour = tour7, TourSearchQuery = tourSearchQuery3}
+          };
+
+      var tourItinerary7 = new List<TourItinerary>
+  {
+    new() {Agency = agency1, Tour = tour7, Day = 1, Description = @"
+  <p>Comienza tu día a las 8:00 AM en el Zócalo, el corazón de la Ciudad de México. A las 9:00 AM, visita la Catedral Metropolitana y explora su impresionante arquitectura y rica historia. A las 10:30 AM, dirígete al Palacio Nacional para admirar los murales de Diego Rivera.</p>
+  <p>A las 12:00 PM, disfruta de un almuerzo en un restaurante tradicional mexicano. A las 2:00 PM, visita el Templo Mayor, donde aprenderás sobre la antigua civilización azteca. A las 4:00 PM, pasea por el Palacio de Bellas Artes y sus jardines.</p>
+  <p>Termina el día con una caminata por el Paseo de la Reforma a las 6:00 PM, disfrutando de las vistas y la atmósfera de esta vibrante ciudad antes de regresar a tu hotel a las 8:00 PM.</p>"}
+  };
+
+      var tourIncludes7 = new List<TourInclude>
+  {
+    new() { IncludeType = IncludeType.RECOMENDATIONS, Description = "Llevar calzado cómodo", Tour = tour7 },
+    new() { IncludeType = IncludeType.RECOMENDATIONS, Description = "Traer cámara fotográfica", Tour = tour7 },
+    new() { IncludeType = IncludeType.INCLUDES, Description = "Guía turístico", Tour = tour7 },
+    new() { IncludeType = IncludeType.INCLUDES, Description = "Entradas a museos", Tour = tour7 },
+    new() { IncludeType = IncludeType.EXCLUDES, Description = "Almuerzo", Tour = tour7 },
+    new() { IncludeType = IncludeType.EXCLUDES, Description = "Propinas", Tour = tour7 }
+  };
+
+      var tourgalleryimages7 = new List<TourGalleryImage>
+  {
+    new() {Agency = agency1, Tour = tour7, Image = $"image_{agency1.Name}_25.jpg", ImageThumbnail = $"image_thumbnail_{agency1.Name}_25.jpg"  },
+    new() {Agency = agency1, Tour = tour7, Image = $"image_{agency1.Name}_26.jpg", ImageThumbnail = $"image_thumbnail_{agency1.Name}_26.jpg"  },
+    new() {Agency = agency1, Tour = tour7, Image = $"image_{agency1.Name}_27.jpg", ImageThumbnail = $"image_thumbnail_{agency1.Name}_27.jpg"  },
+    new() {Agency = agency1, Tour = tour7, Image = $"image_{agency1.Name}_28.jpg", ImageThumbnail = $"image_thumbnail_{agency1.Name}_28.jpg"  },
+  };
+
+      tour7.TourIncludes = tourIncludes7;
+      tour7.TourCategoryCompositions = tourCategoryCompositions7;
+      tour7.TourSearchQueryCompositions = tourSearchQueryCompositions7;
+      tour7.TourItineraries = tourItinerary7;
+      tour7.TourGalleryImages = tourgalleryimages7;
+      #endregion
+
+
+      #region Tour 8
+
+      var direction6 = new TourDirection
+      {
+        Name = "Puebla",
+        Agency = agency1
+      };
+
+      var tour8 = new Tour
+      {
+        Title = "Experiencia Cultural en Puebla",
+        TourType = TourType.SINGLEDAY,
+        Image = "imagenPuebla.png",
+        ImageThumbnail = "imagenPueblathumbnail.png",
+        MetaKeywords = "Puebla, tour, cultural, viaje, vacaciones, México, historia, turismo",
+        Description = @"<p>Descubre la riqueza cultural de Puebla en un tour de un día. Visita la Catedral de Puebla, la Biblioteca Palafoxiana y la Capilla del Rosario. Disfruta de la famosa gastronomía poblana con una degustación de mole poblano y chiles en nogada.</p>
+    <p>Este tour te llevará a través de la historia y la cultura de esta encantadora ciudad colonial, famosa por su arquitectura y deliciosa comida. Ideal para los amantes de la cultura y la historia.</p>",
+        LinkVideo = "https://youtube.com",
+        LinkPDFItinerary = "documentoPuebla.pdf",
+        Duration = 5,
+        DurationType = DurationType.HOURS,
+        IsInternational = false,
+        Agency = agency1,
+        TourDirection = direction6
+      };
+
+
+      var tourCategoryCompositions8 = new List<TourCategoryComposition>
+          {
+            new() {Tour = tour8, TourCategory = tourCategory2},
+            new() {Tour = tour8, TourCategory = tourCategory4},
+          };
+
+      var tourSearchQueryCompositions8 = new List<TourSearchQueryComposition>
+          {
+            new() {Tour = tour8, TourSearchQuery = tourSearchQuery5},
+            new() {Tour = tour8, TourSearchQuery = tourSearchQuery3}
+          };
+
+      var tourItinerary8 = new List<TourItinerary>
+  {
+    new() {Agency = agency1, Tour = tour8, Day = 1, Description = @"
+  <p>Comienza tu día a las 8:00 AM visitando la majestuosa Catedral de Puebla. A las 10:00 AM, explora la Biblioteca Palafoxiana, una de las bibliotecas más antiguas de América. A las 11:30 AM, maravíllate con la Capilla del Rosario y su impresionante decoración barroca.</p>
+  <p>A la 1:00 PM, disfruta de un almuerzo tradicional poblano, degustando platos como mole poblano y chiles en nogada. A las 3:00 PM, visita el Barrio del Artista, donde podrás admirar y comprar artesanías locales. Termina el día con una visita al mercado de El Parián a las 5:00 PM.</p>
+  <p>Regresa a tu hotel a las 7:00 PM, llevando contigo recuerdos inolvidables y experiencias culturales enriquecedoras de la ciudad de Puebla.</p>"}
+  };
+
+      var tourIncludes8 = new List<TourInclude>
+  {
+    new() { IncludeType = IncludeType.RECOMENDATIONS, Description = "Llevar calzado cómodo", Tour = tour8 },
+    new() { IncludeType = IncludeType.RECOMENDATIONS, Description = "Traer efectivo para compras", Tour = tour8 },
+    new() { IncludeType = IncludeType.INCLUDES, Description = "Guía turístico", Tour = tour8 },
+    new() { IncludeType = IncludeType.INCLUDES, Description = "Entradas a sitios", Tour = tour8 },
+    new() { IncludeType = IncludeType.EXCLUDES, Description = "Almuerzo", Tour = tour8 },
+    new() { IncludeType = IncludeType.EXCLUDES, Description = "Propinas", Tour = tour8 }
+  };
+
+      var tourgalleryimages8 = new List<TourGalleryImage>
+  {
+    new() {Agency = agency1, Tour = tour8, Image = $"image_{agency1.Name}_29.jpg", ImageThumbnail = $"image_thumbnail_{agency1.Name}_29.jpg"  },
+    new() {Agency = agency1, Tour = tour8, Image = $"image_{agency1.Name}_30.jpg", ImageThumbnail = $"image_thumbnail_{agency1.Name}_30.jpg"  },
+    new() {Agency = agency1, Tour = tour8, Image = $"image_{agency1.Name}_31.jpg", ImageThumbnail = $"image_thumbnail_{agency1.Name}_31.jpg"  },
+    new() {Agency = agency1, Tour = tour8, Image = $"image_{agency1.Name}_32.jpg", ImageThumbnail = $"image_thumbnail_{agency1.Name}_32.jpg"  },
+  };
+
+      tour8.TourIncludes = tourIncludes8;
+      tour8.TourCategoryCompositions = tourCategoryCompositions8;
+      tour8.TourSearchQueryCompositions = tourSearchQueryCompositions8;
+      tour8.TourItineraries = tourItinerary8;
+      tour8.TourGalleryImages = tourgalleryimages8;
+
+
+      #endregion
+
+
+
+      #region Tour 9
+
+      var direction7 = new TourDirection
+      {
+        Name = "Oaxaca",
+        Agency = agency1
+      };
+
+      var tour9 = new Tour
+      {
+        Title = "Tour Gastronómico en Oaxaca",
+        TourType = TourType.MULTIDAY,
+        Image = "imagenOaxaca.png",
+        ImageThumbnail = "imagenOaxacathumbnail.png",
+        MetaKeywords = "Oaxaca, tour, gastronómico, viaje, comida, vacaciones, México, turismo",
+        Description = @"<p>Experimenta los sabores únicos de Oaxaca en este tour de dos días. Disfruta de la comida tradicional oaxaqueña, incluyendo mole, tlayudas y mezcal. Visita mercados locales, aprende sobre la cultura culinaria y participa en una clase de cocina con un chef local.</p>
+    <p>Este tour es perfecto para los amantes de la gastronomía que desean sumergirse en los sabores y tradiciones de una de las regiones culinarias más ricas de México.</p>",
+        LinkVideo = "https://youtube.com",
+        LinkPDFItinerary = "documentoOaxaca.pdf",
+        Duration = 2,
+        DurationType = DurationType.DAYS,
+        IsInternational = false,
+        Agency = agency1,
+        TourDirection = direction7
+      };
+
+
+      var tourCategoryCompositions9 = new List<TourCategoryComposition>
+          {
+            new() {Tour = tour9, TourCategory = tourCategory4}
+          };
+
+      var tourSearchQueryCompositions9 = new List<TourSearchQueryComposition>
+          {
+            new() {Tour = tour9, TourSearchQuery = tourSearchQuery5},
+            new() {Tour = tour9, TourSearchQuery = tourSearchQuery1}
+          };
+
+      var tourItinerary9 = new List<TourItinerary>
+  {
+  new() {Agency = agency1, Tour = tour9, Day = 1, Description = @"
+  <p>Comienza el día con una visita al Mercado de Benito Juárez a las 9:00 AM, donde podrás degustar una variedad de productos locales. A las 11:00 AM, participa en una clase de cocina con un chef local, aprendiendo a preparar mole y tlayudas.</p>
+  <p>Después de un almuerzo preparado por ti mismo, visita una fábrica de mezcal a las 3:00 PM para conocer el proceso de producción y degustar diferentes tipos de mezcal. Termina el día con una cena</p>"},
+  new() {Agency = agency1, Tour = tour9, Day = 2, Description = @"
+  <p>Comienza el segundo día con un desayuno típico oaxaqueño a las 8:00 AM. A las 9:00 AM, visita el Mercado 20 de Noviembre para explorar más de la gastronomía local. A las 11:00 AM, realiza un recorrido por una plantación de cacao y aprende sobre la elaboración del chocolate oaxaqueño.</p>
+  <p>Después de un almuerzo en el mercado, visita el Jardín Etnobotánico a las 2:00 PM para conocer las plantas nativas de la región. Termina el tour con una cena en un restaurante local a las 7:00 PM, disfrutando de una degustación de platos tradicionales.</p>"}
+  };
+
+      var tourIncludes9 = new List<TourInclude>
+{
+  new() { IncludeType = IncludeType.RECOMENDATIONS, Description = "Traer cámara fotográfica", Tour = tour9 },
+  new() { IncludeType = IncludeType.RECOMENDATIONS, Description = "Usar ropa cómoda", Tour = tour9 },
+  new() { IncludeType = IncludeType.INCLUDES, Description = "Clases de cocina", Tour = tour9 },
+  new() { IncludeType = IncludeType.INCLUDES, Description = "Degustaciones", Tour = tour9 },
+  new() { IncludeType = IncludeType.EXCLUDES, Description = "Almuerzos", Tour = tour9 },
+  new() { IncludeType = IncludeType.EXCLUDES, Description = "Propinas", Tour = tour9 }
+};
+
+      var tourgalleryimages9 = new List<TourGalleryImage>
+{
+  new() {Agency = agency1, Tour = tour9, Image = $"image_{agency1.Name}_33.jpg", ImageThumbnail = $"image_thumbnail_{agency1.Name}_33.jpg"  },
+  new() {Agency = agency1, Tour = tour9, Image = $"image_{agency1.Name}_34.jpg", ImageThumbnail = $"image_thumbnail_{agency1.Name}_34.jpg"  },
+  new() {Agency = agency1, Tour = tour9, Image = $"image_{agency1.Name}_35.jpg", ImageThumbnail = $"image_thumbnail_{agency1.Name}_35.jpg"  },
+  new() {Agency = agency1, Tour = tour9, Image = $"image_{agency1.Name}_36.jpg", ImageThumbnail = $"image_thumbnail_{agency1.Name}_36.jpg"  },
+};
+
+      tour9.TourIncludes = tourIncludes9;
+      tour9.TourCategoryCompositions = tourCategoryCompositions9;
+      tour9.TourSearchQueryCompositions = tourSearchQueryCompositions9;
+      tour9.TourItineraries = tourItinerary9;
+      tour9.TourGalleryImages = tourgalleryimages9;
+
+      #endregion
+
+
+      #region Tour 10
+
+      var direction8 = new TourDirection
+      {
+        Name = "Guadalajara",
+        Agency = agency1
+      };
+
+
+      var tour10 = new Tour
+      {
+        Title = "Tour de Tequila en Guadalajara",
+        TourType = TourType.SINGLEDAY,
+        Image = "imagenGuadalajara.png",
+        ImageThumbnail = "imagenGuadalajarathumbnail.png",
+        MetaKeywords = "Guadalajara, tour, tequila, viaje, vacaciones, México, bebida, turismo",
+        Description = @"<p>Descubre el proceso de elaboración del tequila en este tour de un día en Guadalajara. Visita destilerías famosas y conoce la historia de esta icónica bebida mexicana. Disfruta de catas de diferentes tipos de tequila y aprende a diferenciar sus sabores únicos.</p>
+    <p>Este tour es ideal para los amantes de las bebidas espirituosas que desean conocer más sobre el proceso de destilación del tequila y disfrutar de un día en la región de Jalisco.</p>",
+        LinkVideo = "https://youtube.com",
+        LinkPDFItinerary = "documentoGuadalajara.pdf",
+        Duration = 1,
+        DurationType = DurationType.DAYS,
+        IsInternational = false,
+        Agency = agency1,
+        TourDirection = direction8
+      };
+
+
+      var tourCategoryCompositions10 = new List<TourCategoryComposition>
+          {
+            new() {Tour = tour10, TourCategory = tourCategory4}
+          };
+
+      var tourSearchQueryCompositions10 = new List<TourSearchQueryComposition>
+          {
+            new() {Tour = tour10, TourSearchQuery = tourSearchQuery5},
+            new() {Tour = tour10, TourSearchQuery = tourSearchQuery1}
+          };
+
+      var tourItinerary10 = new List<TourItinerary>
+  {
+    new() {Agency = agency1, Tour = tour10, Day = 1, Description = @"
+  <p>Comienza el día con una visita a las plantaciones de agave a las 9:00 AM, donde aprenderás sobre el cultivo de la planta base del tequila. A las 11:00 AM, dirígete a una destilería local para ver el proceso de destilación en acción y disfrutar de una cata de tequila.</p>
+  <p>A las 1:00 PM, almuerza en un restaurante típico de Jalisco, probando platos locales que maridan perfectamente con el tequila. A las 3:00 PM, visita una segunda destilería para conocer diferentes métodos de producción y degustar más variedades de tequila.</p>
+  <p>Termina el tour a las 5:00 PM con una visita al Museo del Tequila y el Mariachi en el centro de Guadalajara, donde podrás aprender sobre la historia y la cultura del tequila y la música tradicional mexicana.</p>"}
+  };
+
+      var tourIncludes10 = new List<TourInclude>
+  {
+    new() { IncludeType = IncludeType.RECOMENDATIONS, Description = "Llevar calzado cómodo", Tour = tour10 },
+    new() { IncludeType = IncludeType.RECOMENDATIONS, Description = "Traer sombrero para el sol", Tour = tour10 },
+    new() { IncludeType = IncludeType.INCLUDES, Description = "Entradas a destilerías", Tour = tour10 },
+    new() { IncludeType = IncludeType.INCLUDES, Description = "Degustaciones", Tour = tour10 },
+    new() { IncludeType = IncludeType.EXCLUDES, Description = "Almuerzo", Tour = tour10 },
+    new() { IncludeType = IncludeType.EXCLUDES, Description = "Propinas", Tour = tour10 }
+  };
+
+      var tourgalleryimages10 = new List<TourGalleryImage>
+  {
+    new() {Agency = agency1, Tour = tour10, Image = $"image_{agency1.Name}_37.jpg", ImageThumbnail = $"image_thumbnail_{agency1.Name}_37.jpg"  },
+    new() {Agency = agency1, Tour = tour10, Image = $"image_{agency1.Name}_38.jpg", ImageThumbnail = $"image_thumbnail_{agency1.Name}_38.jpg"  },
+    new() {Agency = agency1, Tour = tour10, Image = $"image_{agency1.Name}_39.jpg", ImageThumbnail = $"image_thumbnail_{agency1.Name}_39.jpg"  },
+    new() {Agency = agency1, Tour = tour10, Image = $"image_{agency1.Name}_40.jpg", ImageThumbnail = $"image_thumbnail_{agency1.Name}_40.jpg"  },
+  };
+
+      tour10.TourIncludes = tourIncludes10;
+      tour10.TourCategoryCompositions = tourCategoryCompositions10;
+      tour10.TourSearchQueryCompositions = tourSearchQueryCompositions10;
+      tour10.TourItineraries = tourItinerary10;
+      tour10.TourGalleryImages = tourgalleryimages10;
+
+      #endregion
+
+
+      #region Tour 11
+
+      var direction9 = new TourDirection
+      {
+        Name = "Monterrey",
+        Agency = agency1
+      };
+
+
+      var tour11 = new Tour
+      {
+        Title = "Tour de Aventura en Monterrey",
+        TourType = TourType.SINGLEDAY,
+        Image = "imagenMonterrey.png",
+        ImageThumbnail = "imagenMonterreythumbnail.png",
+        MetaKeywords = "Monterrey, tour, aventura, viaje, vacaciones, México, turismo, naturaleza",
+        Description = @"<p>Experimenta la emoción de las actividades al aire libre en Monterrey con este tour de un día. Disfruta de una caminata en el Parque Chipinque, seguido de una visita a la impresionante Cascada Cola de Caballo. Termina el día con un paseo en bote en el Paseo Santa Lucía.</p>
+    <p>Este tour es perfecto para los amantes de la naturaleza y la aventura que desean explorar la belleza natural de Monterrey y disfrutar de un día lleno de actividades emocionantes.</p>",
+        LinkVideo = "https://youtube.com",
+        LinkPDFItinerary = "documentoMonterrey.pdf",
+        Duration = 1,
+        DurationType = DurationType.DAYS,
+        IsInternational = false,
+        Agency = agency1,
+        TourDirection = direction9
+      };
+
+
+      var tourCategoryCompositions11 = new List<TourCategoryComposition>
+          {
+            new() {Tour = tour11, TourCategory = tourCategory2}
+          };
+
+      var tourSearchQueryCompositions11 = new List<TourSearchQueryComposition>
+          {
+            new() {Tour = tour11, TourSearchQuery = tourSearchQuery4},
+            new() {Tour = tour11, TourSearchQuery = tourSearchQuery3}
+          };
+
+      var tourItinerary11 = new List<TourItinerary>
+  {
+    new() {Agency = agency1, Tour = tour11, Day = 1, Description = @"
+  <p>Comienza el día con una caminata en el Parque Chipinque a las 8:00 AM, disfrutando de las vistas panorámicas y la vida silvestre local. A las 10:00 AM, dirígete a la Cascada Cola de Caballo para maravillarte con su impresionante caída de agua.</p>
+  <p>A las 12:00 PM, disfruta de un almuerzo campestre en el área de picnic cercana. A las 2:00 PM, visita el Parque Fundidora para explorar sus atracciones y museos. A las 4:00 PM, embarca en un paseo en bote por el Paseo Santa Lucía, disfrutando del paisaje urbano y los canales.</p>
+  <p>Termina el tour a las 6:00 PM con una cena en un restaurante local, degustando platillos típicos de Monterrey antes de regresar a tu hotel a las 8:00 PM.</p>"}
+  };
+
+      var tourIncludes11 = new List<TourInclude>
+  {
+    new() { IncludeType = IncludeType.RECOMENDATIONS, Description = "Llevar ropa deportiva", Tour = tour11 },
+    new() { IncludeType = IncludeType.RECOMENDATIONS, Description = "Traer cámara fotográfica", Tour = tour11 },
+    new() { IncludeType = IncludeType.INCLUDES, Description = "Entradas a parques", Tour = tour11 },
+    new() { IncludeType = IncludeType.INCLUDES, Description = "Paseo en bote", Tour = tour11 },
+    new() { IncludeType = IncludeType.EXCLUDES, Description = "Almuerzo", Tour = tour11 },
+    new() { IncludeType = IncludeType.EXCLUDES, Description = "Propinas", Tour = tour11 }
+  };
+
+      var tourgalleryimages11 = new List<TourGalleryImage>
+  {
+    new() {Agency = agency1, Tour = tour11, Image = $"image_{agency1.Name}_41.jpg", ImageThumbnail = $"image_thumbnail_{agency1.Name}_41.jpg"  },
+    new() {Agency = agency1, Tour = tour11, Image = $"image_{agency1.Name}_42.jpg", ImageThumbnail = $"image_thumbnail_{agency1.Name}_42.jpg"  },
+    new() {Agency = agency1, Tour = tour11, Image = $"image_{agency1.Name}_43.jpg", ImageThumbnail = $"image_thumbnail_{agency1.Name}_43.jpg"  },
+    new() {Agency = agency1, Tour = tour11, Image = $"image_{agency1.Name}_44.jpg", ImageThumbnail = $"image_thumbnail_{agency1.Name}_44.jpg"  },
+  };
+
+      tour11.TourIncludes = tourIncludes11;
+      tour11.TourCategoryCompositions = tourCategoryCompositions11;
+      tour11.TourSearchQueryCompositions = tourSearchQueryCompositions11;
+      tour11.TourItineraries = tourItinerary11;
+      tour11.TourGalleryImages = tourgalleryimages11;
+      #endregion
+
+
+      #region Tour 12
+
+      var direction10 = new TourDirection
+      {
+        Name = "Guanajuato",
+        Agency = agency1
+      };
+
+      var tour12 = new Tour
+      {
+        Title = "Tour de Arte en San Miguel de Allende",
+        TourType = TourType.SINGLEDAY,
+        Image = "imagenSanMiguel.png",
+        ImageThumbnail = "imagenSanMiguelthumbnail.png",
+        MetaKeywords = "San Miguel de Allende, tour, arte, viaje, vacaciones, México, cultura, turismo",
+        Description = @"<p>Descubre el vibrante mundo del arte en San Miguel de Allende en este tour de un día. Visita galerías de arte contemporáneo, estudios de artistas locales y participa en talleres creativos. Aprende sobre la historia artística de la ciudad y disfruta de un ambiente cultural único.</p>
+    <p>Este tour es ideal para los amantes del arte y la cultura que desean sumergirse en la creatividad de San Miguel de Allende y explorar sus numerosas galerías y estudios.</p>",
+        LinkVideo = "https://youtube.com",
+        LinkPDFItinerary = "documentoSanMiguel.pdf",
+        Duration = 1,
+        DurationType = DurationType.DAYS,
+        IsInternational = false,
+        Agency = agency1,
+        TourDirection = direction10
+      };
+
+      var tourCategoryCompositions12 = new List<TourCategoryComposition>
+          {
+            new() {Tour = tour12, TourCategory = tourCategory2}
+          };
+
+      var tourSearchQueryCompositions12 = new List<TourSearchQueryComposition>
+          {
+            new() {Tour = tour12, TourSearchQuery = tourSearchQuery3},
+            new() {Tour = tour12, TourSearchQuery = tourSearchQuery1}
+          };
+
+      var tourItinerary12 = new List<TourItinerary>
+  {
+    new() {Agency = agency1, Tour = tour12, Day = 1, Description = @"
+  <p>Comienza el día a las 9:00 AM con una visita a la Galería de Arte Contemporáneo, donde podrás admirar obras de artistas locales e internacionales. A las 11:00 AM, dirígete a un estudio de un artista local para conocer su proceso creativo y técnicas.</p>
+  <p>A la 1:00 PM, disfruta de un almuerzo en un café artístico, rodeado de obras de arte. A las 2:30 PM, participa en un taller de pintura o escultura, guiado por un artista experimentado. A las 4:00 PM, explora el Mercado de Artesanías para comprar recuerdos únicos.</p>
+  <p>Termina el tour a las 6:00 PM con una visita a una galería de arte tradicional, donde aprenderás sobre la historia del arte en San Miguel de Allende antes de regresar a tu hotel a las 8:00 PM.</p>"}
+  };
+
+      var tourIncludes12 = new List<TourInclude>
+  {
+    new() { IncludeType = IncludeType.RECOMENDATIONS, Description = "Llevar ropa cómoda", Tour = tour12 },
+    new() { IncludeType = IncludeType.RECOMENDATIONS, Description = "Traer cuaderno de bocetos", Tour = tour12 },
+    new() { IncludeType = IncludeType.INCLUDES, Description = "Entradas a galerías", Tour = tour12 },
+    new() { IncludeType = IncludeType.INCLUDES, Description = "Taller creativo", Tour = tour12 },
+    new() { IncludeType = IncludeType.EXCLUDES, Description = "Almuerzo", Tour = tour12 },
+    new() { IncludeType = IncludeType.EXCLUDES, Description = "Propinas", Tour = tour12 }
+  };
+
+      var tourgalleryimages12 = new List<TourGalleryImage>
+  {
+    new() {Agency = agency1, Tour = tour12, Image = $"image_{agency1.Name}_45.jpg", ImageThumbnail = $"image_thumbnail_{agency1.Name}_45.jpg"  },
+    new() {Agency = agency1, Tour = tour12, Image = $"image_{agency1.Name}_46.jpg", ImageThumbnail = $"image_thumbnail_{agency1.Name}_46.jpg"  },
+    new() {Agency = agency1, Tour = tour12, Image = $"image_{agency1.Name}_47.jpg", ImageThumbnail = $"image_thumbnail_{agency1.Name}_47.jpg"  },
+    new() {Agency = agency1, Tour = tour12, Image = $"image_{agency1.Name}_48.jpg", ImageThumbnail = $"image_thumbnail_{agency1.Name}_48.jpg"  },
+  };
+
+      tour12.TourIncludes = tourIncludes12;
+      tour12.TourCategoryCompositions = tourCategoryCompositions12;
+      tour12.TourSearchQueryCompositions = tourSearchQueryCompositions12;
+      tour12.TourItineraries = tourItinerary12;
+      tour12.TourGalleryImages = tourgalleryimages12;
+
+
+      #endregion
+
+
+      #region Tour 13
+
+      var direction11 = new TourDirection
+      {
+        Name = "Tulum",
+        Agency = agency1
+      };
+
+
+      var tour13 = new Tour
+      {
+        Title = "Tour de Playa y Ruinas en Tulum",
+        TourType = TourType.SINGLEDAY,
+        Image = "imagenTulum.png",
+        ImageThumbnail = "imagenTulumthumbnail.png",
+        MetaKeywords = "Tulum, tour, playa, ruinas, viaje, vacaciones, México, turismo, historia",
+        Description = @"<p>Explora las hermosas playas y las impresionantes ruinas mayas de Tulum en este tour de un día. Disfruta de la arena blanca y las aguas turquesas, y aprende sobre la historia de la civilización maya en las ruinas de Tulum. Este tour combina historia y relajación en un entorno paradisíaco.</p>
+    <p>Ideal para aquellos que desean disfrutar de la belleza natural de Tulum y conocer más sobre la historia y cultura maya.</p>",
+        LinkVideo = "https://youtube.com",
+        LinkPDFItinerary = "documentoTulum.pdf",
+        Duration = 1,
+        DurationType = DurationType.DAYS,
+        IsInternational = false,
+        Agency = agency1,
+        TourDirection = direction11
+      };
+
+      var tourCategoryCompositions13 = new List<TourCategoryComposition>
+          {
+            new() {Tour = tour13, TourCategory = tourCategory1}
+          };
+
+      var tourSearchQueryCompositions13 = new List<TourSearchQueryComposition>
+          {
+            new() {Tour = tour13, TourSearchQuery = tourSearchQuery3},
+            new() {Tour = tour13, TourSearchQuery = tourSearchQuery2}
+          };
+
+      var tourItinerary13 = new List<TourItinerary>
+  {
+    new() {Agency = agency1, Tour = tour13, Day = 1, Description = @"
+  <p>Comienza el día con una visita a las ruinas de Tulum a las 9:00 AM, explorando los antiguos templos y edificios con una guía que te explicará la historia y cultura maya. A las 11:00 AM, baja a la playa cercana y disfruta de tiempo libre para nadar y relajarte en la arena blanca.</p>
+  <p>A la 1:00 PM, almuerza en un restaurante frente al mar, degustando mariscos frescos y platos locales. A las 2:30 PM, realiza una caminata por la reserva natural de Sian Ka'an, observando la flora y fauna de la región.</p>
+  <p>Termina el tour a las 5:00 PM con una visita a un cenote cercano, donde podrás nadar en sus aguas cristalinas antes de regresar a tu hotel a las 7:00 PM.</p>"}
+  };
+
+      var tourIncludes13 = new List<TourInclude>
+  {
+    new() { IncludeType = IncludeType.RECOMENDATIONS, Description = "Llevar traje de baño", Tour = tour13 },
+    new() { IncludeType = IncludeType.RECOMENDATIONS, Description = "Usar protector solar", Tour = tour13 },
+    new() { IncludeType = IncludeType.INCLUDES, Description = "Entradas a ruinas", Tour = tour13 },
+    new() { IncludeType = IncludeType.INCLUDES, Description = "Guía turístico", Tour = tour13 },
+    new() { IncludeType = IncludeType.EXCLUDES, Description = "Almuerzo", Tour = tour13 },
+    new() { IncludeType = IncludeType.EXCLUDES, Description = "Propinas", Tour = tour13 }
+  };
+
+      var tourgalleryimages13 = new List<TourGalleryImage>
+  {
+    new() {Agency = agency1, Tour = tour13, Image = $"image_{agency1.Name}_49.jpg", ImageThumbnail = $"image_thumbnail_{agency1.Name}_49.jpg"  },
+    new() {Agency = agency1, Tour = tour13, Image = $"image_{agency1.Name}_50.jpg", ImageThumbnail = $"image_thumbnail_{agency1.Name}_50.jpg"  },
+    new() {Agency = agency1, Tour = tour13, Image = $"image_{agency1.Name}_51.jpg", ImageThumbnail = $"image_thumbnail_{agency1.Name}_51.jpg"  },
+    new() {Agency = agency1, Tour = tour13, Image = $"image_{agency1.Name}_52.jpg", ImageThumbnail = $"image_thumbnail_{agency1.Name}_52.jpg"  },
+  };
+
+      tour13.TourIncludes = tourIncludes13;
+      tour13.TourCategoryCompositions = tourCategoryCompositions13;
+      tour13.TourSearchQueryCompositions = tourSearchQueryCompositions13;
+      tour13.TourItineraries = tourItinerary13;
+      tour13.TourGalleryImages = tourgalleryimages13;
+
+      #endregion
+
+
       _context.Tours.Add(tour1);
       _context.Tours.Add(tour2);
       _context.Tours.Add(tour3);
       _context.Tours.Add(tour4);
       _context.Tours.Add(tour5);
       _context.Tours.Add(tour6);
+      _context.Tours.Add(tour7);
+      _context.Tours.Add(tour8);
+      _context.Tours.Add(tour9);
+      _context.Tours.Add(tour10);
+      _context.Tours.Add(tour11);
+      _context.Tours.Add(tour12);
+      _context.Tours.Add(tour13);
       await _context.SaveChangesAsync();
 
 
@@ -738,6 +1196,10 @@ public class AppDbSeeder
       {
         new() {Tour = tour1, Agency = agency1, PopularType = PopularType.POPULAR, Order = 1},
         new() {Tour = tour2, Agency = agency1, PopularType = PopularType.POPULAR, Order = 2},
+        new() {Tour = tour9, Agency = agency1, PopularType = PopularType.POPULAR, Order = 3},
+        new() {Tour = tour5, Agency = agency1, PopularType = PopularType.POPULAR, Order = 4},
+        new() {Tour = tour10, Agency = agency1, PopularType = PopularType.POPULAR, Order = 5},
+        new() {Tour = tour3, Agency = agency1, PopularType = PopularType.POPULAR, Order = 6},
 
         new() {Tour = tour3, Agency = agency1, PopularType = PopularType.OTHERTOURS, Order = 1},
         new() {Tour = tour4, Agency = agency1, PopularType = PopularType.OTHERTOURS, Order = 1},
@@ -755,8 +1217,62 @@ public class AppDbSeeder
         new() {Image = "fullresolutionimage8.png", ImageThumbnail = "imagethumbnail8.png", Order = 8, IsFavorite = false, Agency = agency1},
       };
 
+
+      var terms = new OtherTermsCondition
+      {
+        Agency = agency1,
+        LastEditedDate = DateOnly.FromDateTime(DateTime.UtcNow),
+        Text = @"
+<h4>Términos y Condiciones</h4>
+    <p>Bienvenido a nuestra página de demostración. Al utilizar este sitio web, usted acepta los siguientes términos y condiciones:</p>
+    <ul>
+        <li>El contenido de esta página es solo para fines demostrativos y no representa ningún servicio real.</li>
+        <li>No nos hacemos responsables de cualquier pérdida o daño que pueda resultar del uso de este sitio web.</li>
+        <li>Nos reservamos el derecho de modificar estos términos en cualquier momento sin previo aviso.</li>
+        <li>Todos los derechos sobre el contenido y diseño de esta página son propiedad de sus respectivos dueños.</li>
+        <li>El uso de esta página implica la aceptación de estos términos y condiciones.</li>
+    </ul>
+    <p>Gracias por visitar nuestra página de demostración.</p>
+    
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><ul>
+        <li>El contenido de esta página es solo para fines demostrativos y no representa ningún servicio real.</li>
+        <li>No nos hacemos responsables de cualquier pérdida o daño que pueda resultar del uso de este sitio web.</li>
+        <li>Nos reservamos el derecho de modificar estos términos en cualquier momento sin previo aviso.</li>
+        <li>Todos los derechos sobre el contenido y diseño de esta página son propiedad de sus respectivos dueños.</li>
+        
+    </ul><p>Gracias por visitar nuestra página de demostración. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum a</p>
+      "
+      };
+
+      var privacy = new OtherPrivacyNotice
+      {
+        Agency = agency1,
+        LastEditedDate = DateOnly.FromDateTime(DateTime.UtcNow),
+        Text = @"
+<h4>Aviso de Privacidad</h4>
+    <p>En nuestra página de demostración, nos tomamos en serio su privacidad. Este aviso de privacidad describe cómo recopilamos, utilizamos y protegemos su información personal.</p>
+    <ul>
+        <li>La información recopilada en esta página es solo con fines demostrativos y no se utilizará para ningún propósito real.</li>
+        <li>No compartimos su información personal con terceros.</li>
+        <li>Nos esforzamos por proteger su información personal mediante el uso de medidas de seguridad adecuadas.</li>
+        <li>Usted tiene derecho a solicitar el acceso, rectificación o eliminación de su información personal en cualquier momento.</li>
+        <li>Al utilizar esta página, usted acepta los términos de este aviso de privacidad.</li>
+    </ul>
+    <p>Si tiene alguna pregunta sobre este aviso de privacidad, por favor contáctenos.</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p><ul>
+        <li>La información recopilada en esta página es solo con fines demostrativos y no se utilizará para ningún propósito real.</li>
+        <li>No compartimos su información personal con terceros.</li>
+        <li>Nos esforzamos por proteger su información personal mediante el uso de medidas de seguridad adecuadas.</li>
+        
+        
+    </ul><p>Gracias por visitar nuestra página de demostración. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum a</p>
+        "
+      };
+
       _context.HomeTourPopularCompositions.AddRange(populartours);
       _context.OtherGalleries.AddRange(otherGallery);
+      _context.OtherTermsConditions.Add(terms);
+      _context.OtherPrivacyNotices.Add(privacy);
       await _context.SaveChangesAsync();
 
       #endregion
