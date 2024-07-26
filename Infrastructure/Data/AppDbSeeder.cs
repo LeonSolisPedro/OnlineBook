@@ -123,8 +123,10 @@ public class AppDbSeeder
 
       var homeOffers1 = new List<HomeOffer>
         {
-          new() {Image = "imagen1.png", ImageThumbnail = "imagen1.png", Name = "Oferta 1", IncludesHotel = true, IncludesFlights = true, IncludesTransportation = true, MoreInfoLink = "https://wintercr.com"},
-          new() {Image = "imagen2.png", ImageThumbnail = "imagen2.png", Name = "Oferta 2", IncludesHotel = true, IncludesFlights = true, IncludesTransportation = true, MoreInfoLink = "https://wintercr.com"},
+          new() {Image = "imagen1.png", ImageThumbnail = "imagen1.png", Name = "Puerto Vallarta 2 x 1", IncludesHotel = true, IncludesFlights = true, MoreInfoLink = "https://www.linkedin.com/in/leonsolispedro/"},
+          new() {Image = "imagen1.png", ImageThumbnail = "imagen1.png", Name = "Xcaret Descuento", IncludesHotel = true, IncludesFlights = true, IncludesTransportation = true, MoreInfoLink = "https://www.linkedin.com/in/leonsolispedro/"},
+          new() {Image = "imagen1.png", ImageThumbnail = "imagen1.png", Name = "Oaxaca Gastronómico", IncludesFlights = true, IncludesTransportation = true, MoreInfoLink = "https://www.linkedin.com/in/leonsolispedro/"},
+          new() {Image = "imagen1.png", ImageThumbnail = "imagen1.png", Name = "Tour Estudiantes", IncludesHotel = true, IncludesFlights = true, IncludesTransportation = true, MoreInfoLink = "https://www.linkedin.com/in/leonsolispedro/"},
         };
 
       agency1.AgencySocialCompositions = agencySocial1;
@@ -1201,8 +1203,10 @@ public class AppDbSeeder
         new() {Tour = tour10, Agency = agency1, PopularType = PopularType.POPULAR, Order = 5},
         new() {Tour = tour3, Agency = agency1, PopularType = PopularType.POPULAR, Order = 6},
 
-        new() {Tour = tour3, Agency = agency1, PopularType = PopularType.OTHERTOURS, Order = 1},
-        new() {Tour = tour4, Agency = agency1, PopularType = PopularType.OTHERTOURS, Order = 1},
+        new() {Tour = tour13, Agency = agency1, PopularType = PopularType.OTHERTOURS, Order = 1},
+        new() {Tour = tour6, Agency = agency1, PopularType = PopularType.OTHERTOURS, Order = 2},
+        new() {Tour = tour12, Agency = agency1, PopularType = PopularType.OTHERTOURS, Order = 3},
+        new() {Tour = tour4, Agency = agency1, PopularType = PopularType.OTHERTOURS, Order = 4},
       };
 
       var otherGallery = new List<OtherGallery>
