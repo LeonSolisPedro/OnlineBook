@@ -233,7 +233,7 @@ public class AppDbSeeder
         Description = @"<p>Descubre la belleza de las playas de Cancún en un tour inolvidable. Relájate en la arena blanca y disfruta del mar turquesa mientras tomas el sol. Este destino paradisíaco en México ofrece un ambiente perfecto para descansar y desconectar del estrés diario. Además, podrás explorar la vida marina con actividades como snorkel y buceo, o simplemente pasear por la orilla mientras contemplas el atardecer.</p>
             <p>En Cancún, las opciones son infinitas. Puedes visitar el centro de la ciudad para experimentar la cultura local, probar la deliciosa gastronomía mexicana en los restaurantes cercanos o hacer una excursión a las ruinas mayas cercanas para aprender más sobre la historia de la región. Los tours están diseñados para ofrecerte una experiencia completa, combinando el relax de la playa con la emoción de descubrir nuevos lugares y actividades.</p>",
         LinkVideo = "https://youtube.com",
-        LinkPDFItinerary = "documento.pdf",
+        LinkPDFItinerary = "/storage/tours/1/documento.pdf",
         Duration = 2,
         DurationType = DurationType.HOURS,
         IsInternational = false,
@@ -308,7 +308,7 @@ public class AppDbSeeder
         Description = @"<p>Explora las maravillas naturales de Xcaret en un emocionante tour de un día. Sumérgete en la belleza de los ríos subterráneos, nada en caletas y lagunas cristalinas, y descubre la rica fauna y flora del parque. Xcaret ofrece una combinación perfecta de aventura y relax, con actividades para todas las edades.</p>
                           <p>Visita el acuario, el mariposario, y aprende sobre la cultura maya a través de espectáculos y exposiciones. Este tour es ideal para familias y amantes de la naturaleza que buscan una experiencia única y memorable.</p>",
         LinkVideo = "https://youtube.com",
-        LinkPDFItinerary = "documentoXcaret.pdf",
+        LinkPDFItinerary = "/storage/tours/2/documentoXcaret.pdf",
         Duration = 6,
         DurationType = DurationType.HOURS,
         IsInternational = false,
@@ -382,7 +382,7 @@ public class AppDbSeeder
         Description = @"<p>Explora la encantadora Isla Mujeres en un tour de un día. Disfruta de la tranquilidad de sus playas, nada en aguas cristalinas y descubre la belleza natural de este paraíso mexicano. Este tour es ideal para quienes buscan una escapada relajante y pintoresca.</p>
     <p>Pasea por el centro de la isla, prueba la deliciosa comida local y visita el parque Garrafón para actividades acuáticas y vistas espectaculares. Isla Mujeres ofrece una experiencia única llena de paz y belleza natural.</p>",
         LinkVideo = "https://youtube.com",
-        LinkPDFItinerary = "documentoIslaMujeres.pdf",
+        LinkPDFItinerary = "/storage/tours/3/documentoIslaMujeres.pdf",
         Duration = 6,
         DurationType = DurationType.HOURS,
         IsInternational = false,
@@ -529,7 +529,7 @@ public class AppDbSeeder
         Description = @"<p>Vive una experiencia única nadando con delfines en Cancún. Este tour de un día te permitirá interactuar de cerca con estos increíbles animales, aprender sobre su comportamiento y disfrutar de un momento mágico en el mar.</p>
     <p>Después del nado, relájate en la playa y disfruta de las instalaciones del parque marino. Este tour es perfecto para los amantes de la naturaleza y aquellos que buscan una experiencia inolvidable durante sus vacaciones.</p>",
         LinkVideo = "https://youtube.com",
-        LinkPDFItinerary = "documentoDelfines.pdf",
+        LinkPDFItinerary = "/storage/tours/5/documentoDelfines.pdf",
         Duration = 3,
         DurationType = DurationType.HOURS,
         IsInternational = false,
@@ -821,7 +821,7 @@ public class AppDbSeeder
         Description = @"<p>Experimenta los sabores únicos de Oaxaca en este tour de dos días. Disfruta de la comida tradicional oaxaqueña, incluyendo mole, tlayudas y mezcal. Visita mercados locales, aprende sobre la cultura culinaria y participa en una clase de cocina con un chef local.</p>
     <p>Este tour es perfecto para los amantes de la gastronomía que desean sumergirse en los sabores y tradiciones de una de las regiones culinarias más ricas de México.</p>",
         LinkVideo = "https://youtube.com",
-        LinkPDFItinerary = "documentoOaxaca.pdf",
+        LinkPDFItinerary = "/storage/tours/9/documentoOaxaca.pdf",
         Duration = 2,
         DurationType = DurationType.DAYS,
         IsInternational = false,
@@ -1039,7 +1039,7 @@ public class AppDbSeeder
         Description = @"<p>Descubre el vibrante mundo del arte en San Miguel de Allende en este tour de un día. Visita galerías de arte contemporáneo, estudios de artistas locales y participa en talleres creativos. Aprende sobre la historia artística de la ciudad y disfruta de un ambiente cultural único.</p>
     <p>Este tour es ideal para los amantes del arte y la cultura que desean sumergirse en la creatividad de San Miguel de Allende y explorar sus numerosas galerías y estudios.</p>",
         LinkVideo = "https://youtube.com",
-        LinkPDFItinerary = "documentoSanMiguel.pdf",
+        LinkPDFItinerary = "/storage/tours/12/documentoSanMiguel.pdf",
         Duration = 5,
         DurationType = DurationType.HOURS,
         IsInternational = false,
