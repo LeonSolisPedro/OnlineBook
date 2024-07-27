@@ -117,16 +117,19 @@ public class AppDbSeeder
 
       var homeCarousel1 = new List<HomeCarousel>
         {
-          new() {Image = "imagen1.png", Agency = agency1, Order = 1},
-          new() {Image = "imagen2.png", Agency = agency1, Order = 2},
+          new() {Image = $"/storage/home/1/image1.webp", Agency = agency1, Order = 1},
+          new() {Image = $"/storage/home/1/image2.webp", Agency = agency1, Order = 2},
+          new() {Image = $"/storage/home/1/image3.webp", Agency = agency1, Order = 3},
+          new() {Image = $"/storage/home/1/image4.webp", Agency = agency1, Order = 4},
+          new() {Image = $"/storage/home/1/image5.webp", Agency = agency1, Order = 5},
         };
 
       var homeOffers1 = new List<HomeOffer>
         {
-          new() {Image = "imagen1.png", ImageThumbnail = "imagen1.png", Name = "Puerto Vallarta 2 x 1", IncludesHotel = true, IncludesFlights = true, MoreInfoLink = "https://www.linkedin.com/in/leonsolispedro/"},
-          new() {Image = "imagen1.png", ImageThumbnail = "imagen1.png", Name = "Xcaret Descuento", IncludesHotel = true, IncludesFlights = true, IncludesTransportation = true, MoreInfoLink = "https://www.linkedin.com/in/leonsolispedro/"},
-          new() {Image = "imagen1.png", ImageThumbnail = "imagen1.png", Name = "Oaxaca Gastronómico", IncludesFlights = true, IncludesTransportation = true, MoreInfoLink = "https://www.linkedin.com/in/leonsolispedro/"},
-          new() {Image = "imagen1.png", ImageThumbnail = "imagen1.png", Name = "Tour Estudiantes", IncludesHotel = true, IncludesFlights = true, IncludesTransportation = true, MoreInfoLink = "https://www.linkedin.com/in/leonsolispedro/"},
+          new() {Image = "/storage/offers/1/image1.webp", ImageThumbnail = "/storage/offers/1/image1_thumbnail.webp", Name = "Puerto Vallarta 2 x 1", IncludesHotel = true, IncludesFlights = true, MoreInfoLink = "https://www.linkedin.com/in/leonsolispedro/"},
+          new() {Image = "/storage/offers/1/image2.webp", ImageThumbnail = "/storage/offers/1/image2_thumbnail.webp", Name = "Xcaret Descuento", IncludesHotel = true, IncludesFlights = true, IncludesTransportation = true, MoreInfoLink = "https://www.linkedin.com/in/leonsolispedro/"},
+          new() {Image = "/storage/offers/1/image3.webp", ImageThumbnail = "/storage/offers/1/image3_thumbnail.webp", Name = "Oaxaca Gastronómico", IncludesFlights = true, IncludesTransportation = true, MoreInfoLink = "https://www.linkedin.com/in/leonsolispedro/"},
+          new() {Image = "/storage/offers/1/image4.webp", ImageThumbnail = "/storage/offers/1/image4_thumbnail.webp", Name = "Tour Estudiantes", IncludesHotel = true, IncludesFlights = true, IncludesTransportation = true, MoreInfoLink = "https://www.linkedin.com/in/leonsolispedro/"},
         };
 
       agency1.AgencySocialCompositions = agencySocial1;
@@ -451,8 +454,6 @@ public class AppDbSeeder
         MetaKeywords = "Chichén Itzá, cenote, tour, viaje, historia, México, arqueología, mayas, turismo",
         Description = @"<p>Descubre la majestuosidad de Chichén Itzá y refréscate en un cenote cercano en este tour de un día. Conoce la historia de la civilización maya mientras exploras las impresionantes ruinas arqueológicas y aprende sobre su cultura y arquitectura.</p>
     <p>Después de la visita a Chichén Itzá, disfruta de un almuerzo tradicional y báñate en un cenote sagrado, una experiencia única que te conectará con la naturaleza y la historia de la región. Este tour combina aventura, historia y naturaleza en un solo día.</p>",
-        LinkVideo = "https://youtube.com",
-        LinkPDFItinerary = "documentoChichenItza.pdf",
         Duration = 6,
         DurationType = DurationType.HOURS,
         IsInternational = false,
@@ -601,8 +602,6 @@ public class AppDbSeeder
         MetaKeywords = "cenotes, tour, viaje, aventura, México, naturaleza, excursión, vacaciones, turismo",
         Description = @"<p>Embárcate en una emocionante aventura de dos días explorando los cenotes más impresionantes de la península de Yucatán. Este tour te llevará a descubrir estas maravillas naturales, donde podrás nadar, bucear y relajarte en sus aguas cristalinas.</p>
     <p>Disfruta de un itinerario cuidadosamente planeado que incluye visitas a múltiples cenotes, actividades al aire libre y la oportunidad de aprender sobre la historia y la geología de estas formaciones naturales únicas. Ideal para los amantes de la naturaleza y la aventura.</p>",
-        LinkVideo = "https://youtube.com",
-        LinkPDFItinerary = "documentoCenotes.pdf",
         Duration = 2,
         DurationType = DurationType.DAYS,
         IsInternational = false,
@@ -677,8 +676,6 @@ public class AppDbSeeder
         MetaKeywords = "Ciudad de México, tour, histórico, viaje, vacaciones, cultura, México, turismo",
         Description = @"<p>Explora la rica historia de la Ciudad de México en este tour de un día. Visita el Zócalo, la Catedral Metropolitana y el Palacio de Bellas Artes. Aprende sobre la historia y cultura de México con guías expertos y disfruta de la gastronomía local en un restaurante tradicional.</p>
     <p>Este tour es ideal para aquellos interesados en la historia y la cultura de una de las ciudades más grandes y vibrantes del mundo. Descubre monumentos icónicos y maravíllate con la arquitectura colonial.</p>",
-        LinkVideo = "https://youtube.com",
-        LinkPDFItinerary = "documentoCDMX.pdf",
         Duration = 5,
         DurationType = DurationType.HOURS,
         IsInternational = false,
@@ -749,8 +746,6 @@ public class AppDbSeeder
         MetaKeywords = "Puebla, tour, cultural, viaje, vacaciones, México, historia, turismo",
         Description = @"<p>Descubre la riqueza cultural de Puebla en un tour de un día. Visita la Catedral de Puebla, la Biblioteca Palafoxiana y la Capilla del Rosario. Disfruta de la famosa gastronomía poblana con una degustación de mole poblano y chiles en nogada.</p>
     <p>Este tour te llevará a través de la historia y la cultura de esta encantadora ciudad colonial, famosa por su arquitectura y deliciosa comida. Ideal para los amantes de la cultura y la historia.</p>",
-        LinkVideo = "https://youtube.com",
-        LinkPDFItinerary = "documentoPuebla.pdf",
         Duration = 5,
         DurationType = DurationType.HOURS,
         IsInternational = false,
@@ -901,10 +896,8 @@ public class AppDbSeeder
         MetaKeywords = "Guadalajara, tour, tequila, viaje, vacaciones, México, bebida, turismo",
         Description = @"<p>Descubre el proceso de elaboración del tequila en este tour de un día en Guadalajara. Visita destilerías famosas y conoce la historia de esta icónica bebida mexicana. Disfruta de catas de diferentes tipos de tequila y aprende a diferenciar sus sabores únicos.</p>
     <p>Este tour es ideal para los amantes de las bebidas espirituosas que desean conocer más sobre el proceso de destilación del tequila y disfrutar de un día en la región de Jalisco.</p>",
-        LinkVideo = "https://youtube.com",
-        LinkPDFItinerary = "documentoGuadalajara.pdf",
-        Duration = 1,
-        DurationType = DurationType.DAYS,
+        Duration = 6,
+        DurationType = DurationType.HOURS,
         IsInternational = false,
         Agency = agency1,
         TourDirection = direction8
@@ -975,10 +968,8 @@ public class AppDbSeeder
         MetaKeywords = "Monterrey, tour, aventura, viaje, vacaciones, México, turismo, naturaleza",
         Description = @"<p>Experimenta la emoción de las actividades al aire libre en Monterrey con este tour de un día. Disfruta de una caminata en el Parque Chipinque, seguido de una visita a la impresionante Cascada Cola de Caballo. Termina el día con un paseo en bote en el Paseo Santa Lucía.</p>
     <p>Este tour es perfecto para los amantes de la naturaleza y la aventura que desean explorar la belleza natural de Monterrey y disfrutar de un día lleno de actividades emocionantes.</p>",
-        LinkVideo = "https://youtube.com",
-        LinkPDFItinerary = "documentoMonterrey.pdf",
-        Duration = 1,
-        DurationType = DurationType.DAYS,
+        Duration = 5,
+        DurationType = DurationType.HOURS,
         IsInternational = false,
         Agency = agency1,
         TourDirection = direction9
@@ -1049,8 +1040,8 @@ public class AppDbSeeder
     <p>Este tour es ideal para los amantes del arte y la cultura que desean sumergirse en la creatividad de San Miguel de Allende y explorar sus numerosas galerías y estudios.</p>",
         LinkVideo = "https://youtube.com",
         LinkPDFItinerary = "documentoSanMiguel.pdf",
-        Duration = 1,
-        DurationType = DurationType.DAYS,
+        Duration = 5,
+        DurationType = DurationType.HOURS,
         IsInternational = false,
         Agency = agency1,
         TourDirection = direction10
@@ -1122,9 +1113,8 @@ public class AppDbSeeder
         Description = @"<p>Explora las hermosas playas y las impresionantes ruinas mayas de Tulum en este tour de un día. Disfruta de la arena blanca y las aguas turquesas, y aprende sobre la historia de la civilización maya en las ruinas de Tulum. Este tour combina historia y relajación en un entorno paradisíaco.</p>
     <p>Ideal para aquellos que desean disfrutar de la belleza natural de Tulum y conocer más sobre la historia y cultura maya.</p>",
         LinkVideo = "https://youtube.com",
-        LinkPDFItinerary = "documentoTulum.pdf",
-        Duration = 1,
-        DurationType = DurationType.DAYS,
+        Duration = 6,
+        DurationType = DurationType.HOURS,
         IsInternational = false,
         Agency = agency1,
         TourDirection = direction11
@@ -1211,14 +1201,14 @@ public class AppDbSeeder
 
       var otherGallery = new List<OtherGallery>
       {
-        new() {Image = "fullresolutionimage1.png", ImageThumbnail = "imagethumbnail1.png", Order = 1, IsFavorite = false, Agency = agency1},
-        new() {Image = "fullresolutionimage2.png", ImageThumbnail = "imagethumbnail2.png", Order = 2, IsFavorite = true, Agency = agency1},
-        new() {Image = "fullresolutionimage3.png", ImageThumbnail = "imagethumbnail3.png", Order = 3, IsFavorite = true, Agency = agency1},
-        new() {Image = "fullresolutionimage4.png", ImageThumbnail = "imagethumbnail4.png", Order = 4, IsFavorite = false, Agency = agency1},
-        new() {Image = "fullresolutionimage5.png", ImageThumbnail = "imagethumbnail5.png", Order = 5, IsFavorite = true, Agency = agency1},
-        new() {Image = "fullresolutionimage6.png", ImageThumbnail = "imagethumbnail6.png", Order = 6, IsFavorite = false, Agency = agency1},
-        new() {Image = "fullresolutionimage7.png", ImageThumbnail = "imagethumbnail7.png", Order = 7, IsFavorite = true, Agency = agency1},
-        new() {Image = "fullresolutionimage8.png", ImageThumbnail = "imagethumbnail8.png", Order = 8, IsFavorite = false, Agency = agency1},
+        new() {Image = "/storage/gallery/1/image1.webp", ImageThumbnail = "/storage/gallery/1/image1_thumbnail.webp", Order = 1, IsFavorite = false, Agency = agency1},
+        new() {Image = "/storage/gallery/1/image2.webp", ImageThumbnail = "/storage/gallery/1/image2_thumbnail.webp", Order = 2, IsFavorite = true, Agency = agency1},
+        new() {Image = "/storage/gallery/1/image3.webp", ImageThumbnail = "/storage/gallery/1/image3_thumbnail.webp", Order = 3, IsFavorite = true, Agency = agency1},
+        new() {Image = "/storage/gallery/1/image4.webp", ImageThumbnail = "/storage/gallery/1/image4_thumbnail.webp", Order = 4, IsFavorite = false, Agency = agency1},
+        new() {Image = "/storage/gallery/1/image5.webp", ImageThumbnail = "/storage/gallery/1/image5_thumbnail.webp", Order = 5, IsFavorite = true, Agency = agency1},
+        new() {Image = "/storage/gallery/1/image6.webp", ImageThumbnail = "/storage/gallery/1/image6_thumbnail.webp", Order = 6, IsFavorite = false, Agency = agency1},
+        new() {Image = "/storage/gallery/1/image7.webp", ImageThumbnail = "/storage/gallery/1/image7_thumbnail.webp", Order = 7, IsFavorite = true, Agency = agency1},
+        new() {Image = "/storage/gallery/1/image8.webp", ImageThumbnail = "/storage/gallery/1/image8_thumbnail.webp", Order = 8, IsFavorite = false, Agency = agency1},
       };
 
 

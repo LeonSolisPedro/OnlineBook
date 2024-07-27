@@ -85,7 +85,7 @@ public class HomeService
                 Description = description,
                 URL = url,
                 Duration = duration,
-                Pricing = "0.00 MXN"
+                PriceInMXN = 0m
             });
         }
         return listDto;

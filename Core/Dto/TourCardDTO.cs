@@ -20,6 +20,6 @@ public class TourCardDTO
 
   public string Duration {get; set;} = "";
 
-  public string Pricing {get; set;} = "";
+  public decimal PriceInMXN {get; set;}
 
 }
