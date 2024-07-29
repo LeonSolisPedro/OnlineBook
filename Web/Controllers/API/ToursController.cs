@@ -10,16 +10,23 @@ namespace Web.Controllers.API;
 public class ToursController : ControllerBase
 {
 
-  private readonly TourService _TourService;
+  private readonly TourService _tourService;
 
-    public ToursController(TourService tourService)
-    {
-        _TourService = tourService;
-    }
+  public ToursController(TourService tourService)
+  {
+    _tourService = tourService;
+  }
 
-    [Route("GetTour/{id}")]
+  [Route("GetTour/{id}")]
   public async Task<IActionResult> GetTour(int id)
   {
-    return Ok(await _TourService.GetTour(id));
+    return Ok(await _tourService.GetTour(id));
+  }
+
+  [Route("GetList")]
+  public async Task<IActionResult> GetList(int? idCategory)
+  {
+    if (idCategory.HasValue) return Ok(await _tourService.GetList(idCategory.Value));
+    return Ok(await _tourService.GetList());
   }
 }

@@ -21,4 +21,16 @@ public class TourRepository : ITourRepository
     {
       return await _context.Tours.Include(x => x.TourGalleryImages).FirstOrDefaultAsync(x => x.Id == id);
     }
+
+    public async Task<List<Tour>> GetList(int idAgency)
+    {
+      return await _context.Tours.Include(x => x.TourDirection).Include(x => x.TourGalleryImages).Include(x => x.TourDirection).Include(x => x.TourSearchQueryCompositions)!.ThenInclude(x => x.TourSearchQuery).Where(x => x.IdAgency == idAgency).ToListAsync();
+    }
+
+    public async Task<List<Tour>> GetList(int idAgency, int idCategory)
+    {
+      return await _context.Tours.Include(x => x.TourDirection).Include(x => x.TourGalleryImages).Include(x => x.TourSearchQueryCompositions)!.ThenInclude(x => x.TourSearchQuery).Include(x => x.TourCategoryCompositions).Where(x => x.IdAgency == idAgency  && x.TourCategoryCompositions!.Any(x => x.IdTourCategory == idCategory)).ToListAsync();
+    }
+
+
 }

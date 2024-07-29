@@ -1,7 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Core.Entites._Tour;
 
 namespace Core.Dto;
 
@@ -21,5 +18,9 @@ public class TourCardDTO
   public string Duration {get; set;} = "";
 
   public decimal PriceInMXN {get; set;}
+
+  public TourDirection? TourDirection {get; set;}
+
+  public List<TourSearchQueryComposition>? TourSearchQueries {get; set;}
 
 }
