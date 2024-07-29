@@ -44,13 +44,13 @@ public class HomeService
 
     public async Task<List<TourCardDTO>> GetPopularTours()
     {
-        var list = await _genericTourPopularRepository.GetList(x => x.IdAgency == 1 && x.PopularType == Enums.PopularType.POPULAR && x.Tour!.IsArchived == false, "Tour.TourDirection");
+        var list = await _genericTourPopularRepository.GetList(x => x.IdAgency == 1 && x.PopularType == Enums.PopularType.POPULAR && x.Tour!.IsArchived == false, "Tour.TourDirection,Tour.TourGalleryImages");
         return ConvertCardDto(list);
     }
 
     public async Task<List<TourCardDTO>> GetOtherTours()
     {
-        var list = await _genericTourPopularRepository.GetList(x => x.IdAgency == 1 && x.PopularType == Enums.PopularType.OTHERTOURS && x.Tour!.IsArchived == false, "Tour.TourDirection");
+        var list = await _genericTourPopularRepository.GetList(x => x.IdAgency == 1 && x.PopularType == Enums.PopularType.OTHERTOURS && x.Tour!.IsArchived == false, "Tour.TourDirection,Tour.TourGalleryImages");
         return ConvertCardDto(list);
     }
 
@@ -72,6 +72,7 @@ public class HomeService
             var helper = new SlugHelper();
             html.LoadHtml(li.Tour.Description);
             var description = html.DocumentNode.InnerText;
+            var image = li.Tour.TourGalleryImages?.FirstOrDefault()?.ImagePreview ?? "";
             var url = $"/tours/{helper.GenerateSlug(li.Tour.TourDirection.Name)}/{helper.GenerateSlug(li.Tour.Title)}/{li.Tour.Id}";
             var durationWord = li.Tour.DurationType == Enums.DurationType.HOURS ? "Horas" : "Días";
             durationWord = li.Tour.Duration == 1 ? durationWord.Replace("s", "") : durationWord;
@@ -80,7 +81,7 @@ public class HomeService
             listDto.Add(new TourCardDTO
             {
                 Id = li.Id,
-                Image = li.Tour.ImageThumbnail,
+                Image = image,
                 Title = li.Tour.Title,
                 Description = description,
                 URL = url,

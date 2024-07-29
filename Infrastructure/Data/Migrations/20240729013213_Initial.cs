@@ -393,8 +393,6 @@ namespace Infrastructure.Data.Migrations
                     Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     TourType = table.Column<int>(type: "int", nullable: false),
                     IsArchived = table.Column<bool>(type: "bit", nullable: false),
-                    Image = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ImageThumbnail = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     MetaKeywords = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Description = table.Column<string>(type: "ntext", nullable: false),
                     LinkVideo = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -507,7 +505,9 @@ namespace Infrastructure.Data.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Image = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ImagePreview = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ImageThumbnail = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Order = table.Column<int>(type: "int", nullable: false),
                     IdTour = table.Column<int>(type: "int", nullable: false),
                     IdAgency = table.Column<int>(type: "int", nullable: false)
                 },

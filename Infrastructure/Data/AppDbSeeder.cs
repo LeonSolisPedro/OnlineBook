@@ -227,8 +227,6 @@ public class AppDbSeeder
       {
         Title = "Playa en Cancún",
         TourType = TourType.SINGLEDAY,
-        Image = "/storage/tours/1/imagenCancun.webp",
-        ImageThumbnail = "/storage/tours/1/imagenCancun_thumbnail.webp",
         MetaKeywords = "playa, Cancún, tour, viaje, vacaciones, arena, mar, México, sol, turismo",
         Description = @"<p>Descubre la belleza de las playas de Cancún en un tour inolvidable. Relájate en la arena blanca y disfruta del mar turquesa mientras tomas el sol. Este destino paradisíaco en México ofrece un ambiente perfecto para descansar y desconectar del estrés diario. Además, podrás explorar la vida marina con actividades como snorkel y buceo, o simplemente pasear por la orilla mientras contemplas el atardecer.</p>
             <p>En Cancún, las opciones son infinitas. Puedes visitar el centro de la ciudad para experimentar la cultura local, probar la deliciosa gastronomía mexicana en los restaurantes cercanos o hacer una excursión a las ruinas mayas cercanas para aprender más sobre la historia de la región. Los tours están diseñados para ofrecerte una experiencia completa, combinando el relax de la playa con la emoción de descubrir nuevos lugares y actividades.</p>",
@@ -273,12 +271,12 @@ public class AppDbSeeder
           };
 
       var tourgalleryimages1 = new List<TourGalleryImage>
-          {
-            new() {Agency = agency1, Tour = tour1, Image = "/storage/tours/1/gallery/image1.webp", ImageThumbnail = "/storage/tours/1/gallery/image1_thumbnail.webp"  },
-            new() {Agency = agency1, Tour = tour1, Image = "/storage/tours/1/gallery/image2.webp", ImageThumbnail = "/storage/tours/1/gallery/image2_thumbnail.webp"  },
-            new() {Agency = agency1, Tour = tour1, Image = "/storage/tours/1/gallery/image3.webp", ImageThumbnail = "/storage/tours/1/gallery/image3_thumbnail.webp"  },
-          };
-
+{
+  new() {Agency = agency1, Tour = tour1, Image = "/storage/tours/1/gallery/image1.webp", ImagePreview = "/storage/tours/1/gallery/image1_preview.webp", ImageThumbnail =  "/storage/tours/1/gallery/image1_thumbnail.webp", Order = 1 },
+  new() {Agency = agency1, Tour = tour1, Image = "/storage/tours/1/gallery/image2.webp", ImagePreview = "/storage/tours/1/gallery/image2_preview.webp", ImageThumbnail =  "/storage/tours/1/gallery/image2_thumbnail.webp", Order = 2 },
+  new() {Agency = agency1, Tour = tour1, Image = "/storage/tours/1/gallery/image3.webp", ImagePreview = "/storage/tours/1/gallery/image3_preview.webp", ImageThumbnail =  "/storage/tours/1/gallery/image3_thumbnail.webp", Order = 3 },
+  new() {Agency = agency1, Tour = tour1, Image = "/storage/tours/1/gallery/image4.webp", ImagePreview = "/storage/tours/1/gallery/image4_preview.webp", ImageThumbnail =  "/storage/tours/1/gallery/image4_thumbnail.webp", Order = 4 },
+};
       tour1.TourIncludes = tourIncludes1;
       tour1.TourCategoryCompositions = tourCategoryCompositions1;
       tour1.TourSearchQueryCompositions = tourSearchQueryCompositions1;
@@ -301,8 +299,6 @@ public class AppDbSeeder
       {
         Title = "Aventura en Xcaret",
         TourType = TourType.SINGLEDAY,
-        Image = "/storage/tours/2/imagenXcaret.webp",
-        ImageThumbnail = "/storage/tours/2/imagenXcaretthumbnail.webp",
         MetaKeywords = "aventura, Xcaret, tour, viaje, diversión, México, parque, naturaleza, eco-turismo",
         Description = @"<p>Explora las maravillas naturales de Xcaret en un emocionante tour de un día. Sumérgete en la belleza de los ríos subterráneos, nada en caletas y lagunas cristalinas, y descubre la rica fauna y flora del parque. Xcaret ofrece una combinación perfecta de aventura y relax, con actividades para todas las edades.</p>
                           <p>Visita el acuario, el mariposario, y aprende sobre la cultura maya a través de espectáculos y exposiciones. Este tour es ideal para familias y amantes de la naturaleza que buscan una experiencia única y memorable.</p>",
@@ -346,9 +342,10 @@ public class AppDbSeeder
 
       var tourgalleryimages2 = new List<TourGalleryImage>
 {
-  new() {Agency = agency1, Tour = tour2, Image = "/storage/tours/2/gallery/image1.webp", ImageThumbnail = "/storage/tours/2/gallery/image1_thumbnail.webp"  },
-  new() {Agency = agency1, Tour = tour2, Image = "/storage/tours/2/gallery/image2.webp", ImageThumbnail = "/storage/tours/2/gallery/image2_thumbnail.webp"  },
-  new() {Agency = agency1, Tour = tour2, Image = "/storage/tours/2/gallery/image3.webp", ImageThumbnail = "/storage/tours/2/gallery/image3_thumbnail.webp"  },
+  new() {Agency = agency1, Tour = tour2, Image = "/storage/tours/2/gallery/image1.webp", ImagePreview = "/storage/tours/2/gallery/image1_preview.webp", ImageThumbnail =  "/storage/tours/2/gallery/image1_thumbnail.webp", Order = 1  },
+  new() {Agency = agency1, Tour = tour2, Image = "/storage/tours/2/gallery/image2.webp", ImagePreview = "/storage/tours/2/gallery/image2_preview.webp", ImageThumbnail =  "/storage/tours/2/gallery/image2_thumbnail.webp", Order = 2  },
+  new() {Agency = agency1, Tour = tour2, Image = "/storage/tours/2/gallery/image3.webp", ImagePreview = "/storage/tours/2/gallery/image3_preview.webp", ImageThumbnail =  "/storage/tours/2/gallery/image3_thumbnail.webp", Order = 3  },
+  new() {Agency = agency1, Tour = tour2, Image = "/storage/tours/2/gallery/image4.webp", ImagePreview = "/storage/tours/2/gallery/image4_preview.webp", ImageThumbnail =  "/storage/tours/2/gallery/image4_thumbnail.webp", Order = 4  },
 };
 
       tour2.TourIncludes = tourIncludes2;
@@ -374,8 +371,6 @@ public class AppDbSeeder
       {
         Title = "Isla Mujeres",
         TourType = TourType.SINGLEDAY,
-        Image = "imagenIslaMujeres.webp",
-        ImageThumbnail = "imagenIslaMujeresthumbnail.webp",
         MetaKeywords = "isla, Mujeres, tour, viaje, playa, mar, México, sol, vacaciones, turismo",
         Description = @"<p>Explora la encantadora Isla Mujeres en un tour de un día. Disfruta de la tranquilidad de sus playas, nada en aguas cristalinas y descubre la belleza natural de este paraíso mexicano. Este tour es ideal para quienes buscan una escapada relajante y pintoresca.</p>
     <p>Pasea por el centro de la isla, prueba la deliciosa comida local y visita el parque Garrafón para actividades acuáticas y vistas espectaculares. Isla Mujeres ofrece una experiencia única llena de paz y belleza natural.</p>",
@@ -419,11 +414,12 @@ public class AppDbSeeder
   };
 
       var tourgalleryimages3 = new List<TourGalleryImage>
-  {
-    new() {Agency = agency1, Tour = tour3, Image = "/storage/tours/3/gallery/image1.webp", ImageThumbnail = "/storage/tours/3/gallery/image1_thumbnail.webp"  },
-    new() {Agency = agency1, Tour = tour3, Image = "/storage/tours/3/gallery/image2.webp", ImageThumbnail = "/storage/tours/3/gallery/image2_thumbnail.webp"  },
-    new() {Agency = agency1, Tour = tour3, Image = "/storage/tours/3/gallery/image3.webp", ImageThumbnail = "/storage/tours/3/gallery/image3_thumbnail.webp"  },
-  };
+{
+  new() {Agency = agency1, Tour = tour3, Image = "/storage/tours/3/gallery/image1.webp", ImagePreview = "/storage/tours/3/gallery/image1_preview.webp", ImageThumbnail =  "/storage/tours/3/gallery/image1_thumbnail.webp", Order = 1  },
+  new() {Agency = agency1, Tour = tour3, Image = "/storage/tours/3/gallery/image2.webp", ImagePreview = "/storage/tours/3/gallery/image2_preview.webp", ImageThumbnail =  "/storage/tours/3/gallery/image2_thumbnail.webp", Order = 2  },
+  new() {Agency = agency1, Tour = tour3, Image = "/storage/tours/3/gallery/image3.webp", ImagePreview = "/storage/tours/3/gallery/image3_preview.webp", ImageThumbnail =  "/storage/tours/3/gallery/image3_thumbnail.webp", Order = 3  },
+  new() {Agency = agency1, Tour = tour3, Image = "/storage/tours/3/gallery/image4.webp", ImagePreview = "/storage/tours/3/gallery/image4_preview.webp", ImageThumbnail =  "/storage/tours/3/gallery/image4_thumbnail.webp", Order = 4  },
+};
 
       tour3.TourIncludes = tourIncludes3;
       tour3.TourCategoryCompositions = tourCategoryCompositions3;
@@ -446,8 +442,6 @@ public class AppDbSeeder
       {
         Title = "Chichén Itzá y Cenote",
         TourType = TourType.SINGLEDAY,
-        Image = "/storage/tours/4/imagenChichenItza.webp",
-        ImageThumbnail = "/storage/tours/4/imagenChichenItzathumbnail.webp",
         MetaKeywords = "Chichén Itzá, cenote, tour, viaje, historia, México, arqueología, mayas, turismo",
         Description = @"<p>Descubre la majestuosidad de Chichén Itzá y refréscate en un cenote cercano en este tour de un día. Conoce la historia de la civilización maya mientras exploras las impresionantes ruinas arqueológicas y aprende sobre su cultura y arquitectura.</p>
     <p>Después de la visita a Chichén Itzá, disfruta de un almuerzo tradicional y báñate en un cenote sagrado, una experiencia única que te conectará con la naturaleza y la historia de la región. Este tour combina aventura, historia y naturaleza en un solo día.</p>",
@@ -490,9 +484,10 @@ public class AppDbSeeder
 
       var tourgalleryimages4 = new List<TourGalleryImage>
 {
-  new() {Agency = agency1, Tour = tour4, Image = "/storage/tours/4/gallery/image1.webp", ImageThumbnail = "/storage/tours/4/gallery/image1_thumbnail.webp"  },
-  new() {Agency = agency1, Tour = tour4, Image = "/storage/tours/4/gallery/image2.webp", ImageThumbnail = "/storage/tours/4/gallery/image2_thumbnail.webp"  },
-  new() {Agency = agency1, Tour = tour4, Image = "/storage/tours/4/gallery/image3.webp", ImageThumbnail = "/storage/tours/4/gallery/image3_thumbnail.webp"  },
+  new() {Agency = agency1, Tour = tour4, Image = "/storage/tours/4/gallery/image1.webp", ImagePreview = "/storage/tours/4/gallery/image1_preview.webp", ImageThumbnail =  "/storage/tours/4/gallery/image1_thumbnail.webp", Order = 1  },
+  new() {Agency = agency1, Tour = tour4, Image = "/storage/tours/4/gallery/image2.webp", ImagePreview = "/storage/tours/4/gallery/image2_preview.webp", ImageThumbnail =  "/storage/tours/4/gallery/image2_thumbnail.webp", Order = 2  },
+  new() {Agency = agency1, Tour = tour4, Image = "/storage/tours/4/gallery/image3.webp", ImagePreview = "/storage/tours/4/gallery/image3_preview.webp", ImageThumbnail =  "/storage/tours/4/gallery/image3_thumbnail.webp", Order = 3  },
+  new() {Agency = agency1, Tour = tour4, Image = "/storage/tours/4/gallery/image4.webp", ImagePreview = "/storage/tours/4/gallery/image4_preview.webp", ImageThumbnail =  "/storage/tours/4/gallery/image4_thumbnail.webp", Order = 4  },
 };
 
 
@@ -519,8 +514,6 @@ public class AppDbSeeder
       {
         Title = "Nado con Delfines",
         TourType = TourType.SINGLEDAY,
-        Image = "/storage/tours/5/imagenDelfines.webp",
-        ImageThumbnail = "/storage/tours/5/imagenDelfinesthumbnail.webp",
         MetaKeywords = "delfines, nado, tour, viaje, mar, México, aventura, vacaciones, turismo",
         Description = @"<p>Vive una experiencia única nadando con delfines en Cancún. Este tour de un día te permitirá interactuar de cerca con estos increíbles animales, aprender sobre su comportamiento y disfrutar de un momento mágico en el mar.</p>
     <p>Después del nado, relájate en la playa y disfruta de las instalaciones del parque marino. Este tour es perfecto para los amantes de la naturaleza y aquellos que buscan una experiencia inolvidable durante sus vacaciones.</p>",
@@ -563,9 +556,10 @@ public class AppDbSeeder
 
       var tourgalleryimages5 = new List<TourGalleryImage>
 {
-  new() {Agency = agency1, Tour = tour5, Image = "/storage/tours/5/gallery/image1.webp", ImageThumbnail = "/storage/tours/5/gallery/image1_thumbnail.webp"  },
-  new() {Agency = agency1, Tour = tour5, Image = "/storage/tours/5/gallery/image2.webp", ImageThumbnail = "/storage/tours/5/gallery/image2_thumbnail.webp"  },
-  new() {Agency = agency1, Tour = tour5, Image = "/storage/tours/5/gallery/image3.webp", ImageThumbnail = "/storage/tours/5/gallery/image3_thumbnail.webp"  },
+  new() {Agency = agency1, Tour = tour5, Image = "/storage/tours/5/gallery/image1.webp", ImagePreview = "/storage/tours/5/gallery/image1_preview.webp", ImageThumbnail =  "/storage/tours/5/gallery/image1_thumbnail.webp", Order = 1  },
+  new() {Agency = agency1, Tour = tour5, Image = "/storage/tours/5/gallery/image2.webp", ImagePreview = "/storage/tours/5/gallery/image2_preview.webp", ImageThumbnail =  "/storage/tours/5/gallery/image2_thumbnail.webp", Order = 2  },
+  new() {Agency = agency1, Tour = tour5, Image = "/storage/tours/5/gallery/image3.webp", ImagePreview = "/storage/tours/5/gallery/image3_preview.webp", ImageThumbnail =  "/storage/tours/5/gallery/image3_thumbnail.webp", Order = 3  },
+  new() {Agency = agency1, Tour = tour5, Image = "/storage/tours/5/gallery/image4.webp", ImagePreview = "/storage/tours/5/gallery/image4_preview.webp", ImageThumbnail =  "/storage/tours/5/gallery/image4_thumbnail.webp", Order = 4  },
 };
 
       tour5.TourIncludes = tourIncludes5;
@@ -592,8 +586,6 @@ public class AppDbSeeder
       {
         Title = "Tour de Cenotes",
         TourType = TourType.MULTIDAY,
-        Image = "/storage/tours/6/imagenCenotes.webp",
-        ImageThumbnail = "/storage/tours/6/imagenCenotesthumbnail.webp",
         MetaKeywords = "cenotes, tour, viaje, aventura, México, naturaleza, excursión, vacaciones, turismo",
         Description = @"<p>Embárcate en una emocionante aventura de dos días explorando los cenotes más impresionantes de la península de Yucatán. Este tour te llevará a descubrir estas maravillas naturales, donde podrás nadar, bucear y relajarte en sus aguas cristalinas.</p>
     <p>Disfruta de un itinerario cuidadosamente planeado que incluye visitas a múltiples cenotes, actividades al aire libre y la oportunidad de aprender sobre la historia y la geología de estas formaciones naturales únicas. Ideal para los amantes de la naturaleza y la aventura.</p>",
@@ -639,9 +631,10 @@ public class AppDbSeeder
 
       var tourgalleryimages6 = new List<TourGalleryImage>
 {
-  new() {Agency = agency1, Tour = tour6, Image = "/storage/tours/6/gallery/image1.webp", ImageThumbnail = "/storage/tours/6/gallery/image1_thumbnail.webp"  },
-  new() {Agency = agency1, Tour = tour6, Image = "/storage/tours/6/gallery/image2.webp", ImageThumbnail = "/storage/tours/6/gallery/image2_thumbnail.webp"  },
-  new() {Agency = agency1, Tour = tour6, Image = "/storage/tours/6/gallery/image3.webp", ImageThumbnail = "/storage/tours/6/gallery/image3_thumbnail.webp"  },
+  new() {Agency = agency1, Tour = tour6, Image = "/storage/tours/6/gallery/image1.webp", ImagePreview = "/storage/tours/6/gallery/image1_preview.webp", ImageThumbnail =  "/storage/tours/6/gallery/image1_thumbnail.webp", Order = 1  },
+  new() {Agency = agency1, Tour = tour6, Image = "/storage/tours/6/gallery/image2.webp", ImagePreview = "/storage/tours/6/gallery/image2_preview.webp", ImageThumbnail =  "/storage/tours/6/gallery/image2_thumbnail.webp", Order = 2  },
+  new() {Agency = agency1, Tour = tour6, Image = "/storage/tours/6/gallery/image3.webp", ImagePreview = "/storage/tours/6/gallery/image3_preview.webp", ImageThumbnail =  "/storage/tours/6/gallery/image3_thumbnail.webp", Order = 3  },
+  new() {Agency = agency1, Tour = tour6, Image = "/storage/tours/6/gallery/image4.webp", ImagePreview = "/storage/tours/6/gallery/image4_preview.webp", ImageThumbnail =  "/storage/tours/6/gallery/image4_thumbnail.webp", Order = 4  },
 };
 
       tour6.TourIncludes = tourIncludes6;
@@ -665,8 +658,6 @@ public class AppDbSeeder
       {
         Title = "Tour Histórico en Ciudad de México",
         TourType = TourType.SINGLEDAY,
-        Image = "/storage/tours/7/imagenCDMX.webp",
-        ImageThumbnail = "/storage/tours/7/imagenCDMXthumbnail.webp",
         MetaKeywords = "Ciudad de México, tour, histórico, viaje, vacaciones, cultura, México, turismo",
         Description = @"<p>Explora la rica historia de la Ciudad de México en este tour de un día. Visita el Zócalo, la Catedral Metropolitana y el Palacio de Bellas Artes. Aprende sobre la historia y cultura de México con guías expertos y disfruta de la gastronomía local en un restaurante tradicional.</p>
     <p>Este tour es ideal para aquellos interesados en la historia y la cultura de una de las ciudades más grandes y vibrantes del mundo. Descubre monumentos icónicos y maravíllate con la arquitectura colonial.</p>",
@@ -708,11 +699,12 @@ public class AppDbSeeder
   };
 
       var tourgalleryimages7 = new List<TourGalleryImage>
-  {
-    new() {Agency = agency1, Tour = tour7, Image = "/storage/tours/7/gallery/image1.webp", ImageThumbnail = "/storage/tours/7/gallery/image1_thumbnail.webp"  },
-    new() {Agency = agency1, Tour = tour7, Image = "/storage/tours/7/gallery/image2.webp", ImageThumbnail = "/storage/tours/7/gallery/image2_thumbnail.webp"  },
-    new() {Agency = agency1, Tour = tour7, Image = "/storage/tours/7/gallery/image3.webp", ImageThumbnail = "/storage/tours/7/gallery/image3_thumbnail.webp"  },
-  };
+{
+  new() {Agency = agency1, Tour = tour7, Image = "/storage/tours/7/gallery/image1.webp", ImagePreview = "/storage/tours/7/gallery/image1_preview.webp", ImageThumbnail =  "/storage/tours/7/gallery/image1_thumbnail.webp", Order = 1  },
+  new() {Agency = agency1, Tour = tour7, Image = "/storage/tours/7/gallery/image2.webp", ImagePreview = "/storage/tours/7/gallery/image2_preview.webp", ImageThumbnail =  "/storage/tours/7/gallery/image2_thumbnail.webp", Order = 2  },
+  new() {Agency = agency1, Tour = tour7, Image = "/storage/tours/7/gallery/image3.webp", ImagePreview = "/storage/tours/7/gallery/image3_preview.webp", ImageThumbnail =  "/storage/tours/7/gallery/image3_thumbnail.webp", Order = 3  },
+  new() {Agency = agency1, Tour = tour7, Image = "/storage/tours/7/gallery/image4.webp", ImagePreview = "/storage/tours/7/gallery/image4_preview.webp", ImageThumbnail =  "/storage/tours/7/gallery/image4_thumbnail.webp", Order = 4  },
+};
 
       tour7.TourIncludes = tourIncludes7;
       tour7.TourCategoryCompositions = tourCategoryCompositions7;
@@ -734,8 +726,6 @@ public class AppDbSeeder
       {
         Title = "Experiencia Cultural en Puebla",
         TourType = TourType.SINGLEDAY,
-        Image = "/storage/tours/8/imagenPuebla.webp",
-        ImageThumbnail = "/storage/tours/8/imagenPueblathumbnail.webp",
         MetaKeywords = "Puebla, tour, cultural, viaje, vacaciones, México, historia, turismo",
         Description = @"<p>Descubre la riqueza cultural de Puebla en un tour de un día. Visita la Catedral de Puebla, la Biblioteca Palafoxiana y la Capilla del Rosario. Disfruta de la famosa gastronomía poblana con una degustación de mole poblano y chiles en nogada.</p>
     <p>Este tour te llevará a través de la historia y la cultura de esta encantadora ciudad colonial, famosa por su arquitectura y deliciosa comida. Ideal para los amantes de la cultura y la historia.</p>",
@@ -778,11 +768,12 @@ public class AppDbSeeder
   };
 
       var tourgalleryimages8 = new List<TourGalleryImage>
-  {
-    new() {Agency = agency1, Tour = tour8, Image = "/storage/tours/8/gallery/image1.webp", ImageThumbnail = "/storage/tours/8/gallery/image1_thumbnail.webp"  },
-    new() {Agency = agency1, Tour = tour8, Image = "/storage/tours/8/gallery/image2.webp", ImageThumbnail = "/storage/tours/8/gallery/image2_thumbnail.webp"  },
-    new() {Agency = agency1, Tour = tour8, Image = "/storage/tours/8/gallery/image3.webp", ImageThumbnail = "/storage/tours/8/gallery/image3_thumbnail.webp"  },
-  };
+{
+  new() {Agency = agency1, Tour = tour8, Image = "/storage/tours/8/gallery/image1.webp", ImagePreview = "/storage/tours/8/gallery/image1_preview.webp", ImageThumbnail =  "/storage/tours/8/gallery/image1_thumbnail.webp", Order = 1  },
+  new() {Agency = agency1, Tour = tour8, Image = "/storage/tours/8/gallery/image2.webp", ImagePreview = "/storage/tours/8/gallery/image2_preview.webp", ImageThumbnail =  "/storage/tours/8/gallery/image2_thumbnail.webp", Order = 2  },
+  new() {Agency = agency1, Tour = tour8, Image = "/storage/tours/8/gallery/image3.webp", ImagePreview = "/storage/tours/8/gallery/image3_preview.webp", ImageThumbnail =  "/storage/tours/8/gallery/image3_thumbnail.webp", Order = 3  },
+  new() {Agency = agency1, Tour = tour8, Image = "/storage/tours/8/gallery/image4.webp", ImagePreview = "/storage/tours/8/gallery/image4_preview.webp", ImageThumbnail =  "/storage/tours/8/gallery/image4_thumbnail.webp", Order = 4  },
+};
 
       tour8.TourIncludes = tourIncludes8;
       tour8.TourCategoryCompositions = tourCategoryCompositions8;
@@ -807,8 +798,6 @@ public class AppDbSeeder
       {
         Title = "Tour Gastronómico en Oaxaca",
         TourType = TourType.MULTIDAY,
-        Image = "/storage/tours/9/imagenOaxaca.webp",
-        ImageThumbnail = "/storage/tours/9/imagenOaxacathumbnail.webp",
         MetaKeywords = "Oaxaca, tour, gastronómico, viaje, comida, vacaciones, México, turismo",
         Description = @"<p>Experimenta los sabores únicos de Oaxaca en este tour de dos días. Disfruta de la comida tradicional oaxaqueña, incluyendo mole, tlayudas y mezcal. Visita mercados locales, aprende sobre la cultura culinaria y participa en una clase de cocina con un chef local.</p>
     <p>Este tour es perfecto para los amantes de la gastronomía que desean sumergirse en los sabores y tradiciones de una de las regiones culinarias más ricas de México.</p>",
@@ -855,9 +844,10 @@ public class AppDbSeeder
 
       var tourgalleryimages9 = new List<TourGalleryImage>
 {
-  new() {Agency = agency1, Tour = tour9, Image = "/storage/tours/9/gallery/image1.webp", ImageThumbnail = "/storage/tours/9/gallery/image1_thumbnail.webp"  },
-  new() {Agency = agency1, Tour = tour9, Image = "/storage/tours/9/gallery/image2.webp", ImageThumbnail = "/storage/tours/9/gallery/image2_thumbnail.webp"  },
-  new() {Agency = agency1, Tour = tour9, Image = "/storage/tours/9/gallery/image3.webp", ImageThumbnail = "/storage/tours/9/gallery/image3_thumbnail.webp"  },
+  new() {Agency = agency1, Tour = tour9, Image = "/storage/tours/9/gallery/image1.webp", ImagePreview = "/storage/tours/9/gallery/image1_preview.webp", ImageThumbnail =  "/storage/tours/9/gallery/image1_thumbnail.webp", Order = 1  },
+  new() {Agency = agency1, Tour = tour9, Image = "/storage/tours/9/gallery/image2.webp", ImagePreview = "/storage/tours/9/gallery/image2_preview.webp", ImageThumbnail =  "/storage/tours/9/gallery/image2_thumbnail.webp", Order = 2  },
+  new() {Agency = agency1, Tour = tour9, Image = "/storage/tours/9/gallery/image3.webp", ImagePreview = "/storage/tours/9/gallery/image3_preview.webp", ImageThumbnail =  "/storage/tours/9/gallery/image3_thumbnail.webp", Order = 3  },
+  new() {Agency = agency1, Tour = tour9, Image = "/storage/tours/9/gallery/image4.webp", ImagePreview = "/storage/tours/9/gallery/image4_preview.webp", ImageThumbnail =  "/storage/tours/9/gallery/image4_thumbnail.webp", Order = 4  },
 };
 
       tour9.TourIncludes = tourIncludes9;
@@ -882,8 +872,6 @@ public class AppDbSeeder
       {
         Title = "Tour de Tequila en Guadalajara",
         TourType = TourType.SINGLEDAY,
-        Image = "/storage/tours/10/imagenGuadalajara.webp",
-        ImageThumbnail = "/storage/tours/10/imagenGuadalajarathumbnail.webp",
         MetaKeywords = "Guadalajara, tour, tequila, viaje, vacaciones, México, bebida, turismo",
         Description = @"<p>Descubre el proceso de elaboración del tequila en este tour de un día en Guadalajara. Visita destilerías famosas y conoce la historia de esta icónica bebida mexicana. Disfruta de catas de diferentes tipos de tequila y aprende a diferenciar sus sabores únicos.</p>
     <p>Este tour es ideal para los amantes de las bebidas espirituosas que desean conocer más sobre el proceso de destilación del tequila y disfrutar de un día en la región de Jalisco.</p>",
@@ -925,11 +913,12 @@ public class AppDbSeeder
   };
 
       var tourgalleryimages10 = new List<TourGalleryImage>
-  {
-    new() {Agency = agency1, Tour = tour10, Image = "/storage/tours/10/gallery/image1.webp", ImageThumbnail = "/storage/tours/10/gallery/image1_thumbnail.webp"  },
-    new() {Agency = agency1, Tour = tour10, Image = "/storage/tours/10/gallery/image2.webp", ImageThumbnail = "/storage/tours/10/gallery/image2_thumbnail.webp"  },
-    new() {Agency = agency1, Tour = tour10, Image = "/storage/tours/10/gallery/image3.webp", ImageThumbnail = "/storage/tours/10/gallery/image3_thumbnail.webp"  },
-  };
+{
+  new() {Agency = agency1, Tour = tour10, Image = "/storage/tours/10/gallery/image1.webp", ImagePreview = "/storage/tours/10/gallery/image1_preview.webp", ImageThumbnail =  "/storage/tours/10/gallery/image1_thumbnail.webp", Order = 1  },
+  new() {Agency = agency1, Tour = tour10, Image = "/storage/tours/10/gallery/image2.webp", ImagePreview = "/storage/tours/10/gallery/image2_preview.webp", ImageThumbnail =  "/storage/tours/10/gallery/image2_thumbnail.webp", Order = 2  },
+  new() {Agency = agency1, Tour = tour10, Image = "/storage/tours/10/gallery/image3.webp", ImagePreview = "/storage/tours/10/gallery/image3_preview.webp", ImageThumbnail =  "/storage/tours/10/gallery/image3_thumbnail.webp", Order = 3  },
+  new() {Agency = agency1, Tour = tour10, Image = "/storage/tours/10/gallery/image4.webp", ImagePreview = "/storage/tours/10/gallery/image4_preview.webp", ImageThumbnail =  "/storage/tours/10/gallery/image4_thumbnail.webp", Order = 4  },
+};
 
       tour10.TourIncludes = tourIncludes10;
       tour10.TourCategoryCompositions = tourCategoryCompositions10;
@@ -953,8 +942,6 @@ public class AppDbSeeder
       {
         Title = "Tour de Aventura en Monterrey",
         TourType = TourType.SINGLEDAY,
-        Image = "/storage/tours/11/imagenMonterrey.webp",
-        ImageThumbnail = "/storage/tours/11/imagenMonterreythumbnail.webp",
         MetaKeywords = "Monterrey, tour, aventura, viaje, vacaciones, México, turismo, naturaleza",
         Description = @"<p>Experimenta la emoción de las actividades al aire libre en Monterrey con este tour de un día. Disfruta de una caminata en el Parque Chipinque, seguido de una visita a la impresionante Cascada Cola de Caballo. Termina el día con un paseo en bote en el Paseo Santa Lucía.</p>
     <p>Este tour es perfecto para los amantes de la naturaleza y la aventura que desean explorar la belleza natural de Monterrey y disfrutar de un día lleno de actividades emocionantes.</p>",
@@ -996,11 +983,12 @@ public class AppDbSeeder
   };
 
       var tourgalleryimages11 = new List<TourGalleryImage>
-  {
-    new() {Agency = agency1, Tour = tour11, Image = "/storage/tours/11/gallery/image1.webp", ImageThumbnail = "/storage/tours/11/gallery/image1_thumbnail.webp"  },
-    new() {Agency = agency1, Tour = tour11, Image = "/storage/tours/11/gallery/image2.webp", ImageThumbnail = "/storage/tours/11/gallery/image2_thumbnail.webp"  },
-    new() {Agency = agency1, Tour = tour11, Image = "/storage/tours/11/gallery/image3.webp", ImageThumbnail = "/storage/tours/11/gallery/image3_thumbnail.webp"  },
-  };
+{
+  new() {Agency = agency1, Tour = tour11, Image = "/storage/tours/11/gallery/image1.webp", ImagePreview = "/storage/tours/11/gallery/image1_preview.webp", ImageThumbnail =  "/storage/tours/11/gallery/image1_thumbnail.webp", Order = 1  },
+  new() {Agency = agency1, Tour = tour11, Image = "/storage/tours/11/gallery/image2.webp", ImagePreview = "/storage/tours/11/gallery/image2_preview.webp", ImageThumbnail =  "/storage/tours/11/gallery/image2_thumbnail.webp", Order = 2  },
+  new() {Agency = agency1, Tour = tour11, Image = "/storage/tours/11/gallery/image3.webp", ImagePreview = "/storage/tours/11/gallery/image3_preview.webp", ImageThumbnail =  "/storage/tours/11/gallery/image3_thumbnail.webp", Order = 3  },
+  new() {Agency = agency1, Tour = tour11, Image = "/storage/tours/11/gallery/image4.webp", ImagePreview = "/storage/tours/11/gallery/image4_preview.webp", ImageThumbnail =  "/storage/tours/11/gallery/image4_thumbnail.webp", Order = 4  },
+};
 
       tour11.TourIncludes = tourIncludes11;
       tour11.TourCategoryCompositions = tourCategoryCompositions11;
@@ -1022,8 +1010,6 @@ public class AppDbSeeder
       {
         Title = "Tour de Arte en San Miguel de Allende",
         TourType = TourType.SINGLEDAY,
-        Image = "/storage/tours/12/imagenSanMiguel.webp",
-        ImageThumbnail = "/storage/tours/12/imagenSanMiguelthumbnail.webp",
         MetaKeywords = "San Miguel de Allende, tour, arte, viaje, vacaciones, México, cultura, turismo",
         Description = @"<p>Descubre el vibrante mundo del arte en San Miguel de Allende en este tour de un día. Visita galerías de arte contemporáneo, estudios de artistas locales y participa en talleres creativos. Aprende sobre la historia artística de la ciudad y disfruta de un ambiente cultural único.</p>
     <p>Este tour es ideal para los amantes del arte y la cultura que desean sumergirse en la creatividad de San Miguel de Allende y explorar sus numerosas galerías y estudios.</p>",
@@ -1066,11 +1052,12 @@ public class AppDbSeeder
   };
 
       var tourgalleryimages12 = new List<TourGalleryImage>
-  {
-    new() {Agency = agency1, Tour = tour12, Image = "/storage/tours/12/gallery/image1.webp", ImageThumbnail = "/storage/tours/12/gallery/image1_thumbnail.webp"  },
-    new() {Agency = agency1, Tour = tour12, Image = "/storage/tours/12/gallery/image2.webp", ImageThumbnail = "/storage/tours/12/gallery/image2_thumbnail.webp"  },
-    new() {Agency = agency1, Tour = tour12, Image = "/storage/tours/12/gallery/image3.webp", ImageThumbnail = "/storage/tours/12/gallery/image3_thumbnail.webp"  },
-  };
+{
+  new() {Agency = agency1, Tour = tour12, Image = "/storage/tours/12/gallery/image1.webp", ImagePreview = "/storage/tours/12/gallery/image1_preview.webp", ImageThumbnail =  "/storage/tours/12/gallery/image1_thumbnail.webp", Order = 1  },
+  new() {Agency = agency1, Tour = tour12, Image = "/storage/tours/12/gallery/image2.webp", ImagePreview = "/storage/tours/12/gallery/image2_preview.webp", ImageThumbnail =  "/storage/tours/12/gallery/image2_thumbnail.webp", Order = 2  },
+  new() {Agency = agency1, Tour = tour12, Image = "/storage/tours/12/gallery/image3.webp", ImagePreview = "/storage/tours/12/gallery/image3_preview.webp", ImageThumbnail =  "/storage/tours/12/gallery/image3_thumbnail.webp", Order = 3  },
+  new() {Agency = agency1, Tour = tour12, Image = "/storage/tours/12/gallery/image4.webp", ImagePreview = "/storage/tours/12/gallery/image4_preview.webp", ImageThumbnail =  "/storage/tours/12/gallery/image4_thumbnail.webp", Order = 4  },
+};
 
       tour12.TourIncludes = tourIncludes12;
       tour12.TourCategoryCompositions = tourCategoryCompositions12;
@@ -1095,8 +1082,6 @@ public class AppDbSeeder
       {
         Title = "Tour de Playa y Ruinas en Tulum",
         TourType = TourType.SINGLEDAY,
-        Image = "/storage/tours/13/imagenTulum.webp",
-        ImageThumbnail = "/storage/tours/13/imagenTulumthumbnail.webp",
         MetaKeywords = "Tulum, tour, playa, ruinas, viaje, vacaciones, México, turismo, historia",
         Description = @"<p>Explora las hermosas playas y las impresionantes ruinas mayas de Tulum en este tour de un día. Disfruta de la arena blanca y las aguas turquesas, y aprende sobre la historia de la civilización maya en las ruinas de Tulum. Este tour combina historia y relajación en un entorno paradisíaco.</p>
     <p>Ideal para aquellos que desean disfrutar de la belleza natural de Tulum y conocer más sobre la historia y cultura maya.</p>",
@@ -1138,11 +1123,12 @@ public class AppDbSeeder
   };
 
       var tourgalleryimages13 = new List<TourGalleryImage>
-  {
-    new() {Agency = agency1, Tour = tour13, Image = "/storage/tours/13/gallery/image1.webp", ImageThumbnail = "/storage/tours/13/gallery/image1_thumbnail.webp"  },
-    new() {Agency = agency1, Tour = tour13, Image = "/storage/tours/13/gallery/image2.webp", ImageThumbnail = "/storage/tours/13/gallery/image2_thumbnail.webp"  },
-    new() {Agency = agency1, Tour = tour13, Image = "/storage/tours/13/gallery/image3.webp", ImageThumbnail = "/storage/tours/13/gallery/image3_thumbnail.webp"  },
-  };
+{
+  new() {Agency = agency1, Tour = tour13, Image = "/storage/tours/13/gallery/image1.webp", ImagePreview = "/storage/tours/13/gallery/image1_preview.webp", ImageThumbnail =  "/storage/tours/13/gallery/image1_thumbnail.webp", Order = 1  },
+  new() {Agency = agency1, Tour = tour13, Image = "/storage/tours/13/gallery/image2.webp", ImagePreview = "/storage/tours/13/gallery/image2_preview.webp", ImageThumbnail =  "/storage/tours/13/gallery/image2_thumbnail.webp", Order = 2  },
+  new() {Agency = agency1, Tour = tour13, Image = "/storage/tours/13/gallery/image3.webp", ImagePreview = "/storage/tours/13/gallery/image3_preview.webp", ImageThumbnail =  "/storage/tours/13/gallery/image3_thumbnail.webp", Order = 3  },
+  new() {Agency = agency1, Tour = tour13, Image = "/storage/tours/13/gallery/image4.webp", ImagePreview = "/storage/tours/13/gallery/image4_preview.webp", ImageThumbnail =  "/storage/tours/13/gallery/image4_thumbnail.webp", Order = 4  },
+};
 
       tour13.TourIncludes = tourIncludes13;
       tour13.TourCategoryCompositions = tourCategoryCompositions13;

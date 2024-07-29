@@ -13,8 +13,11 @@ public class TourGalleryImage
 
   public string Image { get; set; } = "";
 
+  public string ImagePreview { get; set; } = "";
+
   public string ImageThumbnail { get; set; } = "";
 
+  public int Order {get; set;}
 
   [ForeignKey("Tour")]
   public int IdTour { get; set; }

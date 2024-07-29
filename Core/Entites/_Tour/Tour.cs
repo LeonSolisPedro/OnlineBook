@@ -21,10 +21,6 @@ public class Tour
 
   public bool IsArchived {get; set;}
 
-  public string Image { get; set; } = "";
-
-  public string ImageThumbnail { get; set; } = "";
-
   public string MetaKeywords { get; set; } = "";
 
   [Column(TypeName = "ntext")]
