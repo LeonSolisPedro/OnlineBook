@@ -19,7 +19,12 @@ public class TourRepository : ITourRepository
 
     public async Task<Tour?> GetTour(int id)
     {
-      return await _context.Tours.Include(x => x.TourSimilar).FirstOrDefaultAsync(x => x.Id == id && x.IsArchived == false);
+      return await _context.Tours.Include(x => x.TourDirection).Include(x => x.TourGalleryImages).Include(x => x.TourItineraries).Include(x => x.TourIncludes).FirstOrDefaultAsync(x => x.Id == id && x.IsArchived == false);
+    }
+
+    public async Task<List<TourSimilar>> GetTourSimilar(int idTour)
+    {
+      return await _context.TourSimilars.Include(ts => ts.Tour1) .ThenInclude(t => t.TourDirection).Include(ts => ts.Tour1).ThenInclude(t => t.TourGalleryImages).Include(ts => ts.Tour2).ThenInclude(t => t.TourDirection).Include(ts => ts.Tour2).ThenInclude(t => t.TourGalleryImages).Where(x => x.IdTour1 == idTour || x.IdTour2 == idTour).ToListAsync();
     }
 
     public async Task<List<Tour>> GetList(int idAgency)

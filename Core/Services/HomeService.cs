@@ -21,12 +21,15 @@ public class HomeService
 
     private readonly IGenericRepository<OtherGallery> _genericGalleryRepository;
 
-    public HomeService(IGenericRepository<HomeCarousel> genericCarouselRepository, IGenericRepository<HomeOffer> genericOfferRepository, IGenericRepository<HomeTourPopularComposition> genericTourPopularRepository, IGenericRepository<OtherGallery> genericGalleryRepository)
+    private readonly ConvertService _convertService;
+
+    public HomeService(IGenericRepository<HomeCarousel> genericCarouselRepository, IGenericRepository<HomeOffer> genericOfferRepository, IGenericRepository<HomeTourPopularComposition> genericTourPopularRepository, IGenericRepository<OtherGallery> genericGalleryRepository, ConvertService convertService)
     {
         _genericCarouselRepository = genericCarouselRepository;
         _genericOfferRepository = genericOfferRepository;
         _genericTourPopularRepository = genericTourPopularRepository;
         _genericGalleryRepository = genericGalleryRepository;
+        _convertService = convertService;
     }
 
 
@@ -45,51 +48,19 @@ public class HomeService
     public async Task<List<TourCardDTO>> GetPopularTours()
     {
         var list = await _genericTourPopularRepository.GetList(x => x.IdAgency == 1 && x.PopularType == Enums.PopularType.POPULAR && x.Tour!.IsArchived == false, "Tour.TourDirection,Tour.TourGalleryImages");
-        return ConvertCardDto(list);
+        return _convertService.ConvertCardDto(list);
     }
 
     public async Task<List<TourCardDTO>> GetOtherTours()
     {
         var list = await _genericTourPopularRepository.GetList(x => x.IdAgency == 1 && x.PopularType == Enums.PopularType.OTHERTOURS && x.Tour!.IsArchived == false, "Tour.TourDirection,Tour.TourGalleryImages");
-        return ConvertCardDto(list);
+        return _convertService.ConvertCardDto(list);
     }
 
     public async Task<List<OtherGallery>> GetGalleries()
     {
         var list = await _genericGalleryRepository.GetList(x => x.IdAgency == 1 && x.IsFavorite == true);
         return list.OrderBy(x => x.Order).ToList();
-    }
-
-    private List<TourCardDTO> ConvertCardDto(List<HomeTourPopularComposition> list)
-    {
-        var listDto = new List<TourCardDTO>();
-        foreach (var li in list)
-        {
-            if (li.Tour == null) continue;
-            if (li.Tour.TourDirection == null) continue;
-
-            var html = new HtmlDocument();
-            var helper = new SlugHelper();
-            html.LoadHtml(li.Tour.Description);
-            var description = html.DocumentNode.InnerText;
-            var image = li.Tour.TourGalleryImages?.FirstOrDefault()?.ImagePreview ?? "";
-            var url = $"/tours/{helper.GenerateSlug(li.Tour.TourDirection.Name)}/{helper.GenerateSlug(li.Tour.Title)}/{li.Tour.Id}";
-            var durationWord = li.Tour.DurationType == Enums.DurationType.HOURS ? "Horas" : "Días";
-            durationWord = li.Tour.Duration == 1 ? durationWord.Replace("s", "") : durationWord;
-            var duration = $"{li.Tour.Duration} {durationWord}";
-
-            listDto.Add(new TourCardDTO
-            {
-                Id = li.Id,
-                Image = image,
-                Title = li.Tour.Title,
-                Description = description,
-                URL = url,
-                Duration = duration,
-                PriceInMXN = 0m
-            });
-        }
-        return listDto;
     }
 
 }

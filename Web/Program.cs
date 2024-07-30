@@ -64,6 +64,7 @@ builder.Services.AddScoped<AgencyService>();
 builder.Services.AddScoped<HomeService>();
 builder.Services.AddScoped<OtherWebService>();
 builder.Services.AddScoped<TourService>();
+builder.Services.AddScoped<ConvertService>();
 builder.Services.AddScoped<ITourRepository, TourRepository>();
 
 //Endpoints

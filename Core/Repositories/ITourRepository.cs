@@ -9,4 +9,6 @@ public interface ITourRepository
     public Task<List<Tour>> GetList(int idAgency);
 
     public Task<List<Tour>> GetList(int idAgency, int idCategory);
+
+    public Task<List<TourSimilar>> GetTourSimilar(int idTour);
 }

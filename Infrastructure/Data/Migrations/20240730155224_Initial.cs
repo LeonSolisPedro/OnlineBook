@@ -605,14 +605,13 @@ namespace Infrastructure.Data.Migrations
                 name: "TourSimilars",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    IdTour = table.Column<int>(type: "int", nullable: false),
+                    IdTour1 = table.Column<int>(type: "int", nullable: false),
+                    IdTour2 = table.Column<int>(type: "int", nullable: false),
                     IdAgency = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_TourSimilars", x => x.Id);
+                    table.PrimaryKey("PK_TourSimilars", x => new { x.IdTour1, x.IdTour2 });
                     table.ForeignKey(
                         name: "FK_TourSimilars_Agencies_IdAgency",
                         column: x => x.IdAgency,
@@ -620,8 +619,14 @@ namespace Infrastructure.Data.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_TourSimilars_Tours_IdTour",
-                        column: x => x.IdTour,
+                        name: "FK_TourSimilars_Tours_IdTour1",
+                        column: x => x.IdTour1,
+                        principalTable: "Tours",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_TourSimilars_Tours_IdTour2",
+                        column: x => x.IdTour2,
                         principalTable: "Tours",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
@@ -825,9 +830,9 @@ namespace Infrastructure.Data.Migrations
                 column: "IdAgency");
 
             migrationBuilder.CreateIndex(
-                name: "IX_TourSimilars_IdTour",
+                name: "IX_TourSimilars_IdTour2",
                 table: "TourSimilars",
-                column: "IdTour");
+                column: "IdTour2");
         }
 
         /// <inheritdoc />

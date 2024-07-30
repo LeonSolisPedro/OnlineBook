@@ -859,23 +859,20 @@ namespace Infrastructure.Data.Migrations
 
             modelBuilder.Entity("Core.Entites._Tour.TourSimilar", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
+                    b.Property<int>("IdTour1")
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    b.Property<int>("IdTour2")
+                        .HasColumnType("int");
 
                     b.Property<int>("IdAgency")
                         .HasColumnType("int");
 
-                    b.Property<int>("IdTour")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
+                    b.HasKey("IdTour1", "IdTour2");
 
                     b.HasIndex("IdAgency");
 
-                    b.HasIndex("IdTour");
+                    b.HasIndex("IdTour2");
 
                     b.ToTable("TourSimilars");
                 });
@@ -1221,15 +1218,23 @@ namespace Infrastructure.Data.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("Core.Entites._Tour.Tour", "Tour")
-                        .WithMany("TourSimilar")
-                        .HasForeignKey("IdTour")
+                    b.HasOne("Core.Entites._Tour.Tour", "Tour1")
+                        .WithMany()
+                        .HasForeignKey("IdTour1")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Core.Entites._Tour.Tour", "Tour2")
+                        .WithMany()
+                        .HasForeignKey("IdTour2")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Agency");
 
-                    b.Navigation("Tour");
+                    b.Navigation("Tour1");
+
+                    b.Navigation("Tour2");
                 });
 
             modelBuilder.Entity("Core.Entites._Agency.Agency", b =>
@@ -1266,8 +1271,6 @@ namespace Infrastructure.Data.Migrations
                     b.Navigation("TourItineraries");
 
                     b.Navigation("TourSearchQueryCompositions");
-
-                    b.Navigation("TourSimilar");
                 });
 
             modelBuilder.Entity("Core.Entites._Tour.TourDatePricing", b =>

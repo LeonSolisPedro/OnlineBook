@@ -8,13 +8,13 @@ namespace Core.Entites._Tour;
 
 public class TourSimilar
 {
-  [Key]
-  public int Id { get; set; }
+  [ForeignKey("Tour1")]
+  public int IdTour1 { get; set; }
+  public virtual Tour? Tour1 { get; set; }
 
-
-  [ForeignKey("Tour")]
-  public int IdTour { get; set; }
-  public virtual Tour? Tour { get; set; }
+  [ForeignKey("Tour2")]
+  public int IdTour2 { get; set; }
+  public virtual Tour? Tour2 { get; set; }
 
 
   [ForeignKey("Agency")]

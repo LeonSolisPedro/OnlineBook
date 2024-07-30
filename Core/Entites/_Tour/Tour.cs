@@ -44,8 +44,6 @@ public class Tour
 
   public virtual List<TourInclude>? TourIncludes { get; set; }
 
-  public virtual List<TourSimilar>? TourSimilar { get; set; }
-
   public virtual List<TourCategoryComposition>? TourCategoryCompositions {get; set;}
 
   public virtual List<TourSearchQueryComposition>? TourSearchQueryCompositions {get; set;}

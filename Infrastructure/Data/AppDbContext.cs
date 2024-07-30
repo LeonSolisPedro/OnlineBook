@@ -52,6 +52,7 @@ public class AppDbContext : DbContext
         modelBuilder.Entity<TourRepeatSpecificDate>().HasKey(x => new { x.IdTourDatePricing, x.Day });
         modelBuilder.Entity<AgencySocialComposition>().HasKey(x => new {x.IdAgencySocial, x.IdAgency});
         modelBuilder.Entity<AgencyCurrencyComposition>().HasKey(x => new { x.IdAgency, x.IdAgencyCurrency });
+        modelBuilder.Entity<TourSimilar>().HasKey(x => new { x.IdTour1, x.IdTour2 });
         
         foreach (var relationship in modelBuilder.Model.GetEntityTypes().SelectMany(e => e.GetForeignKeys()))
         {

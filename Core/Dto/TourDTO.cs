@@ -9,7 +9,7 @@ public class TourDTO
 
   public string Title { get; set; } = "";
 
-  public TourType TourType { get; set; }
+  public string Image {get; set;} = "";
 
   public string MetaKeywords { get; set; } = "";
 
@@ -23,8 +23,6 @@ public class TourDTO
   public string Duration { get; set; } = "";
 
   public decimal PriceInMXN { get; set; }
-
-  public bool IsInternational { get; set; }
 
   public TourDirection? TourDirection { get; set; }
 
