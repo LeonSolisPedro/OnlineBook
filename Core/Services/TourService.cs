@@ -15,9 +15,10 @@ public class TourService
     _tourRepository = tourRepository;
   }
 
-  public async Task<Tour?> GetTour(int id)
+  public async Task<TourDTO?> GetTour(int id)
   {
-    return await _tourRepository.GetTour(id);
+    var miau = await _tourRepository.GetTour(id);
+    return null;
   }
 
 
