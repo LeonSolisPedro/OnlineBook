@@ -2,6 +2,7 @@ using Core.Entites._Agency;
 using Core.Entites._Tour;
 using Core.Repositories;
 using Microsoft.Extensions.Caching.Memory;
+using Microsoft.Extensions.Logging;
 
 namespace Core.Services;
 
@@ -12,46 +13,55 @@ public class AgencyService
   private readonly IGenericRepository<AgencyCurrencyComposition> _genericCurrencyComposition;
   private readonly IGenericRepository<TourCategory> _genericCategoryRepository;
   private readonly IMemoryCache _cache;
+  private readonly ILogger<AgencyService> _logger;
 
-  public AgencyService(IGenericRepository<Agency> genericRepository, IGenericRepository<TourCategory> genericCategoryRepository, IGenericRepository<AgencyCurrencyComposition> genericCurrencyComposition, IMemoryCache cache)
+  public AgencyService(IGenericRepository<Agency> genericRepository, IGenericRepository<TourCategory> genericCategoryRepository, IGenericRepository<AgencyCurrencyComposition> genericCurrencyComposition, IMemoryCache cache, ILogger<AgencyService> logger)
   {
     _genericRepository = genericRepository;
     _genericCategoryRepository = genericCategoryRepository;
     _genericCurrencyComposition = genericCurrencyComposition;
     _cache = cache;
+    _logger = logger;
   }
 
   public async Task<Agency> GetInfo()
   {
-    var cache = _cache.Get<Agency>("GetInfo1");
-    if(cache != null) return cache;
+    var agency = new Agency();
+    try
+    {
+      var cache = _cache.Get<Agency>("Agency.GetInfo1");
+      if (cache != null) return cache;
 
-    var agency = await _genericRepository.GetOrNull(x => x.Id == 1, "AgencySocialCompositions.Social") ?? new Agency();
-    agency.AgencySocialCompositions = agency.AgencySocialCompositions?.OrderBy(x => x.Order).ToList();
-    _cache.Set("GetInfo1", agency);
+      agency = await _genericRepository.GetOrNull(x => x.Id == 1, "AgencySocialCompositions.Social") ?? new Agency();
+      agency.AgencySocialCompositions = agency.AgencySocialCompositions?.OrderBy(x => x.Order).ToList();
+      return _cache.Set("Agency.GetInfo1", agency);
+    }
+    catch (Exception e)
+    {
+      _logger.LogError(e, "Error");
+    }
     return agency;
+
   }
 
 
   public async Task<List<AgencyCurrencyComposition>> GetCurrency()
   {
-    var cache = _cache.Get<List<AgencyCurrencyComposition>>("GetCurrency1");
-    if(cache != null) return cache;
+    var cache = _cache.Get<List<AgencyCurrencyComposition>>("Agency.GetCurrency1");
+    if (cache != null) return cache;
 
     var list = await _genericCurrencyComposition.GetList(x => x.IdAgency == 1, "Currency");
     list = list.OrderBy(x => x.Order).ToList();
-    _cache.Set("GetCurrency1", list);
-    return list;
+    return _cache.Set("Agency.GetCurrency1", list);
   }
 
   public async Task<List<TourCategory>> GetTourCategories()
   {
-    var cache = _cache.Get<List<TourCategory>>("GetTourCategories1");
-    if(cache != null) return cache;
+    var cache = _cache.Get<List<TourCategory>>("Agency.GetTourCategories1");
+    if (cache != null) return cache;
 
     var list = await _genericCategoryRepository.GetList(x => x.IdAgency == 1);
     list = list.OrderBy(x => x.Order).ToList();
-    _cache.Set("GetTourCategories1", list);
-    return list;
+    return _cache.Set("Agency.GetTourCategories1", list);
   }
 }
