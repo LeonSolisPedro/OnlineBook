@@ -41,27 +41,44 @@ public class AgencyService
       _logger.LogError(e, "Error");
     }
     return agency;
-
   }
 
 
   public async Task<List<AgencyCurrencyComposition>> GetCurrency()
   {
-    var cache = _cache.Get<List<AgencyCurrencyComposition>>("Agency.GetCurrency1");
-    if (cache != null) return cache;
+    var list = new List<AgencyCurrencyComposition>();
+    try
+    {
+      var cache = _cache.Get<List<AgencyCurrencyComposition>>("Agency.GetCurrency1");
+      if (cache != null) return cache;
 
-    var list = await _genericCurrencyComposition.GetList(x => x.IdAgency == 1, "Currency");
-    list = list.OrderBy(x => x.Order).ToList();
-    return _cache.Set("Agency.GetCurrency1", list);
+      list = await _genericCurrencyComposition.GetList(x => x.IdAgency == 1, "Currency");
+      list = list.OrderBy(x => x.Order).ToList();
+      return _cache.Set("Agency.GetCurrency1", list);
+    }
+    catch (Exception e)
+    {
+      _logger.LogError(e, "Error");
+    }
+    return list;
   }
 
   public async Task<List<TourCategory>> GetTourCategories()
   {
-    var cache = _cache.Get<List<TourCategory>>("Agency.GetTourCategories1");
-    if (cache != null) return cache;
+    var list = new List<TourCategory>();
+    try
+    {
+      var cache = _cache.Get<List<TourCategory>>("Agency.GetTourCategories1");
+      if (cache != null) return cache;
 
-    var list = await _genericCategoryRepository.GetList(x => x.IdAgency == 1);
-    list = list.OrderBy(x => x.Order).ToList();
-    return _cache.Set("Agency.GetTourCategories1", list);
+      list = await _genericCategoryRepository.GetList(x => x.IdAgency == 1);
+      list = list.OrderBy(x => x.Order).ToList();
+      return _cache.Set("Agency.GetTourCategories1", list);
+    }
+    catch (Exception e)
+    {
+      _logger.LogError(e, "Error");
+    }
+    return list;
   }
 }
