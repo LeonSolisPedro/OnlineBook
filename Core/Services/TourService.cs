@@ -1,10 +1,8 @@
 using Core.Dto;
 using Core.Entites._Tour;
 using Core.Repositories;
-using HtmlAgilityPack;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Logging;
-using Slugify;
 
 namespace Core.Services;
 
@@ -28,6 +26,15 @@ public class TourService
     TourDTO? tourDto = null;
     try
     {
+      //Checamos del cache si el tour existe
+      var tourIds = _cache.Get<List<int>>("ListToursIds");
+      var exists = tourIds.Any(x => x == id);
+      if(exists == false) return null;
+
+      //Obtenemos el cache
+      var cache = _cache.Get<TourDTO>($"Tour.GetTour1{id}");
+      if (cache != null) return cache;
+
       var tour = await _tourRepository.GetTour(id);
       if (tour == null) return null;
       tour.TourDirection ??= new TourDirection();
@@ -61,7 +68,7 @@ public class TourService
         TourItineraries = tour.TourItineraries,
         TourGalleryImages = tour.TourGalleryImages
       };
-      return tourDto;
+      return _cache.Set($"Tour.GetTour1{id}", tourDto);
     }
     catch (Exception e)
     {

@@ -7,6 +7,7 @@ using Infrastructure.Data;
 using Infrastructure.Repositories;
 using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Caching.Memory;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddCors(options =>
@@ -79,7 +80,8 @@ using (var scope = app.Services.CreateScope())
 {
   var services = scope.ServiceProvider;
   var context = services.GetRequiredService<AppDbContext>();
-  await AppDbSeeder.SeedAsync(context);
+  var cache = services.GetRequiredService<IMemoryCache>();
+  await AppDbSeeder.SeedAsync(context, cache);
 }
 if (!app.Environment.IsDevelopment())
 {

@@ -1,19 +1,16 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Core.Entites;
 using Core.Entites._Agency;
 using Core.Entites._Home;
 using Core.Entites._Other;
 using Core.Entites._Tour;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Caching.Memory;
 using static Core.Dto.Enums;
 
 namespace Infrastructure.Data;
 
 public class AppDbSeeder
 {
-  public static async Task SeedAsync(AppDbContext _context)
+  public static async Task SeedAsync(AppDbContext _context, IMemoryCache _cache)
   {
 
 
@@ -1145,122 +1142,122 @@ public class AppDbSeeder
       };
       _context.TourSimilars.AddRange(tourSimilars1);
 
-//       var tourSimilars1 = new List<TourSimilar>
-// {
-//   new() {Tour = tour5, Agency = agency1},
-//   new() {Tour = tour13, Agency = agency1},
-//   new() {Tour = tour3, Agency = agency1},
-// };
-//       tour1.TourSimilar = tourSimilars1;
+      //       var tourSimilars1 = new List<TourSimilar>
+      // {
+      //   new() {Tour = tour5, Agency = agency1},
+      //   new() {Tour = tour13, Agency = agency1},
+      //   new() {Tour = tour3, Agency = agency1},
+      // };
+      //       tour1.TourSimilar = tourSimilars1;
 
 
 
-//       var tourSimilars2 = new List<TourSimilar>
-// {
-//   new() {Tour = tour6, Agency = agency1},
-//   new() {Tour = tour4, Agency = agency1},
-//   new() {Tour = tour11, Agency = agency1},
-// };
-//       tour2.TourSimilar = tourSimilars2;
+      //       var tourSimilars2 = new List<TourSimilar>
+      // {
+      //   new() {Tour = tour6, Agency = agency1},
+      //   new() {Tour = tour4, Agency = agency1},
+      //   new() {Tour = tour11, Agency = agency1},
+      // };
+      //       tour2.TourSimilar = tourSimilars2;
 
 
 
-//       var tourSimilars3 = new List<TourSimilar>
-// {
-//   new() {Tour = tour1, Agency = agency1},
-//   new() {Tour = tour13, Agency = agency1},
-//   new() {Tour = tour5, Agency = agency1},
-// };
-//       tour3.TourSimilar = tourSimilars3;
+      //       var tourSimilars3 = new List<TourSimilar>
+      // {
+      //   new() {Tour = tour1, Agency = agency1},
+      //   new() {Tour = tour13, Agency = agency1},
+      //   new() {Tour = tour5, Agency = agency1},
+      // };
+      //       tour3.TourSimilar = tourSimilars3;
 
 
-//       var tourSimilars4 = new List<TourSimilar>
-// {
-//   new() {Tour = tour6, Agency = agency1},
-//   new() {Tour = tour2, Agency = agency1},
-//   new() {Tour = tour11, Agency = agency1},
-// };
-//       tour4.TourSimilar = tourSimilars4;
+      //       var tourSimilars4 = new List<TourSimilar>
+      // {
+      //   new() {Tour = tour6, Agency = agency1},
+      //   new() {Tour = tour2, Agency = agency1},
+      //   new() {Tour = tour11, Agency = agency1},
+      // };
+      //       tour4.TourSimilar = tourSimilars4;
 
 
-//       var tourSimilars5 = new List<TourSimilar>
-// {
-//   new() {Tour = tour1, Agency = agency1},
-//   new() {Tour = tour13, Agency = agency1},
-//   new() {Tour = tour3, Agency = agency1},
-// };
-//       tour5.TourSimilar = tourSimilars5;
+      //       var tourSimilars5 = new List<TourSimilar>
+      // {
+      //   new() {Tour = tour1, Agency = agency1},
+      //   new() {Tour = tour13, Agency = agency1},
+      //   new() {Tour = tour3, Agency = agency1},
+      // };
+      //       tour5.TourSimilar = tourSimilars5;
 
 
-//       var tourSimilars6 = new List<TourSimilar>
-// {
-//   new() {Tour = tour4, Agency = agency1},
-//   new() {Tour = tour2, Agency = agency1},
-//   new() {Tour = tour11, Agency = agency1},
-// };
-//       tour6.TourSimilar = tourSimilars6;
+      //       var tourSimilars6 = new List<TourSimilar>
+      // {
+      //   new() {Tour = tour4, Agency = agency1},
+      //   new() {Tour = tour2, Agency = agency1},
+      //   new() {Tour = tour11, Agency = agency1},
+      // };
+      //       tour6.TourSimilar = tourSimilars6;
 
 
-//       var tourSimilars7 = new List<TourSimilar>
-// {
-//   new() {Tour = tour8, Agency = agency1},
-//   new() {Tour = tour9, Agency = agency1},
-//   new() {Tour = tour12, Agency = agency1},
-// };
-//       tour7.TourSimilar = tourSimilars7;
+      //       var tourSimilars7 = new List<TourSimilar>
+      // {
+      //   new() {Tour = tour8, Agency = agency1},
+      //   new() {Tour = tour9, Agency = agency1},
+      //   new() {Tour = tour12, Agency = agency1},
+      // };
+      //       tour7.TourSimilar = tourSimilars7;
 
 
-//       var tourSimilars8 = new List<TourSimilar>
-// {
-//   new() {Tour = tour7, Agency = agency1},
-//   new() {Tour = tour9, Agency = agency1},
-//   new() {Tour = tour12, Agency = agency1},
-// };
-//       tour8.TourSimilar = tourSimilars8;
+      //       var tourSimilars8 = new List<TourSimilar>
+      // {
+      //   new() {Tour = tour7, Agency = agency1},
+      //   new() {Tour = tour9, Agency = agency1},
+      //   new() {Tour = tour12, Agency = agency1},
+      // };
+      //       tour8.TourSimilar = tourSimilars8;
 
 
-//       var tourSimilars9 = new List<TourSimilar>
-// {
-//   new() {Tour = tour10, Agency = agency1},
-//   new() {Tour = tour8, Agency = agency1},
-//   new() {Tour = tour7, Agency = agency1},
-// };
-//       tour9.TourSimilar = tourSimilars9;
+      //       var tourSimilars9 = new List<TourSimilar>
+      // {
+      //   new() {Tour = tour10, Agency = agency1},
+      //   new() {Tour = tour8, Agency = agency1},
+      //   new() {Tour = tour7, Agency = agency1},
+      // };
+      //       tour9.TourSimilar = tourSimilars9;
 
 
-//       var tourSimilars10 = new List<TourSimilar>
-// {
-//   new() {Tour = tour9, Agency = agency1},
-//   new() {Tour = tour8, Agency = agency1},
-//   new() {Tour = tour7, Agency = agency1},
-// };
-//       tour10.TourSimilar = tourSimilars10;
+      //       var tourSimilars10 = new List<TourSimilar>
+      // {
+      //   new() {Tour = tour9, Agency = agency1},
+      //   new() {Tour = tour8, Agency = agency1},
+      //   new() {Tour = tour7, Agency = agency1},
+      // };
+      //       tour10.TourSimilar = tourSimilars10;
 
 
-//       var tourSimilars11 = new List<TourSimilar>
-// {
-//   new() {Tour = tour2, Agency = agency1},
-//   new() {Tour = tour6, Agency = agency1},
-//   new() {Tour = tour4, Agency = agency1},
-// };
-//       tour11.TourSimilar = tourSimilars11;
+      //       var tourSimilars11 = new List<TourSimilar>
+      // {
+      //   new() {Tour = tour2, Agency = agency1},
+      //   new() {Tour = tour6, Agency = agency1},
+      //   new() {Tour = tour4, Agency = agency1},
+      // };
+      //       tour11.TourSimilar = tourSimilars11;
 
 
-//       var tourSimilars12 = new List<TourSimilar>
-// {
-//   new() {Tour = tour7, Agency = agency1},
-//   new() {Tour = tour8, Agency = agency1},
-//   new() {Tour = tour9, Agency = agency1},
-// };
-//       tour12.TourSimilar = tourSimilars12;
+      //       var tourSimilars12 = new List<TourSimilar>
+      // {
+      //   new() {Tour = tour7, Agency = agency1},
+      //   new() {Tour = tour8, Agency = agency1},
+      //   new() {Tour = tour9, Agency = agency1},
+      // };
+      //       tour12.TourSimilar = tourSimilars12;
 
-//       var tourSimilars13 = new List<TourSimilar>
-// {
-//   new() {Tour = tour1, Agency = agency1},
-//   new() {Tour = tour3, Agency = agency1},
-//   new() {Tour = tour5, Agency = agency1},
-// };
-//       tour13.TourSimilar = tourSimilars13;
+      //       var tourSimilars13 = new List<TourSimilar>
+      // {
+      //   new() {Tour = tour1, Agency = agency1},
+      //   new() {Tour = tour3, Agency = agency1},
+      //   new() {Tour = tour5, Agency = agency1},
+      // };
+      //       tour13.TourSimilar = tourSimilars13;
 
       #endregion
 
@@ -1366,12 +1363,10 @@ public class AppDbSeeder
       _context.OtherTermsConditions.Add(terms);
       _context.OtherPrivacyNotices.Add(privacy);
       await _context.SaveChangesAsync();
-
       #endregion
-
-
-
-
     }
+
+    var listIds = await _context.Tours.Select(x => x.Id).ToListAsync();
+    _cache.Set("ListToursIds", listIds);
   }
 }
