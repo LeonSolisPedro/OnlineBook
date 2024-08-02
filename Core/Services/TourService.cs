@@ -40,7 +40,7 @@ public class TourService
       tour.TourDirection ??= new TourDirection();
 
       var similar = await _tourRepository.GetTourSimilar(id);
-      var tourSimilar = similar.SelectMany(x => new List<Tour> { x.Tour1, x.Tour2 }).Where(x => x.Id != 1).Distinct().ToList();
+      var tourSimilar = similar.SelectMany(x => new List<Tour> { x.Tour1, x.Tour2 }).Where(x => x.Id != id).Distinct().ToList();
       var tourSimilarDto = _convertService.ConvertCardDto(tourSimilar);
       var duration = _convertService.DurationToString(tour.Duration, tour.DurationType);
       var image = tour.TourGalleryImages?.FirstOrDefault()?.Image ?? "";

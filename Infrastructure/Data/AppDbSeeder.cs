@@ -1136,128 +1136,27 @@ public class AppDbSeeder
       #endregion
 
       #region Similar Tours
-      var tourSimilars1 = new List<TourSimilar>
+      var tourSimilars = new List<TourSimilar>
       {
-        new() {Tour1 = tour1, Tour2 = tour13, Agency = agency1 }
-      };
-      _context.TourSimilars.AddRange(tourSimilars1);
-
-      //       var tourSimilars1 = new List<TourSimilar>
-      // {
-      //   new() {Tour = tour5, Agency = agency1},
-      //   new() {Tour = tour13, Agency = agency1},
-      //   new() {Tour = tour3, Agency = agency1},
-      // };
-      //       tour1.TourSimilar = tourSimilars1;
-
-
-
-      //       var tourSimilars2 = new List<TourSimilar>
-      // {
-      //   new() {Tour = tour6, Agency = agency1},
-      //   new() {Tour = tour4, Agency = agency1},
-      //   new() {Tour = tour11, Agency = agency1},
-      // };
-      //       tour2.TourSimilar = tourSimilars2;
-
-
-
-      //       var tourSimilars3 = new List<TourSimilar>
-      // {
-      //   new() {Tour = tour1, Agency = agency1},
-      //   new() {Tour = tour13, Agency = agency1},
-      //   new() {Tour = tour5, Agency = agency1},
-      // };
-      //       tour3.TourSimilar = tourSimilars3;
-
-
-      //       var tourSimilars4 = new List<TourSimilar>
-      // {
-      //   new() {Tour = tour6, Agency = agency1},
-      //   new() {Tour = tour2, Agency = agency1},
-      //   new() {Tour = tour11, Agency = agency1},
-      // };
-      //       tour4.TourSimilar = tourSimilars4;
-
-
-      //       var tourSimilars5 = new List<TourSimilar>
-      // {
-      //   new() {Tour = tour1, Agency = agency1},
-      //   new() {Tour = tour13, Agency = agency1},
-      //   new() {Tour = tour3, Agency = agency1},
-      // };
-      //       tour5.TourSimilar = tourSimilars5;
-
-
-      //       var tourSimilars6 = new List<TourSimilar>
-      // {
-      //   new() {Tour = tour4, Agency = agency1},
-      //   new() {Tour = tour2, Agency = agency1},
-      //   new() {Tour = tour11, Agency = agency1},
-      // };
-      //       tour6.TourSimilar = tourSimilars6;
-
-
-      //       var tourSimilars7 = new List<TourSimilar>
-      // {
-      //   new() {Tour = tour8, Agency = agency1},
-      //   new() {Tour = tour9, Agency = agency1},
-      //   new() {Tour = tour12, Agency = agency1},
-      // };
-      //       tour7.TourSimilar = tourSimilars7;
-
-
-      //       var tourSimilars8 = new List<TourSimilar>
-      // {
-      //   new() {Tour = tour7, Agency = agency1},
-      //   new() {Tour = tour9, Agency = agency1},
-      //   new() {Tour = tour12, Agency = agency1},
-      // };
-      //       tour8.TourSimilar = tourSimilars8;
-
-
-      //       var tourSimilars9 = new List<TourSimilar>
-      // {
-      //   new() {Tour = tour10, Agency = agency1},
-      //   new() {Tour = tour8, Agency = agency1},
-      //   new() {Tour = tour7, Agency = agency1},
-      // };
-      //       tour9.TourSimilar = tourSimilars9;
-
-
-      //       var tourSimilars10 = new List<TourSimilar>
-      // {
-      //   new() {Tour = tour9, Agency = agency1},
-      //   new() {Tour = tour8, Agency = agency1},
-      //   new() {Tour = tour7, Agency = agency1},
-      // };
-      //       tour10.TourSimilar = tourSimilars10;
-
-
-      //       var tourSimilars11 = new List<TourSimilar>
-      // {
-      //   new() {Tour = tour2, Agency = agency1},
-      //   new() {Tour = tour6, Agency = agency1},
-      //   new() {Tour = tour4, Agency = agency1},
-      // };
-      //       tour11.TourSimilar = tourSimilars11;
-
-
-      //       var tourSimilars12 = new List<TourSimilar>
-      // {
-      //   new() {Tour = tour7, Agency = agency1},
-      //   new() {Tour = tour8, Agency = agency1},
-      //   new() {Tour = tour9, Agency = agency1},
-      // };
-      //       tour12.TourSimilar = tourSimilars12;
-
-      //       var tourSimilars13 = new List<TourSimilar>
-      // {
-      //   new() {Tour = tour1, Agency = agency1},
-      //   new() {Tour = tour3, Agency = agency1},
-      //   new() {Tour = tour5, Agency = agency1},
-      // };
-      //       tour13.TourSimilar = tourSimilars13;
+        new() { Tour1 = tour1, Tour2 = tour13, Agency = agency1 },
+    new() { Tour1 = tour1, Tour2 = tour5, Agency = agency1 },
+    new() { Tour1 = tour1, Tour2 = tour3, Agency = agency1 },
+    new() { Tour1 = tour2, Tour2 = tour6, Agency = agency1 },
+    new() { Tour1 = tour2, Tour2 = tour4, Agency = agency1 },
+    new() { Tour1 = tour3, Tour2 = tour5, Agency = agency1 },
+    new() { Tour1 = tour3, Tour2 = tour13, Agency = agency1 },
+    new() { Tour1 = tour4, Tour2 = tour6, Agency = agency1 },
+    new() { Tour1 = tour6, Tour2 = tour11, Agency = agency1 },
+    new() { Tour1 = tour7, Tour2 = tour8, Agency = agency1 },
+    new() { Tour1 = tour7, Tour2 = tour10, Agency = agency1 },
+    new() { Tour1 = tour7, Tour2 = tour9, Agency = agency1 },
+    new() { Tour1 = tour8, Tour2 = tour9, Agency = agency1 },
+    new() { Tour1 = tour9, Tour2 = tour10, Agency = agency1 },
+    new() { Tour1 = tour10, Tour2 = tour8, Agency = agency1 },
+    new() { Tour1 = tour11, Tour2 = tour2, Agency = agency1 },
+    new() { Tour1 = tour13, Tour2 = tour5, Agency = agency1 }
+    };
+      _context.TourSimilars.AddRange(tourSimilars);
 
       #endregion
 
