@@ -1135,6 +1135,22 @@ public class AppDbSeeder
 
       #endregion
 
+      _context.Tours.Add(tour1);
+      _context.Tours.Add(tour2);
+      _context.Tours.Add(tour3);
+      _context.Tours.Add(tour4);
+      _context.Tours.Add(tour5);
+      _context.Tours.Add(tour6);
+      _context.Tours.Add(tour7);
+      _context.Tours.Add(tour8);
+      _context.Tours.Add(tour9);
+      _context.Tours.Add(tour10);
+      _context.Tours.Add(tour11);
+      _context.Tours.Add(tour12);
+      _context.Tours.Add(tour13);
+      await _context.SaveChangesAsync();
+
+
       #region Similar Tours
       var tourSimilars = new List<TourSimilar>
       {
@@ -1156,25 +1172,7 @@ public class AppDbSeeder
     new() { Tour1 = tour11, Tour2 = tour2, Agency = agency1 },
     new() { Tour1 = tour13, Tour2 = tour5, Agency = agency1 }
     };
-      _context.TourSimilars.AddRange(tourSimilars);
-
       #endregion
-
-      _context.Tours.Add(tour1);
-      _context.Tours.Add(tour2);
-      _context.Tours.Add(tour3);
-      _context.Tours.Add(tour4);
-      _context.Tours.Add(tour5);
-      _context.Tours.Add(tour6);
-      _context.Tours.Add(tour7);
-      _context.Tours.Add(tour8);
-      _context.Tours.Add(tour9);
-      _context.Tours.Add(tour10);
-      _context.Tours.Add(tour11);
-      _context.Tours.Add(tour12);
-      _context.Tours.Add(tour13);
-      await _context.SaveChangesAsync();
-
 
       #region Other
 
@@ -1258,6 +1256,7 @@ public class AppDbSeeder
       };
 
       _context.HomeTourPopularCompositions.AddRange(populartours);
+      _context.TourSimilars.AddRange(tourSimilars);
       _context.OtherGalleries.AddRange(otherGallery);
       _context.OtherTermsConditions.Add(terms);
       _context.OtherPrivacyNotices.Add(privacy);
