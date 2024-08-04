@@ -20,11 +20,13 @@ public class Enums
     RECOMENDATIONS
   }
 
-  public enum RepeatType
+  public enum ReservationInterval
   {
     EVERYDAY,
-    EVERYNNNDAYS,
-    SPECIFICDAYS
+    // Todo: Por el momento todos los tours
+    // Se pueden reservar todos los días
+    // EVERYNNNDAYS,
+    // MANUAL
   }
 
   public enum Gender

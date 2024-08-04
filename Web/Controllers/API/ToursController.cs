@@ -1,4 +1,5 @@
 using Asp.Versioning;
+using Core.Dto;
 using Core.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -28,5 +29,19 @@ public class ToursController : ControllerBase
   {
     if (idCategory.HasValue) return Ok(await _tourService.GetList(idCategory.Value));
     return Ok(await _tourService.GetList());
+  }
+
+  [Route("GetDates/{id}")]
+  public async Task<IActionResult> GetDates(int id)
+  {
+    return Ok(await _tourService.GetDates(id));
+  }
+
+
+  [Route("CheckAvailability")]
+  [HttpPost]
+  public async Task<IActionResult> CheckAvailability(SelectedDateDTO selected)
+  {
+    return Ok(await _tourService.CheckAvailability(selected));
   }
 }

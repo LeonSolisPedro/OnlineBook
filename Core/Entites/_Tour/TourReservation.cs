@@ -15,6 +15,12 @@ public class TourReservation
 
   public virtual TourClassPricing? TourClassPricing { get; set; }
 
+
+  [ForeignKey("TourDatePricing")]
+  public int IdTourDatePricing { get; set; }
+
+  public virtual TourDatePricing? TourDatePricing { get; set; }
+
   [ForeignKey("Agency")]
   public int IdAgency { get; set; }
 
@@ -62,7 +68,9 @@ public class TourReservation
 
   public int NumberOfInfants { get; set; }
 
-  public string SettingsData { get; set; } = "";
+  public string TourClassPricingData { get; set; } = "";
+
+  public string TourDatePricingData { get; set; } = "";
 
   public string AdultsData { get; set; } = "";
 

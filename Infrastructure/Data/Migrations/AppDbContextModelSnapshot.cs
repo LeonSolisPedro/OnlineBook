@@ -538,7 +538,7 @@ namespace Infrastructure.Data.Migrations
                     b.Property<int?>("MaxSeats")
                         .HasColumnType("int");
 
-                    b.Property<int>("RepeatType")
+                    b.Property<int>("ReservationInterval")
                         .HasColumnType("int");
 
                     b.Property<DateOnly>("StartDate")
@@ -694,7 +694,7 @@ namespace Infrastructure.Data.Migrations
                     b.ToTable("TourNotWorkingDays");
                 });
 
-            modelBuilder.Entity("Core.Entites._Tour.TourRepeatSpecificDate", b =>
+            modelBuilder.Entity("Core.Entites._Tour.TourNotWorkingWeekDay", b =>
                 {
                     b.Property<int>("IdTourDatePricing")
                         .HasColumnType("int");
@@ -704,7 +704,7 @@ namespace Infrastructure.Data.Migrations
 
                     b.HasKey("IdTourDatePricing", "Day");
 
-                    b.ToTable("TourRepeatSpecificDates");
+                    b.ToTable("TourNotWorkingWeekDays");
                 });
 
             modelBuilder.Entity("Core.Entites._Tour.TourReservation", b =>
@@ -739,6 +739,9 @@ namespace Infrastructure.Data.Migrations
                         .HasColumnType("int");
 
                     b.Property<int>("IdTourClassPricing")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IdTourDatePricing")
                         .HasColumnType("int");
 
                     b.Property<bool>("InfantsCountAsSeat")
@@ -795,10 +798,6 @@ namespace Infrastructure.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("SettingsData")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("Status")
                         .HasColumnType("int");
 
@@ -808,11 +807,21 @@ namespace Infrastructure.Data.Migrations
                     b.Property<decimal>("TotalPricePaid")
                         .HasColumnType("money");
 
+                    b.Property<string>("TourClassPricingData")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TourDatePricingData")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.HasIndex("IdAgency");
 
                     b.HasIndex("IdTourClassPricing");
+
+                    b.HasIndex("IdTourDatePricing");
 
                     b.ToTable("TourReservations");
                 });
@@ -1150,10 +1159,10 @@ namespace Infrastructure.Data.Migrations
                     b.Navigation("TourDatePricing");
                 });
 
-            modelBuilder.Entity("Core.Entites._Tour.TourRepeatSpecificDate", b =>
+            modelBuilder.Entity("Core.Entites._Tour.TourNotWorkingWeekDay", b =>
                 {
                     b.HasOne("Core.Entites._Tour.TourDatePricing", "TourDatePricing")
-                        .WithMany("TourRepeatSpecificDates")
+                        .WithMany("TourNotWorkingWeekDays")
                         .HasForeignKey("IdTourDatePricing")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
@@ -1175,9 +1184,17 @@ namespace Infrastructure.Data.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
+                    b.HasOne("Core.Entites._Tour.TourDatePricing", "TourDatePricing")
+                        .WithMany()
+                        .HasForeignKey("IdTourDatePricing")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
                     b.Navigation("Agency");
 
                     b.Navigation("TourClassPricing");
+
+                    b.Navigation("TourDatePricing");
                 });
 
             modelBuilder.Entity("Core.Entites._Tour.TourSearchQuery", b =>
@@ -1279,7 +1296,7 @@ namespace Infrastructure.Data.Migrations
 
                     b.Navigation("TourNotWorkingDays");
 
-                    b.Navigation("TourRepeatSpecificDates");
+                    b.Navigation("TourNotWorkingWeekDays");
                 });
 
             modelBuilder.Entity("Core.Entites._Tour.TourDirection", b =>

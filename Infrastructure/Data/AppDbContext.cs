@@ -31,7 +31,7 @@ public class AppDbContext : DbContext
     public DbSet<TourDatePricing> TourDatePricings => Set<TourDatePricing>();
     public DbSet<TourDatePricingComposition> TourDatePricingCompositions => Set<TourDatePricingComposition>();
     public DbSet<TourNotWorkingDay> TourNotWorkingDays => Set<TourNotWorkingDay>();
-    public DbSet<TourRepeatSpecificDate> TourRepeatSpecificDates => Set<TourRepeatSpecificDate>();
+    public DbSet<TourNotWorkingWeekDay> TourNotWorkingWeekDays => Set<TourNotWorkingWeekDay>();
     public DbSet<TourReservation> TourReservations => Set<TourReservation>();
     public DbSet<AgencySocial> AgencySocials => Set<AgencySocial>();
     public DbSet<AgencySocialComposition> AgencySocialCompositions => Set<AgencySocialComposition>();
@@ -49,7 +49,7 @@ public class AppDbContext : DbContext
         modelBuilder.Entity<TourSearchQueryComposition>().HasKey(x => new { x.IdTour, x.IdTourSearchQuery });
         modelBuilder.Entity<TourDatePricingComposition>().HasKey(x => new { x.IdTourClassPricing, x.IdTourDatePricing });
         modelBuilder.Entity<TourNotWorkingDay>().HasKey(x => new { x.IdTourDatePricing, x.Day });
-        modelBuilder.Entity<TourRepeatSpecificDate>().HasKey(x => new { x.IdTourDatePricing, x.Day });
+        modelBuilder.Entity<TourNotWorkingWeekDay>().HasKey(x => new { x.IdTourDatePricing, x.Day });
         modelBuilder.Entity<AgencySocialComposition>().HasKey(x => new {x.IdAgencySocial, x.IdAgency});
         modelBuilder.Entity<AgencyCurrencyComposition>().HasKey(x => new { x.IdAgency, x.IdAgencyCurrency });
         modelBuilder.Entity<TourSimilar>().HasKey(x => new { x.IdTour1, x.IdTour2 });

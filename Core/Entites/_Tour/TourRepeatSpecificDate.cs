@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Core.Entites._Tour;
 
-public class TourRepeatSpecificDate
+public class TourNotWorkingWeekDay
 {
   [ForeignKey("TourDatePricing")]
   public int IdTourDatePricing { get; set; }

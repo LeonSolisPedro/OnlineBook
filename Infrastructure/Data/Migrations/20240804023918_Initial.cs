@@ -332,58 +332,6 @@ namespace Infrastructure.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "TourReservations",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    IdTourClassPricing = table.Column<int>(type: "int", nullable: false),
-                    IdAgency = table.Column<int>(type: "int", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    LastName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    PhoneNumber = table.Column<int>(type: "int", nullable: false),
-                    Gender = table.Column<int>(type: "int", nullable: false),
-                    BirthDay = table.Column<DateOnly>(type: "date", nullable: false),
-                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ReservationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ReservationDateTimeZone = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    LastEditedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    LastEditedDateTimeZone = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    PaymentDay = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    PaymentDayTimeZone = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    DepartureDate = table.Column<DateOnly>(type: "date", nullable: false),
-                    Status = table.Column<int>(type: "int", nullable: false),
-                    TotalOcupiedSeats = table.Column<int>(type: "int", nullable: false),
-                    InfantsCountAsSeat = table.Column<bool>(type: "bit", nullable: false),
-                    NumberOfAdults = table.Column<int>(type: "int", nullable: false),
-                    NumberOfMinors = table.Column<int>(type: "int", nullable: false),
-                    NumberOfInfants = table.Column<int>(type: "int", nullable: false),
-                    SettingsData = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    AdultsData = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    MinorsData = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    TotalPricePaid = table.Column<decimal>(type: "money", nullable: false),
-                    AdultsPricinginMXN = table.Column<decimal>(type: "money", nullable: false),
-                    MinorsPricinginMXN = table.Column<decimal>(type: "money", nullable: false),
-                    InfantsPricinginMXN = table.Column<decimal>(type: "money", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_TourReservations", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_TourReservations_Agencies_IdAgency",
-                        column: x => x.IdAgency,
-                        principalTable: "Agencies",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_TourReservations_TourClassPricings_IdTourClassPricing",
-                        column: x => x.IdTourClassPricing,
-                        principalTable: "TourClassPricings",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Tours",
                 columns: table => new
                 {
@@ -480,7 +428,7 @@ namespace Infrastructure.Data.Migrations
                     IdTour = table.Column<int>(type: "int", nullable: false),
                     StartDate = table.Column<DateOnly>(type: "date", nullable: false),
                     EndDate = table.Column<DateOnly>(type: "date", nullable: true),
-                    RepeatType = table.Column<int>(type: "int", nullable: false),
+                    ReservationInterval = table.Column<int>(type: "int", nullable: false),
                     AreSettingsGlobal = table.Column<bool>(type: "bit", nullable: false),
                     MaxSeats = table.Column<int>(type: "int", nullable: true),
                     InfantsCountAsSeats = table.Column<bool>(type: "bit", nullable: true),
@@ -675,7 +623,7 @@ namespace Infrastructure.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "TourRepeatSpecificDates",
+                name: "TourNotWorkingWeekDays",
                 columns: table => new
                 {
                     IdTourDatePricing = table.Column<int>(type: "int", nullable: false),
@@ -683,9 +631,69 @@ namespace Infrastructure.Data.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_TourRepeatSpecificDates", x => new { x.IdTourDatePricing, x.Day });
+                    table.PrimaryKey("PK_TourNotWorkingWeekDays", x => new { x.IdTourDatePricing, x.Day });
                     table.ForeignKey(
-                        name: "FK_TourRepeatSpecificDates_TourDatePricings_IdTourDatePricing",
+                        name: "FK_TourNotWorkingWeekDays_TourDatePricings_IdTourDatePricing",
+                        column: x => x.IdTourDatePricing,
+                        principalTable: "TourDatePricings",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "TourReservations",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    IdTourClassPricing = table.Column<int>(type: "int", nullable: false),
+                    IdTourDatePricing = table.Column<int>(type: "int", nullable: false),
+                    IdAgency = table.Column<int>(type: "int", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    LastName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    PhoneNumber = table.Column<int>(type: "int", nullable: false),
+                    Gender = table.Column<int>(type: "int", nullable: false),
+                    BirthDay = table.Column<DateOnly>(type: "date", nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ReservationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    ReservationDateTimeZone = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    LastEditedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    LastEditedDateTimeZone = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    PaymentDay = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    PaymentDayTimeZone = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    DepartureDate = table.Column<DateOnly>(type: "date", nullable: false),
+                    Status = table.Column<int>(type: "int", nullable: false),
+                    TotalOcupiedSeats = table.Column<int>(type: "int", nullable: false),
+                    InfantsCountAsSeat = table.Column<bool>(type: "bit", nullable: false),
+                    NumberOfAdults = table.Column<int>(type: "int", nullable: false),
+                    NumberOfMinors = table.Column<int>(type: "int", nullable: false),
+                    NumberOfInfants = table.Column<int>(type: "int", nullable: false),
+                    TourClassPricingData = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    TourDatePricingData = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    AdultsData = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    MinorsData = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    TotalPricePaid = table.Column<decimal>(type: "money", nullable: false),
+                    AdultsPricinginMXN = table.Column<decimal>(type: "money", nullable: false),
+                    MinorsPricinginMXN = table.Column<decimal>(type: "money", nullable: false),
+                    InfantsPricinginMXN = table.Column<decimal>(type: "money", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_TourReservations", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_TourReservations_Agencies_IdAgency",
+                        column: x => x.IdAgency,
+                        principalTable: "Agencies",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_TourReservations_TourClassPricings_IdTourClassPricing",
+                        column: x => x.IdTourClassPricing,
+                        principalTable: "TourClassPricings",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_TourReservations_TourDatePricings_IdTourDatePricing",
                         column: x => x.IdTourDatePricing,
                         principalTable: "TourDatePricings",
                         principalColumn: "Id",
@@ -805,6 +813,11 @@ namespace Infrastructure.Data.Migrations
                 column: "IdTourClassPricing");
 
             migrationBuilder.CreateIndex(
+                name: "IX_TourReservations_IdTourDatePricing",
+                table: "TourReservations",
+                column: "IdTourDatePricing");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Tours_IdAgency",
                 table: "Tours",
                 column: "IdAgency");
@@ -884,7 +897,7 @@ namespace Infrastructure.Data.Migrations
                 name: "TourNotWorkingDays");
 
             migrationBuilder.DropTable(
-                name: "TourRepeatSpecificDates");
+                name: "TourNotWorkingWeekDays");
 
             migrationBuilder.DropTable(
                 name: "TourReservations");
@@ -905,10 +918,10 @@ namespace Infrastructure.Data.Migrations
                 name: "TourCategories");
 
             migrationBuilder.DropTable(
-                name: "TourDatePricings");
+                name: "TourClassPricings");
 
             migrationBuilder.DropTable(
-                name: "TourClassPricings");
+                name: "TourDatePricings");
 
             migrationBuilder.DropTable(
                 name: "TourSearchQueries");

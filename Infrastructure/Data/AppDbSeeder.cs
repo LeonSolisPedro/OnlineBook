@@ -274,12 +274,64 @@ public class AppDbSeeder
   new() {Agency = agency1, Tour = tour1, Image = "/storage/tours/1/gallery/image3.webp", ImagePreview = "/storage/tours/1/gallery/image3_preview.webp", ImageThumbnail =  "/storage/tours/1/gallery/image3_thumbnail.webp", Order = 3 },
   new() {Agency = agency1, Tour = tour1, Image = "/storage/tours/1/gallery/image4.webp", ImagePreview = "/storage/tours/1/gallery/image4_preview.webp", ImageThumbnail =  "/storage/tours/1/gallery/image4_thumbnail.webp", Order = 4 },
 };
+
+
+     var tourDatePricing1 = new TourDatePricing
+     {
+      Tour = tour1,
+      StartDate = DateOnly.FromDateTime(DateTime.UtcNow.AddDays(-6)),
+      ReservationInterval = ReservationInterval.EVERYDAY,
+      AreSettingsGlobal = true,
+      MaxSeats = 2,
+      InfantsCountAsSeats = false,
+      AllowInfants = false,
+      AllowMinors = false
+     };
+     var tourDatePricingComposition1 = new List<TourDatePricingComposition>()
+     {
+      new()
+      {
+        TourDatePricing = tourDatePricing1,
+        TourClassPricing = new()
+        {
+          Name = "Básico",
+          AdultsPricinginMXN = 100m
+        }
+      }
+     };
+     var tourNotWorkingWeekDays1 = new List<TourNotWorkingWeekDay>()
+     {
+      new()
+      {
+        TourDatePricing = tourDatePricing1,
+        Day = DayOfWeek.Friday
+      }
+     };
+     var tourNotWorkingDays1 = new List<TourNotWorkingDay>()
+     {
+      new()
+      {
+        TourDatePricing = tourDatePricing1,
+        Day = new DateOnly(2024, 8, 26)
+      },
+      new()
+      {
+        TourDatePricing = tourDatePricing1,
+        Day = new DateOnly(2024, 8, 27)
+      },
+     };
+     tourDatePricing1.TourDatePricingCompositions = tourDatePricingComposition1;
+     tourDatePricing1.TourNotWorkingDays = tourNotWorkingDays1;
+     tourDatePricing1.TourNotWorkingWeekDays = tourNotWorkingWeekDays1;
+
+
+
       tour1.TourIncludes = tourIncludes1;
       tour1.TourCategoryCompositions = tourCategoryCompositions1;
       tour1.TourSearchQueryCompositions = tourSearchQueryCompositions1;
       tour1.TourItineraries = tourItinerary1;
       tour1.TourGalleryImages = tourgalleryimages1;
-
+      tour1.TourDatePricings = [tourDatePricing1];
       #endregion
 
 
