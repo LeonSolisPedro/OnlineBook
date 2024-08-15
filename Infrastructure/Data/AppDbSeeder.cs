@@ -37,51 +37,6 @@ public class AppDbSeeder
         Name = "EUR"
       };
 
-      var social1 = new AgencySocial
-      {
-        Name = "facebook"
-      };
-
-      var social2 = new AgencySocial
-      {
-        Name = "twitter"
-      };
-
-      var social3 = new AgencySocial
-      {
-        Name = "whatsapp"
-      };
-
-      var social4 = new AgencySocial
-      {
-        Name = "google"
-      };
-
-      var social5 = new AgencySocial
-      {
-        Name = "instagram"
-      };
-
-      var social6 = new AgencySocial
-      {
-        Name = "pinterest"
-      };
-
-      var social7 = new AgencySocial
-      {
-        Name = "youtube"
-      };
-
-      var social8 = new AgencySocial
-      {
-        Name = "linkedin"
-      };
-
-      var social9 = new AgencySocial
-      {
-        Name = "tiktok"
-      };
-
       var agency1 = new Agency
       {
         Name = "Agencia",
@@ -89,21 +44,17 @@ public class AppDbSeeder
         BusinessHours = "Lun - Vie: 9:00 a 17:00",
         PhoneContact = "5555555555",
         EmailContact = "pedro@wintercr.com",
-        Copyright = "Derechos Reservados Agencia"
+        Copyright = "Derechos Reservados Agencia",
+        Facebook = "https://www.linkedin.com/in/leonsolispedro/",
+        Twitter = "https://www.linkedin.com/in/leonsolispedro/",
+        Whatsapp = "https://www.linkedin.com/in/leonsolispedro/",
+        Google = "https://www.linkedin.com/in/leonsolispedro/",
+        Instagram = "https://www.linkedin.com/in/leonsolispedro/",
+        Pinterest = "https://www.linkedin.com/in/leonsolispedro/",
+        Youtube = "https://www.linkedin.com/in/leonsolispedro/",
+        Linkedin = "https://www.linkedin.com/in/leonsolispedro/",
+        Tiktok = "https://www.linkedin.com/in/leonsolispedro/"
       };
-
-      var agencySocial1 = new List<AgencySocialComposition>
-        {
-          new() {Agency = agency1, Social = social1, Link = "https://www.linkedin.com/in/leonsolispedro/", Order = 1},
-          new() {Agency = agency1, Social = social2, Link = "https://www.linkedin.com/in/leonsolispedro/", Order = 2},
-          new() {Agency = agency1, Social = social3, Link = "https://www.linkedin.com/in/leonsolispedro/", Order = 3},
-          new() {Agency = agency1, Social = social4, Link = "https://www.linkedin.com/in/leonsolispedro/", Order = 4},
-          new() {Agency = agency1, Social = social5, Link = "https://www.linkedin.com/in/leonsolispedro/", Order = 5},
-          new() {Agency = agency1, Social = social6, Link = "https://www.linkedin.com/in/leonsolispedro/", Order = 6},
-          new() {Agency = agency1, Social = social7, Link = "https://www.linkedin.com/in/leonsolispedro/", Order = 7},
-          new() {Agency = agency1, Social = social8, Link = "https://www.linkedin.com/in/leonsolispedro/", Order = 8},
-          new() {Agency = agency1, Social = social9, Link = "https://www.linkedin.com/in/leonsolispedro/", Order = 9},
-        };
 
       var agencyCurrency1 = new List<AgencyCurrencyComposition>
         {
@@ -129,7 +80,6 @@ public class AppDbSeeder
           new() {Image = "/storage/offers/1/image4.webp", ImageThumbnail = "/storage/offers/1/image4_thumbnail.webp", Name = "Tour Estudiantes", IncludesHotel = true, IncludesFlights = true, IncludesTransportation = true, MoreInfoLink = "https://www.linkedin.com/in/leonsolispedro/"},
         };
 
-      agency1.AgencySocialCompositions = agencySocial1;
       agency1.AgencyCurrencyCompositions = agencyCurrency1;
       agency1.HomeCarousels = homeCarousel1;
       agency1.HomeOffers = homeOffers1;
@@ -276,18 +226,18 @@ public class AppDbSeeder
 };
 
 
-     var tourDatePricing1 = new TourDatePricing
-     {
-      Tour = tour1,
-      StartDate = DateOnly.FromDateTime(DateTime.UtcNow.AddDays(-6)),
-      ReservationInterval = ReservationInterval.EVERYDAY,
-      AreSettingsGlobal = true,
-      MaxSeats = 2,
-      InfantsCountAsSeats = false,
-      AllowInfants = false,
-      AllowMinors = false
-     };
-     var tourDatePricingComposition1 = new List<TourDatePricingComposition>()
+      var tourDatePricing1 = new TourDatePricing
+      {
+        Tour = tour1,
+        StartDate = DateOnly.FromDateTime(DateTime.UtcNow.AddDays(-6)),
+        ReservationInterval = ReservationInterval.EVERYDAY,
+        AreSettingsGlobal = true,
+        MaxSeats = 2,
+        InfantsCountAsSeats = false,
+        AllowInfants = false,
+        AllowMinors = false
+      };
+      var tourDatePricingComposition1 = new List<TourDatePricingComposition>()
      {
       new()
       {
@@ -299,7 +249,7 @@ public class AppDbSeeder
         }
       }
      };
-     var tourNotWorkingWeekDays1 = new List<TourNotWorkingWeekDay>()
+      var tourNotWorkingWeekDays1 = new List<TourNotWorkingWeekDay>()
      {
       new()
       {
@@ -307,7 +257,7 @@ public class AppDbSeeder
         Day = DayOfWeek.Friday
       }
      };
-     var tourNotWorkingDays1 = new List<TourNotWorkingDay>()
+      var tourNotWorkingDays1 = new List<TourNotWorkingDay>()
      {
       new()
       {
@@ -320,9 +270,9 @@ public class AppDbSeeder
         Day = new DateOnly(2024, 8, 27)
       },
      };
-     tourDatePricing1.TourDatePricingCompositions = tourDatePricingComposition1;
-     tourDatePricing1.TourNotWorkingDays = tourNotWorkingDays1;
-     tourDatePricing1.TourNotWorkingWeekDays = tourNotWorkingWeekDays1;
+      tourDatePricing1.TourDatePricingCompositions = tourDatePricingComposition1;
+      tourDatePricing1.TourNotWorkingDays = tourNotWorkingDays1;
+      tourDatePricing1.TourNotWorkingWeekDays = tourNotWorkingWeekDays1;
 
 
 

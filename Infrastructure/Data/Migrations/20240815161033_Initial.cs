@@ -22,7 +22,16 @@ namespace Infrastructure.Data.Migrations
                     BusinessHours = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     PhoneContact = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     EmailContact = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Copyright = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Copyright = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Facebook = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Twitter = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Whatsapp = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Google = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Instagram = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Pinterest = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Youtube = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Linkedin = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Tiktok = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -41,19 +50,6 @@ namespace Infrastructure.Data.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AgencyCurrencies", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "AgencySocials",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_AgencySocials", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -301,32 +297,6 @@ namespace Infrastructure.Data.Migrations
                         name: "FK_AgencyCurrencyCompositions_AgencyCurrencies_IdAgencyCurrency",
                         column: x => x.IdAgencyCurrency,
                         principalTable: "AgencyCurrencies",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "AgencySocialCompositions",
-                columns: table => new
-                {
-                    IdAgencySocial = table.Column<int>(type: "int", nullable: false),
-                    IdAgency = table.Column<int>(type: "int", nullable: false),
-                    Link = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Order = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_AgencySocialCompositions", x => new { x.IdAgencySocial, x.IdAgency });
-                    table.ForeignKey(
-                        name: "FK_AgencySocialCompositions_Agencies_IdAgency",
-                        column: x => x.IdAgency,
-                        principalTable: "Agencies",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_AgencySocialCompositions_AgencySocials_IdAgencySocial",
-                        column: x => x.IdAgencySocial,
-                        principalTable: "AgencySocials",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
@@ -706,11 +676,6 @@ namespace Infrastructure.Data.Migrations
                 column: "IdAgencyCurrency");
 
             migrationBuilder.CreateIndex(
-                name: "IX_AgencySocialCompositions_IdAgency",
-                table: "AgencySocialCompositions",
-                column: "IdAgency");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_HomeCarousels_IdAgency",
                 table: "HomeCarousels",
                 column: "IdAgency");
@@ -855,9 +820,6 @@ namespace Infrastructure.Data.Migrations
                 name: "AgencyCurrencyCompositions");
 
             migrationBuilder.DropTable(
-                name: "AgencySocialCompositions");
-
-            migrationBuilder.DropTable(
                 name: "HomeCarousels");
 
             migrationBuilder.DropTable(
@@ -910,9 +872,6 @@ namespace Infrastructure.Data.Migrations
 
             migrationBuilder.DropTable(
                 name: "AgencyCurrencies");
-
-            migrationBuilder.DropTable(
-                name: "AgencySocials");
 
             migrationBuilder.DropTable(
                 name: "TourCategories");

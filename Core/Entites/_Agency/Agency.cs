@@ -21,22 +21,38 @@ public class Agency
 
     public string Copyright { get; set; } = "";
 
-    public virtual List<AgencyCurrencyComposition>? AgencyCurrencyCompositions { get; set; }
+    public string Facebook { get; set; } = "";
 
-    public virtual List<AgencySocialComposition>? AgencySocialCompositions { get; set; }
+    public string Twitter { get; set; } = "";
+
+    public string Whatsapp { get; set; } = "";
+
+    public string Google { get; set; } = "";
+
+    public string Instagram { get; set; } = "";
+
+    public string Pinterest { get; set; } = "";
+
+    public string Youtube { get; set; } = "";
+
+    public string Linkedin { get; set; } = "";
+
+    public string Tiktok { get; set; } = "";
+
+    public virtual List<AgencyCurrencyComposition>? AgencyCurrencyCompositions { get; set; }
 
     public virtual List<OtherGallery>? OtherGalleries { get; set; }
 
     public virtual List<HomeCarousel>? HomeCarousels { get; set; }
 
-    public virtual List<HomeOffer>? HomeOffers {get; set;}
+    public virtual List<HomeOffer>? HomeOffers { get; set; }
 
     public virtual List<HomeTourPopularComposition>? HomeTourPopularCompositions { get; set; }
 
-    public virtual OtherPrivacyNotice? OtherPrivacyNotice {get; set;}
+    public virtual OtherPrivacyNotice? OtherPrivacyNotice { get; set; }
 
-    public virtual OtherTermsCondition? OtherTermsCondition {get; set;}
+    public virtual OtherTermsCondition? OtherTermsCondition { get; set; }
 
-    public virtual List<OtherContactForm>? OtherContactForms {get; set;}
+    public virtual List<OtherContactForm>? OtherContactForms { get; set; }
 
 }

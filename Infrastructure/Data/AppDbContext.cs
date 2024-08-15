@@ -33,8 +33,6 @@ public class AppDbContext : DbContext
     public DbSet<TourNotWorkingDay> TourNotWorkingDays => Set<TourNotWorkingDay>();
     public DbSet<TourNotWorkingWeekDay> TourNotWorkingWeekDays => Set<TourNotWorkingWeekDay>();
     public DbSet<TourReservation> TourReservations => Set<TourReservation>();
-    public DbSet<AgencySocial> AgencySocials => Set<AgencySocial>();
-    public DbSet<AgencySocialComposition> AgencySocialCompositions => Set<AgencySocialComposition>();
     public DbSet<HomeTourPopularComposition> HomeTourPopularCompositions => Set<HomeTourPopularComposition>();
     public DbSet<OtherGallery> OtherGalleries => Set<OtherGallery>();
     public DbSet<HomeCarousel> HomeCarousels => Set<HomeCarousel>();
@@ -50,7 +48,6 @@ public class AppDbContext : DbContext
         modelBuilder.Entity<TourDatePricingComposition>().HasKey(x => new { x.IdTourClassPricing, x.IdTourDatePricing });
         modelBuilder.Entity<TourNotWorkingDay>().HasKey(x => new { x.IdTourDatePricing, x.Day });
         modelBuilder.Entity<TourNotWorkingWeekDay>().HasKey(x => new { x.IdTourDatePricing, x.Day });
-        modelBuilder.Entity<AgencySocialComposition>().HasKey(x => new {x.IdAgencySocial, x.IdAgency});
         modelBuilder.Entity<AgencyCurrencyComposition>().HasKey(x => new { x.IdAgency, x.IdAgencyCurrency });
         modelBuilder.Entity<TourSimilar>().HasKey(x => new { x.IdTour1, x.IdTour2 });
         

@@ -1,8 +1,10 @@
+using Core.Dto;
 using Core.Entites._Agency;
 using Core.Entites._Tour;
 using Core.Repositories;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Logging;
+using Slugify;
 
 namespace Core.Services;
 
@@ -32,8 +34,7 @@ public class AgencyService
       var cache = _cache.Get<Agency>("Agency.GetInfo1");
       if (cache != null) return cache;
 
-      agency = await _genericRepository.GetOrNull(x => x.Id == 1, "AgencySocialCompositions.Social") ?? new Agency();
-      agency.AgencySocialCompositions = agency.AgencySocialCompositions?.OrderBy(x => x.Order).ToList();
+      agency = await _genericRepository.GetOrNull(x => x.Id == 1) ?? new Agency();
       return _cache.Set("Agency.GetInfo1", agency);
     }
     catch (Exception e)
@@ -63,15 +64,21 @@ public class AgencyService
     return list;
   }
 
-  public async Task<List<TourCategory>> GetTourCategories()
+  public async Task<List<CategoryDTO>> GetTourCategories()
   {
-    var list = new List<TourCategory>();
+    var list = new List<CategoryDTO>();
     try
     {
-      var cache = _cache.Get<List<TourCategory>>("Agency.GetTourCategories1");
+      var cache = _cache.Get<List<CategoryDTO>>("Agency.GetTourCategories1");
       if (cache != null) return cache;
 
-      list = await _genericCategoryRepository.GetList(x => x.IdAgency == 1);
+      var helper = new SlugHelper();
+      list = await _genericCategoryRepository.GetList(x => x.IdAgency == 1, x => new CategoryDTO
+      {
+        URL = $"/experiencias/{helper.GenerateSlug(x.Name)}/{x.Id}",
+        Name = x.Name,
+        Order = x.Order
+      });
       list = list.OrderBy(x => x.Order).ToList();
       return _cache.Set("Agency.GetTourCategories1", list);
     }

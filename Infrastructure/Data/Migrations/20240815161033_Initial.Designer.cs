@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructure.Data.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240804023918_Initial")]
+    [Migration("20240815161033_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -45,6 +45,22 @@ namespace Infrastructure.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Facebook")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Google")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Instagram")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Linkedin")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Location")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -54,6 +70,26 @@ namespace Infrastructure.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PhoneContact")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Pinterest")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Tiktok")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Twitter")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Whatsapp")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Youtube")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -98,45 +134,6 @@ namespace Infrastructure.Data.Migrations
                     b.HasIndex("IdAgencyCurrency");
 
                     b.ToTable("AgencyCurrencyCompositions");
-                });
-
-            modelBuilder.Entity("Core.Entites._Agency.AgencySocial", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("AgencySocials");
-                });
-
-            modelBuilder.Entity("Core.Entites._Agency.AgencySocialComposition", b =>
-                {
-                    b.Property<int>("IdAgencySocial")
-                        .HasColumnType("int");
-
-                    b.Property<int>("IdAgency")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Link")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Order")
-                        .HasColumnType("int");
-
-                    b.HasKey("IdAgencySocial", "IdAgency");
-
-                    b.HasIndex("IdAgency");
-
-                    b.ToTable("AgencySocialCompositions");
                 });
 
             modelBuilder.Entity("Core.Entites._Home.HomeCarousel", b =>
@@ -908,25 +905,6 @@ namespace Infrastructure.Data.Migrations
                     b.Navigation("Currency");
                 });
 
-            modelBuilder.Entity("Core.Entites._Agency.AgencySocialComposition", b =>
-                {
-                    b.HasOne("Core.Entites._Agency.Agency", "Agency")
-                        .WithMany("AgencySocialCompositions")
-                        .HasForeignKey("IdAgency")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("Core.Entites._Agency.AgencySocial", "Social")
-                        .WithMany()
-                        .HasForeignKey("IdAgencySocial")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.Navigation("Agency");
-
-                    b.Navigation("Social");
-                });
-
             modelBuilder.Entity("Core.Entites._Home.HomeCarousel", b =>
                 {
                     b.HasOne("Core.Entites._Agency.Agency", "Agency")
@@ -1260,8 +1238,6 @@ namespace Infrastructure.Data.Migrations
             modelBuilder.Entity("Core.Entites._Agency.Agency", b =>
                 {
                     b.Navigation("AgencyCurrencyCompositions");
-
-                    b.Navigation("AgencySocialCompositions");
 
                     b.Navigation("HomeCarousels");
 
