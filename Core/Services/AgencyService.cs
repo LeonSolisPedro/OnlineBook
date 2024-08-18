@@ -75,7 +75,6 @@ public class AgencyService
       var helper = new SlugHelper();
       list = await _genericCategoryRepository.GetList(x => x.IdAgency == 1, x => new CategoryDTO
       {
-        Id = x.Id,
         URL = $"/experiencias/{helper.GenerateSlug(x.Name)}/{x.Id}",
         Name = x.Name,
         Order = x.Order
