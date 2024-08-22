@@ -126,6 +126,11 @@ public class TourService
     GetDatesDTO? dateDTO = null;
     try
     {
+      //Checamos si el tour existe
+      var tourIds = _cache.Get<List<int>>("ListToursIds");
+      var exists = tourIds?.Any(x => x == idTour) ?? false;
+      if (exists == false) return null;
+
       //Checa si hay fechas disponibles hoy
       var date = await _tourRepository.GetDates(idTour);
       if (date == null) return null;
