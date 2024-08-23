@@ -8,7 +8,7 @@ using Infrastructure.Repositories;
 using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Memory;
-//Test
+//Testtttt
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddCors(options =>
 {
