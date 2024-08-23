@@ -35,10 +35,10 @@ on:
       - 'main'
 
 env:
-  PROJECT_ID: 'wintercr-343522'
-  REGION: 'us-central1'
-  SERVICE: 'cool-service'
-  WORKLOAD_IDENTITY_PROVIDER: 'projects/311163271799/locations/global/workloadIdentityPools/github/providers/my-repo'
+  PROJECT_ID: wintercr-343522
+  REGION: us-central1
+  SERVICE: cool-service
+  WORKLOAD_IDENTITY_PROVIDER: projects/311163271799/locations/global/workloadIdentityPools/github/providers/my-repo
 
 jobs:
   deploy:
